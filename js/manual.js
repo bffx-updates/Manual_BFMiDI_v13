@@ -2799,10 +2799,16 @@
               <div class="bf-grid-namecolor">${colorBar("BORDA DO NOME", "linear-gradient(180deg,#a02ec4 0%,#7b1fa2 100%)", tag("borda"))}</div>
               <div class="bf-grid-background">${colorBar("FUNDO", "linear-gradient(180deg,#ff2424 0%,#c62828 100%)", tag("fundo"))}</div>
               <label class="bf-field bf-grid-alinhamento mn-cell">${tag("alinhamento")}
-                <span class="bf-field-label">ALINHAMENTO</span>
-                <div class="bf-align-grid bf-align-grid-large">
-                  ${Array.from({ length: 9 }, (_, i) => `<button type="button" class="bf-align-cell${i === 4 ? " is-active" : ""}" tabindex="-1"></button>`).join("")}
-                </div>
+                <span class="bf-field-label">POSIÇÃO DO NOME</span>
+                <button type="button" class="bf-input" tabindex="-1" style="display:flex;flex-direction:column;gap:6px;height:auto;padding:6px;align-items:stretch">
+                  <span style="position:relative;display:block;height:68px;border-radius:6px;overflow:hidden;background:linear-gradient(180deg,#ff2424 0%,#c62828 100%)">
+                    <span style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:#f57c00;color:#fff;font-size:11px;font-weight:700;padding:2px 7px;border-radius:5px;line-height:1">A1</span>
+                  </span>
+                  <span style="display:inline-flex;align-items:center;justify-content:center;gap:5px;font-size:11px;font-weight:600;letter-spacing:.04em;color:#f57c00;text-transform:uppercase">
+                    <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 9l-3 3 3 3M9 5l3-3 3 3M15 19l-3 3-3-3M19 9l3 3-3 3M2 12h20M12 2v20"/></svg>
+                    Posicionar
+                  </span>
+                </button>
               </label>
               <div class="bf-grid-tagcolor">${colorBar("COR DA SIGLA", "linear-gradient(180deg,#ffb340 0%,#f57c00 100%)", tag("sigla"))}</div>
               <div class="bf-grid-backlayers">${colorBar("BACK LAYERS", "linear-gradient(180deg,#2b50ff 0%,#1230c8 100%)", tag("camadas"))}</div>
