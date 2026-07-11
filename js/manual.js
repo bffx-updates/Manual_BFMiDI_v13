@@ -1328,8 +1328,38 @@
         </div>`;
         break;
 
-      case "sw-single":
+      case "sw-single": {
+        // Ícones dos 3 gestos (curto / longo / reclick) — espelham SwSingleGestureIcon.
+        const gIco = (k) => k === "longo"
+          ? `<svg class="bf-gesture-ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="13" r="4" fill="currentColor" stroke="none"/><path d="M12 4.5 A8.5 8.5 0 1 1 4.2 9.5"/></svg>`
+          : k === "reclick"
+          ? `<svg class="bf-gesture-ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="9" cy="15" r="3.4" fill="currentColor" stroke="none"/><circle cx="16.5" cy="15" r="2.2" fill="currentColor" stroke="none" opacity="0.55"/><path d="M5.5 8.5 Q9 4.5 12.5 8.5"/><path d="M12.5 6.5 Q16 2.5 19.5 6.5"/></svg>`
+          : `<svg class="bf-gesture-ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="15" r="4" fill="currentColor" stroke="none"/><path d="M7 8 Q12 3 17 8"/></svg>`;
+        const gHead = (ico, title, eyebrow, cls) => `
+          <div class="bf-sw-studio-head bf-single-gesture-head${cls ? " " + cls : ""}">
+            <span class="bf-sw-studio-title">${gIco(ico)}${esc(title)}</span>
+            <span class="bf-sw-studio-eyebrow">${esc(eyebrow)}</span>
+          </div>`;
+        const extraLed = (color) => `
+          <div class="bf-sw-opt-led bf-single-extra-led">
+            <div class="bf-sw-fx1-led">
+              <div class="bf-fsw">
+                <span class="bf-fsw-glyph" style="--led-c:${color}">${fswArcSvg(color)}</span>
+                <span class="bf-fsw-label">LED</span>
+              </div>
+            </div>
+          </div>`;
+        const extraSlot = (ch, cc, val) => `
+          <div class="bf-macros-slot">
+            <div class="bf-slot-title">Slot 1</div>
+            ${slotHead(false, ch)}
+            <div class="bf-extras-row bf-macros-slot-fields is-pc">
+              ${selCell("CC", cc)}
+              ${selCell("Valor", val)}
+            </div>
+          </div>`;
         body = `<div class="bf-sw-fx1 bf-sw-macros bf-sw-single">
+          ${gHead("curto", "CURTO", "1 TOQUE", "bf-single-main-head")}
           <div class="bf-macros-slot mn-cell">${tag("slot")}
             <div class="bf-slot-title">Slot 1</div>
             ${slotHead(false, "CH 1", tag("tipo"))}
@@ -1350,8 +1380,21 @@
           </div>
           ${slotActions("REMOVER SLOT", "ADICIONAR SLOT", tag("slots"))}
           ${optCard({ noStart: true, tagCard: tag("opcoes"), tagLed: tag("led") })}
+          <div class="bf-sw-studio bf-single-extra mn-cell">${tag("longo")}
+            ${gHead("longo", "LONG PRESS", "SEGURAR · ~300 MS")}
+            <div class="bf-single-extra-hint">Segurar o pé (~300 ms) dispara estes slots. Com LONG configurado, o disparo principal passa a acontecer ao SOLTAR o pé.</div>
+            ${extraSlot("CH 3", "31 - Afinador", "127")}
+            ${extraLed("#bf5af2")}
+          </div>
+          <div class="bf-sw-studio bf-single-extra mn-cell">${tag("reclick")}
+            ${gHead("reclick", "RECLICK", "2 TOQUES")}
+            <div class="bf-single-extra-hint">Dois toques rápidos disparam estes slots. Com RECLICK configurado, o disparo principal espera a janela do duplo-toque (~350 ms).</div>
+            ${extraSlot("CH 4", "60 - Mute", "0")}
+            ${extraLed("#ff9f0a")}
+          </div>
         </div>`;
         break;
+      }
 
       case "sw-mute":
         body = `<div class="bf-sw-card-empty">MUTE — sem disparo. Escolha um modo acima.</div>`;
@@ -1783,23 +1826,66 @@
         break;
 
       case "g-extdual": {
+        const EXT_MODES = ["STOMP", "MACROS", "MOMENTARY", "TAP TEMPO", "SPIN", "RAMPA", "SINGLE"];
         const modeBtns = (active) => `
           <div class="bf-sw-global-modes">
-            <button type="button" class="bf-sw-global-mode${active === 0 ? " is-active" : ""}" tabindex="-1">${swIcon("mode")}<span>STOMP</span></button>
-            <button type="button" class="bf-sw-global-mode${active === 1 ? " is-active" : ""}" tabindex="-1">${swIcon("mode")}<span>SINGLE</span></button>
+            ${EXT_MODES.map((m, i) => `<button type="button" class="bf-sw-global-mode${i === active ? " is-active" : ""}" tabindex="-1">${swIcon("mode")}<span>${esc(m)}</span></button>`).join("")}
+          </div>`;
+        const resetRow = (tagHtml) => `
+          <div class="bf-sw-opt-row mn-cell" style="margin-top:12px">${tagHtml || ""}
+            <div class="bf-sw-opt-text">
+              <span class="bf-sw-opt-name">RESET AO CHAMAR PRESET</span>
+              <span class="bf-sw-opt-sub">Volta o indicador para OFF sem enviar MIDI.</span>
+            </div>
+            <button type="button" class="bf-toggle" tabindex="-1"><span class="bf-toggle-knob"></span></button>
+          </div>`;
+        const cbar = (label, bg) => `
+          <div class="bf-esw-color">
+            <span class="bf-field-label">${esc(label)}</span>
+            <button type="button" class="bf-color-bar" tabindex="-1" style="background:${bg}"></button>
+          </div>`;
+        const moveIco = `<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 9l-3 3 3 3M9 5l3-3 3 3M15 19l-3 3-3-3M19 9l3 3-3 3M2 12h20M12 2v20"/></svg>`;
+        const indic = `
+          <div class="bf-esw-indic">
+            <div class="bfg-eyebrow-row" style="margin-top:12px">INDICADOR NA TELA</div>
+            <div class="bf-seg bf-esw-scope mn-cell">${tag("indic")}
+              <button type="button" tabindex="-1">OFF</button>
+              <button type="button" class="is-active" tabindex="-1">LIVE</button>
+              <button type="button" tabindex="-1">PRESET</button>
+              <button type="button" tabindex="-1">AMBOS</button>
+            </div>
+            <div class="bfg-eyebrow-row" style="margin-top:12px">SIGLA E CORES</div>
+            <div class="bf-esw-indic-fields mn-cell">${tag("sigla")}
+              <label class="bf-field">
+                <span class="bf-field-label">SIGLA</span>
+                <div class="bf-input bf-esw-sigla"><span class="value">ESW1</span></div>
+              </label>
+              ${cbar("COR ON", "#30d158")}
+              ${cbar("COR OFF", "#3a3a40")}
+              <label class="bf-field bf-esw-font-field">
+                <span class="bf-field-label">TAMANHO</span>
+                <button type="button" class="bf-input bf-input-num bf-esw-font-size" tabindex="-1">14pt</button>
+              </label>
+            </div>
+            <div class="bfg-eyebrow-row" style="margin-top:12px">POSIÇÃO</div>
+            <button type="button" class="bf-namepos-btn mn-cell" tabindex="-1">${tag("posicao")}
+              <span class="bf-namepos-btn-cta">${moveIco} EDITAR POSIÇÃO</span>
+            </button>
           </div>`;
         body = `
           <div class="bf-card">
             ${tag("modo1")}
-            ${head("External SW1", "sem LED · só MIDI")}
-            ${modeBtns(1)}
+            ${head("External SW1", "sem LED · indicador na tela")}
+            ${modeBtns(0)}
             <div class="mk-note">…campos do modo escolhido (iguais ao editor de switch)…</div>
+            ${resetRow(tag("reset"))}
+            ${indic}
           </div>
           <div class="bf-card">
             ${tag("modo2")}
-            ${head("External SW2", "sem LED · só MIDI")}
-            ${modeBtns(0)}
-            <div class="mk-note">…campos do modo escolhido (iguais ao editor de switch)…</div>
+            ${head("External SW2", "sem LED · indicador na tela")}
+            ${modeBtns(6)}
+            <div class="mk-note">…mesmos modos e opções do External SW1, de forma independente…</div>
           </div>`;
         break;
       }

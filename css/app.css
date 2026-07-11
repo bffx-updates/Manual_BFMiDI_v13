@@ -9210,3 +9210,79 @@ body.is-theme-light .bf-sw-mode {
 .bf-screen.is-theme-light .bf-chip {
   border-color: var(--field-line);
 }
+
+/* ==================================================================
+   MANUAL — regras sincronizadas do webApp para os mockups novos
+   (SINGLE: gestos LONG PRESS/RECLICK; EXTERNAL DUAL SWITCH: indicador
+   na tela). Copiadas verbatim de webApp/app.css.
+   ================================================================== */
+
+/* SINGLE — cards de gesto auxiliares (LONG PRESS / RECLICK) */
+.bf-single-extra { margin-top: 12px; }
+.bf-single-extra-hint {
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.45;
+  margin: 2px 2px 10px;
+}
+.bf-single-extra-led { margin-top: 8px; display: flex; justify-content: center; }
+.bf-single-gesture-head .bf-sw-studio-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+.bf-gesture-ico { flex: 0 0 auto; opacity: 0.9; }
+.bf-single-main-head { margin: 2px 2px 8px; }
+
+/* EXTERNAL DUAL SWITCH — indicador de estado na tela (ESW) */
+.bf-esw-scope { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.bf-esw-indic-fields {
+  display: grid;
+  grid-template-columns: minmax(100px, 1.35fr) minmax(68px, .8fr) minmax(68px, .8fr) 68px;
+  gap: 8px;
+  align-items: end;
+}
+.bf-esw-indic-fields .bf-field { min-width: 0; }
+.bf-esw-sigla { height: 32px; padding-inline: 11px; }
+.bf-esw-color .bf-field-label { text-align: center; }
+.bf-esw-color .bf-color-bar { height: 28px; border-radius: 7px; }
+.bf-esw-font-field { text-align: center; }
+.bf-esw-font-size {
+  width: 100%;
+  height: 32px;
+  padding: 0 4px;
+  line-height: 1;
+}
+@media (max-width: 520px) {
+  .bf-esw-indic-fields { grid-template-columns: 1fr 1fr; }
+  .bf-esw-font-field { grid-column: 1 / 3; max-width: 104px; }
+}
+
+/* Botao de posicao (reusado pelo indicador ESW) */
+.bf-namepos-btn {
+  appearance: none;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 6px;
+  width: 100%;
+  padding: 6px;
+  background: var(--card-2);
+  border: 1px solid var(--hair);
+  border-radius: var(--r-md);
+  cursor: pointer;
+  transition: border-color 0.12s ease, background 0.12s ease;
+}
+.bf-namepos-btn:hover { border-color: var(--accent-soft); background: var(--card-3); }
+.bf-namepos-mini { width: 100%; max-width: 100%; align-self: center; }
+.bf-namepos-btn-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
