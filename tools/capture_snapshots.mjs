@@ -154,16 +154,21 @@ const HELPERS = `(function(){
     [].slice.call(clone.querySelectorAll('input,button,select,textarea,a')).forEach(function(n){
       n.setAttribute('tabindex','-1');
     });
-    return clone.outerHTML;
+    // Largura/altura REAIS no app. Sem isso o manual tem que chutar a largura,
+    // o layout responsivo reflui noutra medida e a tela sai esticada.
+    var r = el.getBoundingClientRect();
+    return { html: clone.outerHTML, w: Math.round(r.width), h: Math.round(r.height) };
   };
   window.__mnCaptureClosest = async function(childSel, ancestorSel, maxW){
     var c=document.querySelector(childSel); if(!c) return null;
     var a=c.closest(ancestorSel); if(!a) return null;
     var tmp='__mn'+Math.floor(performance.now());
     a.setAttribute('data-mn-tmp', tmp);
-    var html=await window.__mnCapture('[data-mn-tmp="'+tmp+'"]', maxW);
+    var cap=await window.__mnCapture('[data-mn-tmp="'+tmp+'"]', maxW);
     a.removeAttribute('data-mn-tmp');
-    return html ? html.replace(/ data-mn-tmp="[^"]*"/,'') : null;
+    if(!cap) return null;
+    cap.html = cap.html.replace(/ data-mn-tmp="[^"]*"/,'');
+    return cap;
   };
   window.__mnWaitFor = async function(sel, maxMs){
     var t0=Date.now();
@@ -278,9 +283,12 @@ async function main() {
 
   const shots = {};
   const grab = async (id, sel) => {
-    const html = await cdp.eval(`window.__mnCapture(${JSON.stringify(sel)},200)`);
-    if (html) { shots[id] = html; console.log('  + ' + id + ' (' + (html.length / 1024).toFixed(1) + ' KB)'); }
-    else console.log('  ! ' + id + ' — sem match: ' + sel);
+    const cap = await cdp.eval(`window.__mnCapture(${JSON.stringify(sel)},200)`);
+    if (cap && cap.html) {
+      shots[id] = cap;
+      console.log('  + ' + id + ' (' + (cap.html.length / 1024).toFixed(1) + ' KB, '
+        + cap.w + '×' + cap.h + ')');
+    } else console.log('  ! ' + id + ' — sem match: ' + sel);
   };
   const click = (sel, txt) => cdp.eval(`window.__mnClickText(${JSON.stringify(sel)},${JSON.stringify(txt)})`);
 
@@ -380,9 +388,11 @@ async function main() {
     }
     await sleep(700);
     const id = MODE_SLUG[mode];
-    const html = await cdp.eval(`window.__mnCapture('.bf-sw-card', 200)`);
-    if (html) { shots[id] = html; console.log('  + ' + id + ' (' + (html.length/1024).toFixed(1) + ' KB)'); }
-    else console.log('  ! ' + id + ' — painel do modo nao capturado');
+    const cap = await cdp.eval(`window.__mnCapture('.bf-sw-card', 200)`);
+    if (cap && cap.html) {
+      shots[id] = cap;
+      console.log('  + ' + id + ' (' + (cap.html.length/1024).toFixed(1) + ' KB, ' + cap.w + '×' + cap.h + ')');
+    } else console.log('  ! ' + id + ' — painel do modo nao capturado');
   }
 
   // ── CONFIGURACOES ───────────────────────────────────────────────
@@ -430,10 +440,10 @@ async function main() {
     [/\b([0-9A-Fa-f]{2}:){5}[0-9A-Fa-f]{2}\b/g, 'A1:B2:C3:D4:E5:F6'],
   ];
   for (const k of Object.keys(shots)) {
-    let v = shots[k], before = v;
+    let v = shots[k].html, before = v;
     for (const [re, rep] of SCRUB) v = v.replace(re, rep);
     if (ssid) v = v.split(ssid).join('MINHA REDE');
-    if (v !== before) { shots[k] = v; scrubbed++; }
+    if (v !== before) { shots[k].html = v; scrubbed++; }
   }
   console.log('snapshots anonimizados: ' + scrubbed);
 
@@ -445,7 +455,7 @@ async function main() {
     + '/* eslint-disable */\n"use strict";\n\nconst MN_SHOTS = '
     + JSON.stringify(shots, null, 1) + ';\n', 'utf8');
 
-  const kb = Object.values(shots).reduce((n, v) => n + v.length, 0) / 1024;
+  const kb = Object.values(shots).reduce((n, v) => n + v.html.length, 0) / 1024;
   console.log('js/snapshots.js — ' + Object.keys(shots).length + ' snapshots, ' + kb.toFixed(0) + ' KB');
 
   proc.kill(); srv.close(); process.exit(0);

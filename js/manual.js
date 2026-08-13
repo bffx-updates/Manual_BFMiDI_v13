@@ -3258,15 +3258,25 @@
                      seletor DENTRO do snapshot e `at` ajusta o ponto
                      ("tl","tr","bl","br","c"; default = centro).
      Os numeros casam com a lista "O QUE E CADA CAMPO" logo abaixo. */
-  function shotHtml(card) {
+  /* Um snapshot é { html, w, h }: `w`/`h` são a largura e a altura REAIS que
+     aquele pedaço tinha no editor. São elas que preservam a proporção — o app
+     é responsivo, então renderizar numa largura diferente reflui o layout e a
+     tela sai esticada. (Formato antigo, string pura, ainda é aceito.) */
+  function shotData(id) {
     if (typeof MN_SHOTS === "undefined") return null;
-    var raw = MN_SHOTS[card.shot];
+    var raw = MN_SHOTS[id];
     if (!raw) return null;
-    if (!card.shotOf) return raw;
+    return typeof raw === "string" ? { html: raw, w: 0, h: 0 } : raw;
+  }
+
+  function shotHtml(card) {
+    var data = shotData(card.shot);
+    if (!data) return null;
+    if (!card.shotOf) return data.html;
     var box = document.createElement("div");
-    box.innerHTML = raw;
+    box.innerHTML = data.html;
     var part = box.querySelector(card.shotOf);
-    return part ? part.outerHTML : raw;
+    return part ? part.outerHTML : data.html;
   }
 
   function renderShot(card) {
@@ -3280,7 +3290,7 @@
     var legend = "";
     if (card.hot && card.hot.length) {
       legend = `<div class="mn-shot-legend">${card.hot.map(function (h) {
-        return `<span><b>${h.n}</b>${esc(h.label || "")}</span>`;
+        return `<span data-hot="${h.n}"><b>${h.n}</b>${esc(h.label || "")}</span>`;
       }).join("")}</div>`;
     }
     return `<div class="mn-block-label">${esc(t("realScreen"))}</div>
@@ -3295,19 +3305,42 @@
      desenhado pra ~1280px; aqui ele vira "captura de tela" escalada, sem
      reflow — reflow mudaria o layout do app e a previa deixaria de ser
      fiel. Roda no render e a cada resize. */
-  /* Largura de projeto de cada snapshot. O app e responsivo: renderizar
-     um card de coluna (≈420px no editor) com largura livre faz o layout
-     explodir. Entao cada snapshot volta a ter a largura que tinha no app,
-     deduzida da classe da raiz, e so depois e escalado. */
-  function shotDesignWidth(frame) {
+  /* Largura de projeto: a MEDIDA REAL gravada na captura. O fallback por
+     classe só serve para snapshots antigos, sem `w` — chutar a largura é
+     exatamente o que esticava a tela. */
+  function shotDesignWidth(frame, id) {
+    var data = shotData(id);
+    if (data && data.w) return data.w;
     var el = frame.firstElementChild;
     var cls = el ? String(el.className || "") : "";
-    if (/bf-content/.test(cls)) return 1280;            // tela inteira
+    if (/bf-content/.test(cls)) return 1280;
     if (/settings-backdrop|wiz-backdrop|modal-backdrop/.test(cls)) return 900;
     if (/bf-sw-mode-modal/.test(cls)) return 720;
     if (/bf-header/.test(cls)) return 1280;
     if (/bf-bank-col/.test(cls)) return 460;
-    return 440;                                          // cards de coluna
+    return 440;
+  }
+
+  /* Altura real do conteúdo: o ponto mais baixo alcançado por qualquer
+     descendente. Cobre filhos absolutos (offsetHeight 0) e evita herdar a
+     sobra da coluna do app. `fallback` é a altura gravada na captura, usada
+     só se a medição não achar nada. */
+  function measureContent(frame, fallback) {
+    var top = frame.getBoundingClientRect().top;
+    var all = frame.querySelectorAll("*");
+    var max = 0;
+    for (var i = 0; i < all.length; i++) {
+      var r = all[i].getBoundingClientRect();
+      if (!r.height && !r.width) continue;              // oculto
+      var b = r.bottom - top;
+      if (b > max) max = b;
+    }
+    max = Math.ceil(max);
+    if (!max) return fallback || frame.offsetHeight || 200;
+    // Sem teto proporcional: telas legitimamente altas (SPIN, STEPS, os
+    // paineis de CONFIGURACOES) sao 2-3x a altura da coluna que as continha
+    // no app, e um teto em cima da altura gravada CORTAVA o conteudo.
+    return max;
   }
 
   function fitShots(root) {
@@ -3329,15 +3362,54 @@
         frame.dataset.mnUnstuck = "1";
       }
 
-      var design = shotDesignWidth(frame);
+      var id = stage.closest("[data-shot]");
+      id = id ? id.getAttribute("data-shot") : null;
+      var data = shotData(id);
+      var design = shotDesignWidth(frame, id);
+
+      // A LARGURA vem da captura (é ela que reproduz o layout do app). A
+      // ALTURA é medida pelo conteúdo de verdade — nem offsetHeight nem a
+      // altura gravada servem sozinhas:
+      //   · vários painéis têm filhos ABSOLUTOS, então offsetHeight é 0 e o
+      //     conteúdo sairia cortado;
+      //   · a altura gravada é a da COLUNA do app, que sobra muito espaço
+      //     vazio embaixo de um card pequeno.
+      // Medir o ponto mais baixo de todos os descendentes resolve os dois.
       frame.style.width = design + "px";
-      frame.style.setProperty("--mn-scale", 1);          // mede sem escala
-      var avail = stage.clientWidth || stage.parentElement.clientWidth;
-      if (!avail) continue;
+      frame.style.height = "auto";
+      frame.style.setProperty("--mn-scale", "1");        // mede sem escala
+      var contentH = measureContent(frame, data && data.h);
+      frame.style.height = contentH + "px";
+
+      // A largura util vem do CARTAO, não do palco: o palco é filho do frame
+      // escalado no fluxo e, no primeiro render, ainda mede errado — foi o que
+      // fazia a escala sair minúscula e a tela nascer achatada.
+      var host = stage.parentElement;                     // .mn-shot-scroll
+      var cs = getComputedStyle(host);
+      var avail = host.clientWidth
+        - parseFloat(cs.paddingLeft || 0) - parseFloat(cs.paddingRight || 0);
+      if (!avail || avail < 40) continue;                 // layout ainda não pronto
       var scale = Math.min(1, avail / design);
-      frame.style.setProperty("--mn-scale", scale);
+      frame.style.setProperty("--mn-scale", String(scale));
       // o transform nao reserva espaco: a altura do palco tem que ser dada
-      stage.style.height = Math.ceil(frame.offsetHeight * scale) + "px";
+      var natH = frame.offsetHeight;      // ja reflete o piso + eventual sobra
+      stage.style.height = Math.ceil(natH * scale) + "px";
+      stage.style.width = Math.ceil(design * scale) + "px";
+
+      // Re-ajusta quando a largura do cartão mudar (abrir a sidebar, girar o
+      // celular, fonte carregar). Só largura: mexer na altura é o que ESTE
+      // código faz, e observar altura entraria em laço.
+      if (!stage.dataset.mnObserved && typeof ResizeObserver !== "undefined") {
+        stage.dataset.mnObserved = "1";
+        stage.dataset.mnLastW = String(Math.round(avail));
+        new ResizeObserver(function () {
+          var w = Math.round(host.clientWidth);
+          if (String(w) === stage.dataset.mnLastW) return;
+          stage.dataset.mnLastW = String(w);
+          fitShots(stage.closest(".mn-shot"));
+          placeHotspots(stage.closest(".mn-shot"));
+        }).observe(host);
+      }
     }
   }
 
@@ -3366,6 +3438,7 @@
       var old = stage.querySelectorAll(".mn-hot");
       for (var k = 0; k < old.length; k++) old[k].remove();
       var sr = stage.getBoundingClientRect();
+      var postos = {};
       for (var j = 0; j < card.hot.length; j++) {
         var h = card.hot[j];
         var el = null;
@@ -3385,6 +3458,14 @@
         tag.style.left = x + "px";
         tag.style.top = y + "px";
         stage.appendChild(tag);
+        postos[h.n] = 1;
+      }
+      // Um recorte pode nao conter todos os alvos (a barra inferior, por
+      // exemplo, nao faz parte da tela de conteudo). Legenda que aponta pra
+      // marcador inexistente confunde — some com ela.
+      var leg = box.querySelectorAll(".mn-shot-legend [data-hot]");
+      for (var q = 0; q < leg.length; q++) {
+        leg[q].style.display = postos[leg[q].getAttribute("data-hot")] ? "" : "none";
       }
     }
   }
@@ -3579,8 +3660,12 @@
     // escala e marcadores: só dá pra medir depois que o markup real está no
     // DOM (a posição vem do layout, não de coordenada fixa). fitShots primeiro,
     // porque os marcadores são medidos já com o snapshot no tamanho final.
+    // Duas passadas: a primeira pega o caso comum; a segunda, no próximo
+    // frame, corrige quando o layout do cartão ainda não estava resolvido
+    // (fonte carregando, sidebar abrindo). Sem ela a escala nascia errada.
     fitShots(main);
     placeHotspots(main);
+    requestAnimationFrame(function () { fitShots(main); placeHotspots(main); });
 
     // troca de aba: re-renderiza a seção mantendo o scroll, e atualiza a
     // sidebar (a aba ativa muda o destaque dos cards agrupados)

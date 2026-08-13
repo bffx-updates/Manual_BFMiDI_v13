@@ -1597,33 +1597,33 @@ body.is-theme-light .mn-svg-placeholder svg { stroke: rgba(22,32,46,0.22); }
 }
 .mn-shot-stage { position: relative; overflow: hidden; }
 
-/* — contencao da casca do app — */
+/* — contencao da casca do app —
+   REGRA DE OURO: nao mexer em `display`, `flex`, `grid`, padding ou
+   dimensoes internas. O app e responsivo; qualquer um desses overrides
+   refaz o layout numa medida diferente da capturada e a tela sai
+   ESTICADA. O frame ja recebe, via JS, a largura e a altura exatas que o
+   elemento tinha no editor — aqui so se remove o que e amarrado a
+   JANELA (100vh) e o que vazaria pra fora do cartao. */
 .mn-shot-frame .phone-frame,
 .mn-shot-frame .bf-screen,
 .mn-shot-frame .bf-content,
 .mn-shot-frame [class*="bf-content-"] {
-  min-height: 0 !important;
-  height: auto !important;
+  min-height: 0 !important;      /* 100vh viraria a altura do NAVEGADOR */
   max-width: none !important;
-  overflow: visible !important;
-  background: transparent !important;
+  /* Nada de height fixa: a altura sai do proprio conteudo na largura certa.
+     Forcar height:100% aqui colapsava paineis (o console de bancos vinha
+     cortado no meio) — com a largura correta, a altura natural JA e a do
+     navegador. */
 }
-.mn-shot-frame .bf-screen,
-.mn-shot-frame .bf-content,
-.mn-shot-frame [class*="bf-content-"] { display: block !important; padding: 0 !important; }
-.mn-shot-frame .bf-screen::before, .mn-shot-frame .bf-screen::after,
-.mn-shot-frame .bf-content::before, .mn-shot-frame .bf-content::after { display: none !important; }
-
-/* modais (CONFIGURACOES, assistente, pickers) viram bloco no fluxo */
+/* backdrops de modal: sem position:fixed (o JS tambem cuida disso) e sem
+   escurecer o cartao do manual; o resto do layout interno fica intacto */
+/* Backdrop de modal: no app ele cobre a janela e centraliza o dialogo. No
+   manual vira um bloco normal — se ficar absoluto, a caixa tem altura zero,
+   o dialogo se posiciona em relacao ao nada e a previa sai cortada. */
 .mn-shot-frame [class*="backdrop"] {
   position: static !important; inset: auto !important;
-  background: transparent !important; padding: 0 !important;
-  display: block !important; backdrop-filter: none !important;
-}
-/* barras ancoradas deixam de flutuar */
-.mn-shot-frame .bf-tabbar {
-  position: static !important; transform: none !important;
-  margin: 10px auto 0 !important;
+  background: transparent !important; backdrop-filter: none !important;
+  display: flex !important; justify-content: center !important;
 }
 /* nada anima dentro de uma previa parada */
 .mn-shot-frame * { animation: none !important; transition: none !important; }
