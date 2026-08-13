@@ -1554,3 +1554,108 @@ body.is-theme-light .mn-svg-placeholder svg { stroke: rgba(22,32,46,0.22); }
 ::-webkit-scrollbar { width: 10px; height: 10px; }
 ::-webkit-scrollbar-thumb { background: var(--card-3); border-radius: 8px; border: 2px solid var(--bg); }
 ::-webkit-scrollbar-track { background: transparent; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   SNAPSHOT — a tela real do editor dentro do manual
+   ═══════════════════════════════════════════════════════════════════
+   O conteudo de .mn-shot-frame e markup EXTRAIDO do editor v13 rodando
+   (tools/capture_snapshots.mjs), estilizado pelo css/app.css do mesmo
+   build. Estas regras so fazem a CONTENCAO: o app foi desenhado pra
+   ocupar a tela inteira (100vh, backdrops fixos, tabbar ancorada), e
+   aqui ele precisa caber num cartao do manual. Nada aqui muda cor,
+   fonte ou espacamento dos componentes — se mudar, a previa deixa de
+   ser fiel, que e o unico motivo de ela existir. */
+
+.mn-shot {
+  margin: 14px 0 6px;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  background: #0b0d11;
+  overflow: hidden;
+  position: relative;
+}
+.mn-shot-bar {
+  display: flex; align-items: center; gap: 8px;
+  padding: 7px 12px;
+  background: linear-gradient(180deg, #14171d, #0e1116);
+  border-bottom: 1px solid var(--line);
+  font: 600 10px/1 var(--font-ui, system-ui);
+  letter-spacing: .12em; text-transform: uppercase; color: var(--muted);
+}
+.mn-shot-bar .dot { width: 8px; height: 8px; border-radius: 50%; background: #ff6a1f; flex: none; }
+.mn-shot-scroll { overflow: hidden; padding: 14px; }
+/* O snapshot e a tela do app em tamanho real (o editor foi desenhado pra
+   1280px). Dentro de um cartao estreito ele estouraria, entao o frame e
+   medido no tamanho natural e reduzido por transform ate caber — como uma
+   captura de tela, sem reflow: reflow mudaria o layout e a previa deixaria
+   de ser fiel, que e o unico motivo dela existir. */
+.mn-shot-frame {
+  /* largura definida por fitShots (js): cada snapshot volta a ter a
+     largura que tinha no app antes de ser escalado */
+  transform-origin: top left;
+  transform: scale(var(--mn-scale, 1));
+}
+.mn-shot-stage { position: relative; overflow: hidden; }
+
+/* — contencao da casca do app — */
+.mn-shot-frame .phone-frame,
+.mn-shot-frame .bf-screen,
+.mn-shot-frame .bf-content,
+.mn-shot-frame [class*="bf-content-"] {
+  min-height: 0 !important;
+  height: auto !important;
+  max-width: none !important;
+  overflow: visible !important;
+  background: transparent !important;
+}
+.mn-shot-frame .bf-screen,
+.mn-shot-frame .bf-content,
+.mn-shot-frame [class*="bf-content-"] { display: block !important; padding: 0 !important; }
+.mn-shot-frame .bf-screen::before, .mn-shot-frame .bf-screen::after,
+.mn-shot-frame .bf-content::before, .mn-shot-frame .bf-content::after { display: none !important; }
+
+/* modais (CONFIGURACOES, assistente, pickers) viram bloco no fluxo */
+.mn-shot-frame [class*="backdrop"] {
+  position: static !important; inset: auto !important;
+  background: transparent !important; padding: 0 !important;
+  display: block !important; backdrop-filter: none !important;
+}
+/* barras ancoradas deixam de flutuar */
+.mn-shot-frame .bf-tabbar {
+  position: static !important; transform: none !important;
+  margin: 10px auto 0 !important;
+}
+/* nada anima dentro de uma previa parada */
+.mn-shot-frame * { animation: none !important; transition: none !important; }
+/* previa nao e interativa: o cursor nao deve prometer clique */
+.mn-shot-frame button, .mn-shot-frame input, .mn-shot-frame select,
+.mn-shot-frame textarea, .mn-shot-frame a { cursor: default !important; pointer-events: none !important; }
+
+/* colunas do desktop: no manual o cartao e estreito, entao empilha */
+@media (max-width: 1100px) {
+  .mn-shot-frame .bf-bank-col { width: auto !important; }
+}
+
+/* — marcadores numerados sobre a previa — */
+.mn-shot-frame { position: relative; }
+.mn-hot {
+  position: absolute; z-index: 5;
+  min-width: 20px; height: 20px; padding: 0 5px;
+  border-radius: 999px;
+  background: #ff6a1f; color: #120a04;
+  font: 800 11px/20px var(--font-ui, system-ui);
+  text-align: center;
+  box-shadow: 0 0 0 2px rgba(10,10,12,.92), 0 2px 8px rgba(0,0,0,.5);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.mn-shot-legend {
+  display: flex; flex-wrap: wrap; gap: 6px 14px;
+  padding: 10px 14px 12px; border-top: 1px dashed var(--line);
+  font-size: 12px; color: var(--muted);
+}
+.mn-shot-legend b {
+  display: inline-block; min-width: 18px; height: 18px; line-height: 18px;
+  margin-right: 5px; border-radius: 999px; text-align: center;
+  background: #ff6a1f; color: #120a04; font-size: 10px; font-weight: 800;
+}

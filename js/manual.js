@@ -50,6 +50,8 @@
       notesLimits: "Observações e limitações",
       exampleMeta: "EXEMPLO",
       previewReal: "Como aparece no app — prévia em CSS do card real",
+      realScreen: "A tela real do editor",
+      shotMissing: "Snapshot ausente — rode tools/capture_snapshots.mjs:",
       previewStomp: "Como aparece no app — card real do modo STOMP",
       previewMode: "Como aparece no app — card real do modo {m}",
       noDescription: "Sem descrição.",
@@ -124,6 +126,8 @@
       notesLimits: "Notes and limitations",
       exampleMeta: "EXAMPLE",
       previewReal: "How it looks in the app — CSS preview of the real card",
+      realScreen: "The editor's real screen",
+      shotMissing: "Missing snapshot — run tools/capture_snapshots.mjs:",
       previewStomp: "How it looks in the app — real STOMP mode card",
       previewMode: "How it looks in the app — real {m} mode card",
       noDescription: "No description.",
@@ -197,6 +201,8 @@
       notesLimits: "Notas y limitaciones",
       exampleMeta: "EJEMPLO",
       previewReal: "Cómo se ve en la app — vista previa CSS de la tarjeta real",
+      realScreen: "La pantalla real del editor",
+      shotMissing: "Falta el snapshot — ejecuta tools/capture_snapshots.mjs:",
       previewStomp: "Cómo se ve en la app — tarjeta real del modo STOMP",
       previewMode: "Cómo se ve en la app — tarjeta real del modo {m}",
       noDescription: "Sin descripción.",
@@ -3245,6 +3251,147 @@
     }
   }
 
+  /* ─────────── SNAPSHOT: a tela real do editor ───────────
+     card.shot     = id em MN_SHOTS (markup extraido do editor v13)
+     card.shotOf   = seletor opcional: recorta um pedaco do snapshot
+     card.hot      = [{n, sel, at}] marcadores numerados; `sel` e um
+                     seletor DENTRO do snapshot e `at` ajusta o ponto
+                     ("tl","tr","bl","br","c"; default = centro).
+     Os numeros casam com a lista "O QUE E CADA CAMPO" logo abaixo. */
+  function shotHtml(card) {
+    if (typeof MN_SHOTS === "undefined") return null;
+    var raw = MN_SHOTS[card.shot];
+    if (!raw) return null;
+    if (!card.shotOf) return raw;
+    var box = document.createElement("div");
+    box.innerHTML = raw;
+    var part = box.querySelector(card.shotOf);
+    return part ? part.outerHTML : raw;
+  }
+
+  function renderShot(card) {
+    var inner = shotHtml(card);
+    if (inner == null) {
+      return `<div class="mn-shot"><div class="mn-shot-bar"><span class="dot"></span>
+        ${esc(card.mockTitle || card.title)}</div>
+        <div class="mn-shot-scroll"><p class="mn-missing">${esc(t("shotMissing"))} <code>${esc(card.shot)}</code></p></div></div>`;
+    }
+    HOT_BY_SHOT[card.shot] = card;
+    var legend = "";
+    if (card.hot && card.hot.length) {
+      legend = `<div class="mn-shot-legend">${card.hot.map(function (h) {
+        return `<span><b>${h.n}</b>${esc(h.label || "")}</span>`;
+      }).join("")}</div>`;
+    }
+    return `<div class="mn-block-label">${esc(t("realScreen"))}</div>
+      <div class="mn-shot" data-shot="${esc(card.shot)}">
+        <div class="mn-shot-bar"><span class="dot"></span>${esc(card.mockTitle || card.title)}</div>
+        <div class="mn-shot-scroll"><div class="mn-shot-stage"><div class="mn-shot-frame">${inner}</div></div></div>
+        ${legend}
+      </div>`;
+  }
+
+  /* Reduz cada snapshot ate caber na largura do cartao. O editor foi
+     desenhado pra ~1280px; aqui ele vira "captura de tela" escalada, sem
+     reflow — reflow mudaria o layout do app e a previa deixaria de ser
+     fiel. Roda no render e a cada resize. */
+  /* Largura de projeto de cada snapshot. O app e responsivo: renderizar
+     um card de coluna (≈420px no editor) com largura livre faz o layout
+     explodir. Entao cada snapshot volta a ter a largura que tinha no app,
+     deduzida da classe da raiz, e so depois e escalado. */
+  function shotDesignWidth(frame) {
+    var el = frame.firstElementChild;
+    var cls = el ? String(el.className || "") : "";
+    if (/bf-content/.test(cls)) return 1280;            // tela inteira
+    if (/settings-backdrop|wiz-backdrop|modal-backdrop/.test(cls)) return 900;
+    if (/bf-sw-mode-modal/.test(cls)) return 720;
+    if (/bf-header/.test(cls)) return 1280;
+    if (/bf-bank-col/.test(cls)) return 460;
+    return 440;                                          // cards de coluna
+  }
+
+  function fitShots(root) {
+    var stages = (root || document).querySelectorAll(".mn-shot-stage");
+    for (var i = 0; i < stages.length; i++) {
+      var stage = stages[i];
+      var frame = stage.querySelector(".mn-shot-frame");
+      if (!frame) continue;
+
+      // Fixed/sticky vazam do app e flutuam sobre o manual (a barra inferior
+      // era o caso visivel). Nao da pra pegar por seletor CSS, entao vai no
+      // estilo computado — uma vez por snapshot.
+      if (!frame.dataset.mnUnstuck) {
+        var all = frame.querySelectorAll("*");
+        for (var k = 0; k < all.length; k++) {
+          var pos = getComputedStyle(all[k]).position;
+          if (pos === "fixed" || pos === "sticky") all[k].style.position = "relative";
+        }
+        frame.dataset.mnUnstuck = "1";
+      }
+
+      var design = shotDesignWidth(frame);
+      frame.style.width = design + "px";
+      frame.style.setProperty("--mn-scale", 1);          // mede sem escala
+      var avail = stage.clientWidth || stage.parentElement.clientWidth;
+      if (!avail) continue;
+      var scale = Math.min(1, avail / design);
+      frame.style.setProperty("--mn-scale", scale);
+      // o transform nao reserva espaco: a altura do palco tem que ser dada
+      stage.style.height = Math.ceil(frame.offsetHeight * scale) + "px";
+    }
+  }
+
+  var fitTimer = null;
+  window.addEventListener("resize", function () {
+    clearTimeout(fitTimer);
+    fitTimer = setTimeout(function () { fitShots(); placeHotspots(); }, 150);
+  });
+
+  /* Posiciona os marcadores depois que o snapshot ja esta no DOM — a
+     posicao vem do layout real, entao nao ha coordenada chumbada que
+     quebre quando o app mudar de tamanho. */
+  function placeHotspots(root) {
+    var shots = (root || document).querySelectorAll(".mn-shot[data-shot]");
+    for (var i = 0; i < shots.length; i++) {
+      var box = shots[i];
+      var frame = box.querySelector(".mn-shot-frame");
+      var id = box.getAttribute("data-shot");
+      var card = HOT_BY_SHOT[id];
+      if (!frame || !card || !card.hot) continue;
+      // os marcadores vao no PALCO, nao no frame: o frame esta escalado por
+      // transform e um filho dele herdaria a escala (marcador minusculo e
+      // fora de lugar). getBoundingClientRect ja devolve a posicao final na
+      // tela, entao medir contra o palco basta.
+      var stage = frame.parentElement;
+      var old = stage.querySelectorAll(".mn-hot");
+      for (var k = 0; k < old.length; k++) old[k].remove();
+      var sr = stage.getBoundingClientRect();
+      for (var j = 0; j < card.hot.length; j++) {
+        var h = card.hot[j];
+        var el = null;
+        try { el = h.sel ? frame.querySelector(h.sel) : null; } catch (e) { el = null; }
+        if (!el) continue;
+        var r = el.getBoundingClientRect();
+        if (!r.width && !r.height) continue;
+        var x = r.left - sr.left, y = r.top - sr.top;
+        if (h.at === "tl") { /* canto */ }
+        else if (h.at === "tr") { x += r.width; }
+        else if (h.at === "bl") { y += r.height; }
+        else if (h.at === "br") { x += r.width; y += r.height; }
+        else { x += r.width / 2; y += r.height / 2; }
+        var tag = document.createElement("span");
+        tag.className = "mn-hot";
+        tag.textContent = h.n;
+        tag.style.left = x + "px";
+        tag.style.top = y + "px";
+        stage.appendChild(tag);
+      }
+    }
+  }
+
+  // indice shot -> card, preenchido no render (os marcadores precisam do card)
+  var HOT_BY_SHOT = {};
+
   function renderMock(card, secIdx, cardIdx) {
     if (card.mockType === "intro-flow") return renderIntroFlowSvg(card, secIdx, cardIdx);
     if (card.mockType === "acesso-flow") return renderAccessFlowSvg(card, secIdx, cardIdx);
@@ -3360,9 +3507,11 @@
     }
 
     if (!card.noMock) {
-      html += card.mockType || (card.mock && card.mock.length)
-        ? renderMock(card, secIdx, cardIdx)
-        : renderAutoMock(card, secIdx, cardIdx);
+      // `shot` = tela REAL do editor (js/snapshots.js). Tem prioridade sobre
+      // qualquer mockup: o manual mostra o app, nao um desenho parecido.
+      if (card.shot) html += renderShot(card);
+      else if (card.mockType || (card.mock && card.mock.length)) html += renderMock(card, secIdx, cardIdx);
+      else html += renderAutoMock(card, secIdx, cardIdx);
     }
 
     if (card.fields && card.fields.length) {
@@ -3426,6 +3575,12 @@
       </div>`;
 
     document.title = `${sec.title} ${t("docSuffix")}`;
+
+    // escala e marcadores: só dá pra medir depois que o markup real está no
+    // DOM (a posição vem do layout, não de coordenada fixa). fitShots primeiro,
+    // porque os marcadores são medidos já com o snapshot no tamanho final.
+    fitShots(main);
+    placeHotspots(main);
 
     // troca de aba: re-renderiza a seção mantendo o scroll, e atualiza a
     // sidebar (a aba ativa muda o destaque dos cards agrupados)
