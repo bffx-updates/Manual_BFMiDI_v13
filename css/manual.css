@@ -1584,57 +1584,17 @@ body.is-theme-light .mn-svg-placeholder svg { stroke: rgba(22,32,46,0.22); }
 }
 .mn-shot-bar .dot { width: 8px; height: 8px; border-radius: 50%; background: #ff6a1f; flex: none; }
 .mn-shot-scroll { overflow: hidden; padding: 14px; }
-/* O snapshot e a tela do app em tamanho real (o editor foi desenhado pra
-   1280px). Dentro de um cartao estreito ele estouraria, entao o frame e
-   medido no tamanho natural e reduzido por transform ate caber — como uma
-   captura de tela, sem reflow: reflow mudaria o layout e a previa deixaria
-   de ser fiel, que e o unico motivo dela existir. */
+
+/* O frame agora e um IFRAME: o CSS do editor precisa de uma JANELA propria
+   (media queries, vw/vh, variaveis :root). A contencao mora dentro dele,
+   injetada por shotDoc() no manual.js — aqui fica so a casca. */
 .mn-shot-frame {
-  /* largura definida por fitShots (js): cada snapshot volta a ter a
-     largura que tinha no app antes de ser escalado */
-  transform-origin: top left;
-  transform: scale(var(--mn-scale, 1));
+  display: block;
+  border: 0;
+  background: transparent;
+  color-scheme: dark;
 }
 .mn-shot-stage { position: relative; overflow: hidden; }
-
-/* — contencao da casca do app —
-   REGRA DE OURO: nao mexer em `display`, `flex`, `grid`, padding ou
-   dimensoes internas. O app e responsivo; qualquer um desses overrides
-   refaz o layout numa medida diferente da capturada e a tela sai
-   ESTICADA. O frame ja recebe, via JS, a largura e a altura exatas que o
-   elemento tinha no editor — aqui so se remove o que e amarrado a
-   JANELA (100vh) e o que vazaria pra fora do cartao. */
-.mn-shot-frame .phone-frame,
-.mn-shot-frame .bf-screen,
-.mn-shot-frame .bf-content,
-.mn-shot-frame [class*="bf-content-"] {
-  min-height: 0 !important;      /* 100vh viraria a altura do NAVEGADOR */
-  max-width: none !important;
-  /* Nada de height fixa: a altura sai do proprio conteudo na largura certa.
-     Forcar height:100% aqui colapsava paineis (o console de bancos vinha
-     cortado no meio) — com a largura correta, a altura natural JA e a do
-     navegador. */
-}
-/* backdrops de modal: sem position:fixed (o JS tambem cuida disso) e sem
-   escurecer o cartao do manual; o resto do layout interno fica intacto */
-/* Backdrop de modal: no app ele cobre a janela e centraliza o dialogo. No
-   manual vira um bloco normal — se ficar absoluto, a caixa tem altura zero,
-   o dialogo se posiciona em relacao ao nada e a previa sai cortada. */
-.mn-shot-frame [class*="backdrop"] {
-  position: static !important; inset: auto !important;
-  background: transparent !important; backdrop-filter: none !important;
-  display: flex !important; justify-content: center !important;
-}
-/* nada anima dentro de uma previa parada */
-.mn-shot-frame * { animation: none !important; transition: none !important; }
-/* previa nao e interativa: o cursor nao deve prometer clique */
-.mn-shot-frame button, .mn-shot-frame input, .mn-shot-frame select,
-.mn-shot-frame textarea, .mn-shot-frame a { cursor: default !important; pointer-events: none !important; }
-
-/* colunas do desktop: no manual o cartao e estreito, entao empilha */
-@media (max-width: 1100px) {
-  .mn-shot-frame .bf-bank-col { width: auto !important; }
-}
 
 /* — marcadores numerados sobre a previa — */
 .mn-shot-frame { position: relative; }
@@ -1659,3 +1619,57 @@ body.is-theme-light .mn-svg-placeholder svg { stroke: rgba(22,32,46,0.22); }
   margin-right: 5px; border-radius: 999px; text-align: center;
   background: #ff6a1f; color: #120a04; font-size: 10px; font-weight: 800;
 }
+
+/* ═══════════════════════════════════════════════════════════════════
+   PRINT DO EDITOR (v14.5) — o snapshot virou IMAGEM
+   ═══════════════════════════════════════════════════════════════════
+   tools/capture_shots.mjs tira prints de verdade (2x, WebP) do editor
+   rodando contra o pedal simulado. A imagem nunca passa da própria
+   largura (um print de celular não estica até a coluna inteira) e os
+   marcadores numerados vêm em porcentagem, medidos na captura. Tocar no
+   print abre o arquivo em tamanho real. */
+.mn-shot-img { margin: 14px 0 6px; }
+.mn-shot-img .mn-shot-scroll {
+  padding: 14px;
+  display: flex; justify-content: center;
+  background:
+    radial-gradient(120% 90% at 50% 0%, rgba(255,106,31,.06), transparent 60%),
+    #0b0d11;
+}
+.mn-shot-zoom { display: block; width: 100%; cursor: zoom-in; text-decoration: none; }
+.mn-shot-pic {
+  position: relative; display: block; width: 100%; margin: 0 auto;
+}
+.mn-shot-pic img {
+  display: block; width: 100%; height: auto;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.45), 0 0 0 1px rgba(255,255,255,.04);
+}
+.mn-shot-img .mn-hot { transform: translate(-35%, -35%); }
+.mn-shot-zoom:focus-visible { outline: 2px solid #ff6a1f; outline-offset: 4px; border-radius: 12px; }
+/* prints de celular: centralizados, com a moldura de um aparelho */
+.mn-shot-img.is-phone .mn-shot-pic img,
+.mn-shot-img.is-landscape .mn-shot-pic img {
+  border-radius: 22px;
+  box-shadow: 0 0 0 6px #050608, 0 0 0 7px rgba(255,255,255,.08), 0 14px 34px rgba(0,0,0,.5);
+}
+.mn-shot-img.is-phone .mn-shot-scroll,
+.mn-shot-img.is-landscape .mn-shot-scroll { padding: 22px 14px; }
+body.is-theme-light .mn-shot-img .mn-shot-scroll {
+  background:
+    radial-gradient(120% 90% at 50% 0%, rgba(255,106,31,.07), transparent 60%),
+    #e9edf3;
+}
+body.is-theme-light .mn-shot-pic img { box-shadow: 0 10px 26px rgba(20,24,32,.18), 0 0 0 1px rgba(20,24,32,.06); }
+
+/* fotos das placas S3 na seção Hardware (no lugar do desenho SVG) */
+.mn-hw-svg .mn-hw-photo {
+  display: block; width: 100%; height: auto;
+  border-radius: 12px; background: #000;
+}
+
+/* tema claro: a moldura do print acompanha o manual (a legenda dos
+   marcadores ficava cinza-escuro sobre fundo preto) */
+body.is-theme-light .mn-shot.mn-shot-img { background: #eef1f5; border-color: rgba(20,24,32,.12); }
+body.is-theme-light .mn-shot-img .mn-shot-bar { background: linear-gradient(180deg, #f7f9fc, #eceff4); border-bottom-color: rgba(20,24,32,.1); }
+body.is-theme-light .mn-shot-img .mn-shot-legend { border-top-color: rgba(20,24,32,.14); color: #3c434e; }

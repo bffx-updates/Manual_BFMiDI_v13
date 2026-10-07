@@ -3,223 +3,305 @@ Versión TXT completa organizada por temas e ítems
 Generado a partir de js/content.js
 
 SUMARIO
-1. Abrir el editor
-   1.1. Por el Wi-Fi de la controladora (el camino normal)
-   1.2. Por el cable USB (computadora)
-   1.3. Aplicación para Android
-2. Asistente de Configuración
-   2.1. Cómo funciona el asistente
+1. Conectarse al editor
+   1.1. Las aplicaciones BFMiDi
+   1.2. La ventana Conectar ao pedal (Conectar al pedal)
+   1.3. Por el Wi-Fi de la controladora
+   1.4. Por el cable USB (computadora)
+   1.5. Sin pedal: el modo offline
+2. Primeros pasos
+   2.1. Cinco ajustes antes de tocar
 3. Mi primer preset
    3.1. Los cuatro pasos
 4. Hardware
    4.1. Qué se conecta dónde
 5. La pantalla del editor
-   5.1. Visión general de las tres columnas
-   5.2. Elegir banco y preset
-   5.3. Layer 2, Display y Extras
-   5.4. La vista previa del visor y la apariencia del preset
-   5.5. La barra inferior (navegar, copiar y guardar)
+   5.1. Vista general (computadora y tablet)
+   5.2. En el celular
+   5.3. La consola: banco, preset, nombre y modo
+   5.4. Elegir el banco
+   5.5. La tarjeta PRINCIPAL
+   5.6. Envíos extra
+   5.7. La pantalla del pedal y la apariencia del preset
+   5.8. Posición del nombre y layout por preset
+   5.9. La barra inferior
+   5.10. Copiar y pegar
 6. El modo LIVE
    6.1. Cómo configurar un footswitch
    6.2. Los diez modos de operación
    6.3. STOMP — enciende y apaga
-   6.4. TAP TEMPO — marcar el tempo con el pie
-   6.5. SINGLE — un comando por toque
-   6.6. MOMENTARY — solo mientras el pie está encima
-   6.7. MACROS — varios comandos en un toque
-   6.8. SPIN — ciclar entre tres valores
-   6.9. RAMPA — barrer suavemente
-   6.10. STEPS — secuenciador de CC
-   6.11. CONTROL — selector A/B
-   6.12. MUTE — footswitch sin función
-   6.13. La apariencia de cada footswitch
-7. Configuraciones
-   7.1. El menú de configuraciones
-   7.2. MODO AMIGABLE — MIDI con nombres
-   7.3. FOOTSWITCHES — botones fuera del preset
-   7.4. BANCOS — encender, navegar y combos
-   7.5. PANTALLA — layouts, nombres y BPM
-   7.6. LEDS — brillo y colores de los anillos
-   7.7. IMÁGENES — fondos e íconos tuyos
-   7.8. HARDWARE — modelo y memoria
-   7.9. WIFI — red y conexión
-   7.10. HOST — USB Host y Bluetooth
-   7.11. EDITOR — preferencias de la aplicación
-   7.12. ACTUALIZAR — firmware y editor
-   7.13. BACKUP — copia y restauración
-   7.14. PRUEBAS — diagnóstico y monitor MIDI
-   7.15. RESTAURAR — volver al estado de fábrica
-8. Recursos avanzados
-   8.1. Comandos de navegación (la controladora hablándose a sí misma)
-   8.2. Integraciones — Kemper y Valeton GP-5
-   8.3. Cuando algo no responde
+   6.4. Valores custom
+   6.5. TAP TEMPO — marca el tempo con el pie
+   6.6. SINGLE — un comando por gesto
+   6.7. MOMENTARY — solo mientras el pie está encima
+   6.8. MACROS — varios comandos en un toque
+   6.9. SPIN — recorre tres valores en ciclo
+   6.10. RAMP — barrido suave
+   6.11. STEPS — secuenciador de CC
+   6.12. CONTROL — selector A/B
+   6.13. MUTE — footswitch sin función
+   6.14. La apariencia de cada footswitch
+7. Modo Escenario
+   7.1. Abrir el Modo Escenario y el ESCENARIO 1
+   7.2. La barra de controles
+   7.3. ESCENARIO 2 — el aparato conectado
+   7.4. ESCENARIO 2 con la Nano Cortex
+   7.5. ESCENARIO 2 con el Kemper Player
+   7.6. Configuración del escenario — GENERAL
+   7.7. Configuración del escenario — VISUAL
+   7.8. Configuración del escenario — ESCENARIO 1
+   7.9. Las imágenes del escenario
+   7.10. Configuración del escenario — ESCENARIO 2
+   7.11. En el celular y la tablet
+8. Editores de preset de los aparatos
+   8.1. Dónde abrirlo
+   8.2. Valeton GP-5
+   8.3. IK TONEX ONE
+   8.4. Neural DSP Nano Cortex
+   8.5. Kemper Player — EDITAR RIG
+   8.6. Cuando el editor no abre
+9. Configuración
+   9.1. El menú de configuración
+   9.2. MODO AMIGABLE — MIDI con nombres
+   9.3. Aparato personalizado (USER 1, 2 y 3)
+   9.4. Kemper Player y Nano Cortex en el Modo Amigable
+   9.5. FOOTSWITCHES — lo que vale en cualquier preset
+   9.6. Expresión externa
+   9.7. BANCOS — arranque, navegación y combos
+   9.8. PANTALLA — layouts, nombres y BPM
+   9.9. LEDS — brillo y colores de los anillos
+   9.10. IMÁGENES — tus propios fondos e íconos
+   9.11. HARDWARE — modelo, tiempos de envío y memoria
+   9.12. WIFI — red y conexión
+   9.13. HOST — el USB Host y los equipos conectados
+   9.14. BLUETOOTH — inalámbrico
+   9.15. EDITOR — tema, guardado, atajos e idioma
+   9.16. ACTUALIZAR — la controladora
+   9.17. ACTUALIZAR — el USB Host
+   9.18. BACKUP — copia y restauración
+   9.19. PRUEBAS — diagnóstico y monitor MIDI
+   9.20. RESTAURAR — borrar y volver a los valores de fábrica
+10. Funciones avanzadas
+   10.1. Comandos de navegación (la controladora hablando consigo misma)
+   10.2. Integraciones con equipos
+   10.3. Cuando algo no responde
 
 ========================================================================================
 
-TEMA 1 - ABRIR EL EDITOR
+TEMA 1 - CONECTARSE AL EDITOR
 ----------------------------------------------------------------------------------------
 Página: 1
-Resumen: El editor vive dentro de la controladora. Lo abres por su propio Wi-Fi, por tu red de casa
-        o con un cable USB — nada que instalar.
-Introducción: La BFMiDi lleva su propia aplicación de configuración. No hay programa que descargar:
-        la controladora crea una red Wi-Fi, te conectas a ella y abres una dirección en el
-        navegador. Es el mismo editor en el celular, la tablet y la computadora.
+Resumen: Por la aplicación, por el Wi-Fi de la controladora, por tu red de casa o con un cable USB —
+        e incluso sin ningún pedal, en el modo offline.
+Introducción: El editor es el mismo en todas partes: en el celular, en la tablet y en la
+        computadora, dentro de las aplicaciones BFMiDi o en el navegador. Lo que cambia es el camino
+        hasta la controladora.
+        Lo más sencillo es instalar la aplicación de tu dispositivo: abre al instante, busca el
+        pedal sola y, si no lo encuentra, te deja editar de todos modos, en una copia guardada en el
+        propio dispositivo.
 
-1.1. Por el Wi-Fi de la controladora (el camino normal)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Pantalla/vista relacionada: CONFIGURACIONES › WIFI
-Objetivo: Cuatro pasos, sin instalar nada: enciende el pedal, entra en la red que crea, escribe una
-          dirección en el navegador y listo — el editor abre.
-Cómo hacerlo:
-1. Enciende la controladora. Su Wi-Fi sube solo en el arranque y queda al aire 90 segundos esperando
-   que alguien se conecte.
-2. En el celular, abre Ajustes › Wi-Fi y toca BFMIDI_WIFI. La contraseña es bfmidi@editor.
-3. Si el aparato avisa que la red “no tiene internet”, está bien — permanece conectado. El editor
-   vive en el pedal, no en internet.
-4. Abre el navegador y escribe 192.168.4.1 en la barra de direcciones. El editor carga al instante.
-Campos e ítems:
-- La red BFMIDI_WIFI (Wi-Fi)
-  Descripción: Es la red que crea la propia controladora (el llamado modo AP). Aparece en la lista
-             de Wi-Fi del celular junto a las redes de casa. La contraseña es siempre bfmidi@editor,
-             todo en minúsculas.
-- La dirección 192.168.4.1 (navegador)
-  Descripción: Escríbela directo en la barra de direcciones — solo números y puntos, sin “www” y sin
-             “https”. Si el navegador insiste en buscar en vez de abrir, escribe http://192.168.4.1.
-             Consejo: usa el “Añadir a pantalla de inicio” del navegador para dejar un acceso
-             directo con aspecto de app.
-- Usar tu red de casa (opcional)
-  Descripción: Puedes poner la controladora en tu red: en CONFIGURACIONES › WIFI, toca BUSCAR, elige
-             la red, escribe la contraseña y CONECTAR.
-             A partir de ahí accedes por http://bfmidi.local (o por la IP que muestra la pantalla)
-             sin cambiar de red en el celular — mucho más cómodo en el día a día.
-             Solo aparecen redes de 2,4 GHz: es limitación del chip, no del firmware.
-- El Wi-Fi se apagó solo (auxilio)
-  Descripción: Sin nadie conectado, la radio se apaga tras 90 segundos — ahorra energía y evita
-             dejar una red abierta en el escenario.
-             Para recuperarlo: apaga y enciende la controladora (el Wi-Fi sube en el arranque). Si
-             quieres un atajo con el pie, configura un combo con la acción ENCENDER/APAGAR WI-FI en
-             CONFIGURACIONES › BANCOS.
-Observaciones:
-- Funciona igual en celular, tablet y computadora — es siempre la misma pantalla.
-- La contraseña del Wi-Fi de la controladora no cambia, y no es la de tu red de casa.
-
-1.2. Por el cable USB (computadora)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Objetivo: En la computadora puedes hablar con la controladora por cable, sin radio alguna. Es el
-          camino más estable para configuraciones largas — y el único que funciona con el Wi-Fi
-          apagado.
-Cómo hacerlo:
-1. Usa Chrome o Edge en la computadora (Safari no da acceso al puerto serie).
-2. Conecta el cable USB de la controladora a la computadora.
-3. Abre el editor y elige la conexión por USB; el navegador te pedirá autorizar el puerto.
-Campos e ítems:
-- Cuándo el cable es mejor (cuándo usar)
-  Descripción: Cuando el Wi-Fi de casa es inestable, cuando vas a cambiar muchas cosas de una vez,
-             cuando necesitas enviar imágenes e íconos (que son archivos grandes), y siempre que
-             vayas a actualizar la controladora.
-- iPhone y iPad (limitación)
-  Descripción: Safari no abre puertos serie, así que en iPhone/iPad usa Wi-Fi. No es limitación de
-             la controladora — ninguna aplicación consigue ese acceso en iOS.
-Observaciones:
-- Conectado por cable, el editor muestra USB en la esquina del encabezado, en lugar del icono de
-   Wi-Fi.
-
-1.3. Aplicación para Android
+1.1. Las aplicaciones BFMiDi
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Objetivo: En Android hay una app dedicada que abre el editor en pantalla completa, sin barra de
-          navegador. La pantalla viene dentro de la app; se comunica con la controladora por Wi-Fi.
+Objetivo: Hay aplicación oficial para Android, iPhone/iPad, Mac y Windows. Es el mismo editor del
+          navegador, integrado — por eso abre al instante, en pantalla completa, y se actualiza por
+          la tienda.
 Cómo hacerlo:
-1. Descarga: BFMiDi para Android (APK) — el enlace siempre trae la versión más reciente.
-2. Instala: abre el archivo descargado y autoriza “instalar apps de fuentes desconocidas” una vez.
-3. Úsala: conecta el celular al Wi-Fi de la controladora y abre la app — encuentra el pedal solo.
+1. Android (7 o más reciente): BFMiDi en Google Play.
+2. iPhone, iPad (iOS/iPadOS 17+) y Mac (macOS 14+): BFMiDi Editor en la App Store.
+3. Windows 10 y 11 (64 bits): descarga el instalador en la página de descargas.
+4. Abre la aplicación. Muestra el editor al instante y, al mismo tiempo, busca la controladora en tu
+   red y en la red de ella. Cuando la encuentra, se conecta sola.
 Campos e ítems:
-- Actualizar la aplicación (mantenimiento)
-  Descripción: Cuando salga una versión nueva, descarga el APK por el mismo enlace y toca Actualizar
-             — sin desinstalar y sin perder nada.
-             La pantalla de la app la actualiza ella misma. El firmware de la controladora se sigue
-             actualizando desde CONFIGURACIONES › ACTUALIZAR.
-- iPhone y iPad (alternativa)
-  Descripción: No hay APK, y no hace falta: abre 192.168.4.1 en Safari y usa “Añadir a pantalla de
-             inicio”. El acceso directo abre en pantalla completa, igual que una app.
+- Abre antes de encontrar el pedal (comportamiento)
+  Descripción: La aplicación no espera la conexión para mostrar el editor: abre en el modo offline
+             (una copia guardada en el dispositivo) y cambia al pedal real en cuanto lo encuentra.
+             Notas el cambio en el indicador de conexión, el primer botón de la barra inferior.
+- Primero la red de casa (comportamiento)
+  Descripción: Si la controladora está en tu red de casa (modo STA), la aplicación prefiere ese
+             camino — sigues con internet en el celular. Sin red de casa, usa el Wi-Fi de la propia
+             controladora (modo AP).
+             La aplicación también entra sola en la red BFMIDI_WIFI cuando se lo pides, en la
+             ventana Conectar ao pedal (Conectar al pedal).
+- Cable USB en las aplicaciones de computadora (Mac y Windows)
+  Descripción: Las aplicaciones de Mac y Windows también se conectan por el cable USB y son el
+             camino más cómodo para actualizar la controladora y el USB Host. En la aplicación de
+             Android y en iPhone/iPad, la conexión es por Wi-Fi.
+- Actualizaciones de la aplicación (mantenimiento)
+  Descripción: Android, iPhone, iPad y Mac se actualizan por su propia tienda. En Windows, descarga
+             el instalador nuevo en la página de descargas e instálalo encima — no se pierde nada.
+             El firmware de la controladora es otra cosa: se actualiza en CONFIGURACIÓN ›
+             ACTUALIZAR.
 Observaciones:
-- Es el mismo editor del navegador, solo que embebido — por eso carga al instante.
+- ¿Prefieres no instalar nada? El navegador sigue funcionando: mira las dos tarjetas siguientes.
+
+1.2. La ventana Conectar ao pedal (Conectar al pedal)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pantalla/vista relacionada: CONECTAR AO PEDAL
+Objetivo: Cuando el editor no encuentra la controladora, esta ventana se abre sola después de unos
+          segundos y ofrece los caminos posibles en ese dispositivo.
+Cómo hacerlo:
+1. Enciende la controladora y espera: mientras el radar gira, el editor está buscando.
+2. Elige un camino: WI-FI (entrar en la red del pedal), USB (por cable — solo en la computadora) u
+   OFFLINE (editar sin pedal).
+3. ¿Tienes dudas? Toca Como conectar? (¿Cómo conectar?), al pie de la ventana, para ver el paso a
+   paso.
+Campos e ítems:
+- El radar (estado)
+  Descripción: Gira mientras el editor busca la controladora, se cierra en verde cuando conecta y se
+             pone rojo si el intento falla. Al conectar, la ventana se cierra sola.
+- WI-FI — Conectar à rede do pedal (entrar en la red del pedal) (camino)
+  Descripción: En las aplicaciones, esta tarjeta entra sola en la red BFMIDI_WIFI (el sistema pide
+             permiso la primera vez). En el navegador, muestra la red y la contraseña para que
+             entres desde los ajustes del dispositivo.
+- USB — Conectar pelo cabo (conectar por cable) (camino)
+  Descripción: Solo aparece donde hay acceso al puerto USB: en Chrome o Edge en la computadora y en
+             las aplicaciones de Mac y Windows. El navegador te pide autorizar el puerto de la
+             controladora.
+- OFFLINE — Usar sem conexão (usar sin conexión) (camino)
+  Descripción: Cierra la ventana y te deja editar una copia guardada en el dispositivo. Mira la
+             tarjeta Sin pedal: el modo offline.
+- Volver a abrir la ventana (atajo)
+  Descripción: ¿La cerraste sin querer? Toca el primer botón de la barra inferior (el indicador de
+             conexión): vuelve a abrir esta ventana.
+Observaciones:
+- Durante una actualización la ventana no se abre, aunque se caiga la conexión — la caída es parte
+   de la grabación.
+
+1.3. Por el Wi-Fi de la controladora
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pantalla/vista relacionada: CONFIGURACIÓN › WIFI
+Objetivo: La controladora crea su propia red Wi-Fi. Es el camino que funciona en cualquier lugar,
+          sin router y sin internet.
+Cómo hacerlo:
+1. Enciende la controladora. El Wi-Fi se activa solo y queda al aire durante 90 segundos esperando
+   que alguien se conecte.
+2. En el celular, abre Ajustes › Wi-Fi y entra en la red BFMIDI_WIFI. La contraseña es bfmidi@editor
+   — la misma en todas las controladoras.
+3. Si el dispositivo avisa que la red “no tiene internet”, es normal: sigue conectado. El editor
+   vive en el pedal.
+4. Abre la aplicación, o el navegador en la dirección http://192.168.4.1 (o http://bfmidi.local).
+Campos e ítems:
+- Red BFMIDI_WIFI, contraseña bfmidi@editor (Wi-Fi)
+  Descripción: El nombre y la contraseña son fijos e iguales en todas las unidades — están impresos
+             aquí a propósito, para que nunca dependas de leer la pantalla del pedal.
+             Con dos controladoras encendidas en el mismo lugar, las dos redes tienen el mismo
+             nombre; apaga una mientras configuras la otra, o pon las dos en tu red de casa.
+- Las direcciones (navegador)
+  Descripción: http://192.168.4.1 funciona siempre en la red del pedal. http://bfmidi.local funciona
+             en la red del pedal y en tu red de casa.
+             Escríbela con el http:// adelante: sin él, Safari y Chrome hacen una búsqueda en Google
+             en lugar de abrir el editor.
+- Usar tu red de casa (opcional)
+  Descripción: En CONFIGURACIÓN › WIFI, toca BUSCAR, elige la red, escribe la contraseña y toca
+             CONECTAR. A partir de ahí el pedal queda accesible en http://bfmidi.local desde
+             cualquier dispositivo de la casa, y no pierdes internet mientras editas.
+             Solo aparecen redes de 2,4 GHz: es una limitación del chip.
+- El Wi-Fi se apagó solo (ayuda)
+  Descripción: Sin nadie conectado, la radio se apaga después de 90 segundos. Para recuperarla:
+             apaga y enciende la controladora, o usa un combo de footswitches configurado con
+             ENCENDER/APAGAR WI-FI (en CONFIGURACIÓN › BANCOS). Al encenderlo con el combo, la
+             pantalla del pedal muestra la red, la contraseña y la dirección durante unos segundos.
+- Mac: permiso de Red local (ayuda)
+  Descripción: En macOS 15 o más reciente, el navegador necesita el permiso de Red local (Ajustes
+             del Sistema › Privacidad y seguridad › Red local). Sin él, la Mac entra en el Wi-Fi del
+             pedal pero la página se queda cargando para siempre. En la aplicación de Mac, el
+             sistema pide el mismo permiso la primera vez: responde Permitir.
+Observaciones:
+- La contraseña del Wi-Fi del pedal no es la de tu red de casa y no cambia.
+
+1.4. Por el cable USB (computadora)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Objetivo: En la computadora puedes hablar con la controladora por cable, sin radio alguna: es el
+          camino más estable para cambiar muchas cosas y para actualizar.
+Cómo hacerlo:
+1. Usa la aplicación de Mac o de Windows, o abre el editor online en Chrome o en Edge.
+2. Conecta el cable USB en el puerto DEVICE de la controladora.
+3. En la ventana Conectar ao pedal, elige USB y autoriza el puerto de la controladora. La primera
+   vez el editor recarga la página una vez — es normal.
+Campos e ítems:
+- Donde el cable no está disponible (limitación)
+  Descripción: El editor abierto desde el propio pedal (192.168.4.1 o bfmidi.local) no ofrece USB —
+             ahí ya estás conectado por Wi-Fi. Safari tampoco da acceso al puerto USB, y en el
+             celular y en la tablet la conexión es siempre por Wi-Fi.
+- El editor online (dirección)
+  Descripción: La dirección https://bffx-updates.github.io/Editor_BFMiDi_v14/ funciona solo por
+             cable: como es un sitio seguro (https), el navegador no lo deja hablar con el pedal por
+             el Wi-Fi local.
+- Cuándo conviene el cable (cuándo usar)
+  Descripción: Wi-Fi de casa inestable, muchos cambios a la vez, envío de muchas imágenes e íconos,
+             y siempre que vayas a actualizar una controladora S2 o el USB Host.
+Observaciones:
+- Conectado por cable, el primer botón de la barra inferior muestra USB en azul.
+
+1.5. Sin pedal: el modo offline
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pantalla/vista relacionada: BARRA INFERIOR — SIN PEDAL
+Objetivo: Puedes abrir el editor y armar presets lejos de la controladora. El editor trabaja sobre
+          una copia guardada en el propio dispositivo, que responde como si fuera el pedal.
+Cómo hacerlo:
+1. En las aplicaciones, el modo offline es automático: abren en él y cambian al pedal cuando lo
+   encuentran.
+2. En el navegador, elige OFFLINE en la ventana Conectar ao pedal.
+3. Para llevar el trabajo a la controladora: BACKUP › HACER COPIA en el modo offline, conéctate al
+   pedal y usa RESTAURAR con el mismo archivo.
+Campos e ítems:
+- Qué se guarda (copia local)
+  Descripción: La copia empieza con el paquete de fábrica y guarda todo lo que edites: presets,
+             configuraciones e imágenes. Queda solo en este dispositivo — no pasa a la controladora
+             por sí sola.
+- Indicador OFFLINE (estado)
+  Descripción: El primer botón de la barra inferior muestra el Wi-Fi tachado en rojo. Al tocarlo se
+             abre la ventana de conexión.
+- Reiniciar la copia (mantenimiento)
+  Descripción: En CONFIGURACIÓN › RESTAURAR, la tarjeta MODO OFFLINE tiene el botón REINICIAR COPIA
+             LOCAL: devuelve la copia al paquete de fábrica. La controladora no se toca.
+Observaciones:
+- Lo que depende del hardware (pruebas, actualización, dispositivos USB, editores de preset) no está
+   disponible en el modo offline, y la pantalla indica el motivo.
 
 ========================================================================================
 
-TEMA 2 - ASISTENTE DE CONFIGURACIÓN
+TEMA 2 - PRIMEROS PASOS
 ----------------------------------------------------------------------------------------
 Página: 1
-Resumen: El camino guiado: una pregunta por pantalla, en lenguaje común, hasta que el preset esté
-        listo — incluidos los footswitches del modo LIVE.
-Introducción: Si nunca has trabajado con MIDI, empieza por aquí. El asistente pregunta una cosa a la
-        vez y monta el preset por ti. No necesitas saber qué es CC, PC o canal para llegar al final
-        — y lo que monta es un preset normal, que luego puedes ajustar en el editor como cualquier
-        otro.
-        Está al pie de la tarjeta PRINCIPAL, en la pantalla PRESET.
+Resumen: Los ajustes que vale la pena hacer una vez, al principio, antes de armar el repertorio.
+Introducción: La controladora sale de fábrica lista para encender y tocar, pero cinco minutos de
+        ajuste al principio ahorran mucho trabajo después — sobre todo indicar cuál es tu placa y
+        cuál es tu pedalera.
 
-2.1. Cómo funciona el asistente
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Pantalla/vista relacionada: ASISTENTE — UNA PREGUNTA POR PANTALLA
-Objetivo: Recorre cinco etapas — pedal, footswitch, nombre, sonido y modo LIVE — y solo graba al
-          final de cada bloque. Puedes salir a mitad: lo que ya se guardó sigue guardado.
+2.1. Cinco ajustes antes de tocar
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Objetivo: En orden: revisar el modelo, indicar cuál es tu equipo, armar el primer preset, configurar
+          un footswitch en LIVE y elegir tus atajos.
 Cómo hacerlo:
-1. En la pantalla PRESET, toca ASISTENTE · CONFIGURACIÓN GUIADA, al pie de la tarjeta PRINCIPAL.
-2. Dile cuál es tu pedal. Eso es lo que hace que el editor muestre los comandos por nombre en vez de
-   número.
-3. Pisa el footswitch que quieres configurar — la controladora entiende sola cuál fue.
-4. Dale un nombre al preset, elige qué sonido llama y sigue al modo LIVE, un footswitch por vez.
+1. Revisa el modelo en CONFIGURACIÓN › HARDWARE. Tiene que ser el que está escrito en tu
+   controladora.
+2. Indica cuál es tu equipo en CONFIGURACIÓN › MODO AMIGABLE: a partir de ahí los comandos aparecen
+   por nombre (“Delay”, “Reverb”) en lugar de números.
+3. Arma el primer preset: el próximo tema muestra el camino.
+4. Configura un footswitch en el modo LIVE, por ejemplo para encender y apagar el drive.
+5. Elige tus atajos en CONFIGURACIÓN › EDITOR › ATAJOS: aparecen como botones en la tarjeta
+   PRINCIPAL.
 Campos e ítems:
-- Etapa 1 — Cuál es tu pedal (elección)
-  Descripción: Eliges el aparato en una lista con búsqueda (Ampero, Kemper, GP-5, HX Stomp y muchos
-             otros). Eso es lo que activa el Modo Amigable: de ahí en adelante, los comandos
-             aparecen por su nombre — “Drive”, “Delay”, “Reverb” — en vez de números sueltos.
-             ¿No encuentras el tuyo? Elige GENÉRICO y sigue: todo funciona igual, solo que con
-             números.
-- Etapa 2 — Pisa el footswitch (gesto)
-  Descripción: En vez de buscar “banco A, preset 3” en una lista, pisas el footswitch que quieres
-             configurar. El asistente sigue con ese.
-             Para eso pone la controladora en modo PRESET un instante — que es el modo en que pisar
-             cambia de preset.
-- Etapas 3 y 4 — Nombre y sonido (campos)
-  Descripción: El nombre es lo que aparece en el visor de la controladora — normalmente el nombre de
-             la canción.
-             El sonido es qué preset de tu pedalera llamará este botón. Con el Modo Amigable
-             activado, aparece con el nombre que usa la pedalera (en la Ampero, A01-1, A01-2…) en
-             vez de un número.
-- Etapa 5 — El modo LIVE, un footswitch por vez (secuencia)
-  Descripción: Antes de preguntar nada, el asistente explica con un dibujo qué es el modo LIVE —
-             porque “LIVE” no significa nada para quien monta su primer preset.
-             Después, para cada footswitch, pregunta una pantalla a la vez: comportamiento → comando
-             → color del LED → estado inicial → color en pantalla → ícono y nombre. Y al terminar
-             cada footswitch, muestra un resumen con el preset tomando forma.
-- Los cuatro comportamientos ofrecidos (elección)
-  Descripción: ENCIENDE / APAGA — el más común: el pie enciende y apaga un efecto, como un pedal de
-             verdad. TAP TEMPO — marcas el tempo con el pie. UN COMANDO — cada toque manda siempre
-             lo mismo. NADA — el footswitch queda sin función.
-             Son cuatro de los diez modos que tiene la controladora: el asistente es la puerta de
-             entrada, no el techo. Los otros seis están disponibles en el editor normal.
-- Dos colores, dos preguntas (detalle)
-  Descripción: El color del anillo de LED (lo que el pie encuentra sin mirar) y el color del
-             recuadro en pantalla son cosas distintas — por eso son dos pantallas.
-             Para no dar trabajo, el color de la pantalla acompaña al del LED mientras no lo toques:
-             quien solo avanza termina con los dos iguales, y quien quiere diferenciarlos tiene la
-             opción.
-- Estado inicial (elección)
-  Descripción: Solo aparece en el comportamiento ENCIENDE / APAGA, y la pregunta es: ¿el efecto
-             entra ya encendido cuando llamas la canción, o espera a que lo pises?
-             No es adorno. La respuesta cambia lo que sale por el cable MIDI junto con el preset — y
-             no solo el color del LED.
-Observaciones:
-- El asistente no deshace el ajuste fino que ya hayas hecho: al guardar la pantalla del footswitch
-   toca la sigla, el ícono y el color del estado encendido, y deja el resto como estaba.
-- ¿Prefieres montarlo a mano? La sección siguiente muestra el mismo camino sin el asistente.
+- Por qué importa el modelo (atención)
+  Descripción: El modelo le dice a la controladora qué pines existen: pantalla, LEDs y footswitches.
+             Un modelo equivocado deja la pantalla apagada o footswitches sin respuesta.
+             En las placas S3, una unidad en blanco arranca como BFMIDI-S3 8SW+: si la tuya es
+             NANO+, MICRO o 6SW+, cambia el modelo antes que cualquier otra cosa.
+- El guardado es automático (predeterminado)
+  Descripción: El editor guarda solo menos de un segundo después de cada cambio. El botón de
+             guardar, a la derecha de la barra inferior, cambia de color para mostrar el estado. Si
+             prefieres guardar a mano, desactívalo en CONFIGURACIÓN › EDITOR.
+- Pruébalo sin pedal (consejo)
+  Descripción: Las aplicaciones abren en el modo offline: puedes conocer el editor y armar presets
+             incluso antes de encender la controladora.
 
 ========================================================================================
 
 TEMA 3 - MI PRIMER PRESET
 ----------------------------------------------------------------------------------------
 Página: 1
-Resumen: Qué es un preset, cómo decirle a la pedalera qué sonido cargar, guardar y probar con el
+Resumen: Qué es un preset, cómo indicarle a la pedalera qué sonido cargar y cómo probarlo con el
         pie.
 Introducción: Piénsalo así: tu pedalera ya tiene varios sonidos guardados; la BFMiDi es el control
         remoto que, con un toque del pie, la hace saltar al sonido que quieras. Un preset de la
@@ -228,39 +310,46 @@ Introducción: Piénsalo así: tu pedalera ya tiene varios sonidos guardados; la
 
 3.1. Los cuatro pasos
 ~~~~~~~~~~~~~~~~~~~~~
-Pantalla/vista relacionada: LA TARJETA PRINCIPAL
-Objetivo: Elegir el preset, decir qué sonido llama, guardar y pisar. Con eso la controladora ya está
-          tocando.
+Pantalla/vista relacionada: PANTALLA PRESET
+Objetivo: Elegir el preset, indicar qué sonido llama, ponerle un nombre y pisar. El guardado es
+          automático.
 Cómo hacerlo:
-1. En la columna izquierda, toca el preset 1 del banco A. Queda destacado — es el que vas a editar.
+1. En la consola, a la izquierda, toca el visor A1 para elegir el banco y una de las teclas 1 a 6
+   para elegir el preset. La controladora acompaña.
 2. En la tarjeta PRINCIPAL, elige el PC (el sonido de tu pedalera) y revisa el CANAL. En caso de
    duda, canal 1.
-3. Escribe un nombre arriba de la tarjeta — es lo que aparecerá en el visor de la controladora.
-4. Toca SAVE en la barra inferior. Luego pisa el footswitch 1: la pedalera salta al sonido elegido.
+3. Escribe el nombre en la píldora del nombre, justo debajo de las teclas — es lo que aparece en la
+   pantalla de la controladora.
+4. Pisa el footswitch del preset: la pedalera salta al sonido elegido.
 Campos e ítems:
 - PC — el sonido de la pedalera (selección)
-  Descripción: PC significa Program Change: es el número del sonido en tu pedalera, el mismo que
-             aparece en su visor. Con el Modo Amigable activado, la lista muestra el nombre de cada
-             sonido en vez del número.
+  Descripción: PC significa Program Change: es el número del sonido en tu pedalera. Con el Modo
+             Amigable activado, la lista muestra el nombre que usa la pedalera (por ejemplo A01-1)
+             en lugar del número.
+             Por encima de 127 la BFMiDi envía también el Bank Select que espera cada aparato — tú
+             solo eliges el sonido.
 - CANAL (selección)
-  Descripción: El canal MIDI es “qué aparato escucha”. La mayoría de las pedaleras vienen en el
-             canal 1. Si tienes más de un aparato en la cadena, cada uno va en un canal y el preset
-             puede hablar con todos.
-             OFF significa que este preset no manda ningún PC — útil cuando solo sirve para preparar
+  Descripción: El canal MIDI es “qué aparato escucha”. La mayoría viene en el canal 1. Con más de un
+             aparato en la cadena, cada uno va en un canal.
+             OFF significa que el preset no envía ningún PC — útil cuando solo sirve para preparar
              el modo LIVE.
 - Nombre del preset (texto)
-  Descripción: Hasta 16 caracteres, y sirve solo de etiqueta para el visor de la controladora — la
+  Descripción: Hasta 16 caracteres. Sirve de etiqueta para la pantalla de la controladora; la
              pedalera no ve ese nombre. Normalmente es el nombre de la canción.
-- ¿No cambió el sonido? (auxilio)
-  Descripción: Revisa tres cosas, en este orden: (1) el cable va de la BFMiDi a la pedalera (MIDI
-             OUT → MIDI IN); (2) el canal del preset es el mismo que escucha la pedalera; (3)
-             tocaste SAVE antes de pisar.
-             Si aun así nada, usa el DISPARO MIDI en CONFIGURACIONES › PRUEBAS: manda un comando al
+- ¿Pisaste de nuevo y cambió el banco? (atención)
+  Descripción: De fábrica, pisar otra vez el footswitch del preset que ya está sonando sube un banco
+             (A1 → B1). Es el RECLICK, configurable en CONFIGURACIÓN › BANCOS › LLAMADA DE PRESETS.
+             Y mantener pisado el footswitch del preset activo entra en el modo LIVE.
+- ¿No cambió el sonido? (ayuda)
+  Descripción: Revisa en este orden: (1) el cable va de la BFMiDi a la pedalera (MIDI OUT → MIDI
+             IN); (2) el canal del preset es el que escucha la pedalera; (3) el PC existe en la
+             pedalera.
+             ¿Todavía nada? Usa el DISPARO MIDI en CONFIGURACIÓN › PRUEBAS: envía un comando al
              instante y muestra si la pedalera responde.
 Observaciones:
-- Nada se graba antes del SAVE: salir del preset sin guardar descarta los cambios. Si prefieres,
-   activa el guardado automático en CONFIGURACIONES › EDITOR.
-- Repite para los presets 2, 3, 4… y luego para los otros bancos. Un banco suele ser un show; un
+- El botón de guardar (el disquete, a la derecha de la barra inferior) se pone verde cuando todo
+   está guardado.
+- Repite con los presets 2, 3, 4… y después con los otros bancos. Un banco suele ser un show; un
    preset, una canción.
 
 ========================================================================================
@@ -268,1036 +357,1722 @@ Observaciones:
 TEMA 4 - HARDWARE
 ----------------------------------------------------------------------------------------
 Página: 1
-Resumen: Conexiones físicas del hardware por modelo: puertos USB, MIDI, expresión, dual switch y
-        alimentación.
+Resumen: Las conexiones físicas de cada modelo: puertos USB, MIDI, expresión, footswitches externos
+        y alimentación.
 
 4.1. Qué se conecta dónde
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 Pantalla/vista relacionada: CONEXIONES FÍSICAS
-Objetivo: Selecciona el modelo de la controladora para ver las conexiones físicas del hardware. Los
-          puertos disponibles varían según la versión.
+Objetivo: Elige la familia y el modelo de tu controladora para ver el panel y los puertos. Los
+          puertos varían según la versión.
 Campos e ítems:
 - Modelo de la controladora (selección)
-  Descripción: Elige el modelo físico de tu BFMiDi. El diagrama de conexiones cambia según la
-             controladora, porque no todas tienen USB Host, EXP, Dual Switch ni la misma disposición
-             de conectores.
-             Novedad de la v13: la familia ganó la línea ESP32-S3 — la BFMIDI-3 8SW+ (8
-             footswitches) y la BFMIDI-3 NANO+ V2. Son placas con procesador nuevo, más memoria y
-             más espacio para imágenes e íconos. El editor solo ofrece los modelos compatibles con
-             el procesador del pedal conectado, así que no corres el riesgo de elegir la placa
-             equivocada.
-- Vista superior/frontal (dibujo)
-  Descripción: El panel del modelo seleccionado visto desde arriba: la posición de los footswitches
-             (LIVE, GLOBAL y SW1–SW6), del display y de los indicadores. Los modelos aún sin dibujo
-             muestran el espacio reservado.
-- Vista trasera/conectores (dibujo)
-  Descripción: El panel trasero con los puertos físicos del modelo — en el BFMIDI-1 7S: MIDI TRS
-             OUT, alimentación 9v (centro-negativo) y USB DEVICE. Cada puerto se detalla en los
-             campos de abajo.
-- USB Device (puerto)
-  Descripción: El puerto USB principal — la controladora aparece como dispositivo MIDI USB en el
-             ordenador/tablet. Por el mismo puerto funcionan el editor por cable (Web Serial, sin
-             WiFi) y la actualización de firmware desde el navegador.
-- USB Host (puerto)
-  Descripción: Lo contrario del USB Device: aquí conectas dispositivos A la controladora — teclados
-             MIDI, otra BFMiDi, pedaleras USB. Se gestiona en la pestaña SYSTEM › CONEXÕES › USB
-             HOST. Viene en dos versiones: USB Host común (BFMIDI-2) reenvía el MIDI del aparato
-             conectado; USB Host Plus (BFMIDI-3) añade el modo Tonex (controlar el IK Tonex One), el
-             MIDI inverso / Control Host (el aparato conectado controla la BFMiDi) y el Bluetooth
-             (teclado BLE).
-- MIDI TRS (puerto)
-  Descripción: Salida MIDI en conector minijack (TRS), para pedales con entrada MIDI compacta. Lleva
-             la misma señal que la salida DIN5 — usa el cable/adaptador adecuado para tu pedal.
-- MIDI DIN (puerto)
-  Descripción: La salida MIDI clásica de 5 pines, para pedaleras y equipos tradicionales.
-- Pedal de expresión (EXP) (puerto)
-  Descripción: (Modelos con "+".) Entrada para un pedal de expresión analógico (TRS) — el movimiento
-             se convierte en un CC continuo de 0 a 127. Configuración y calibración en GLOBAL ›
-             MIDI.
-- Dual Switch (puerto)
-  Descripción: (Modelos con "+".) Entrada para un pedal doble externo (2 footswitches simples, sin
-             LED) — cada botón obtiene su propia función en GLOBAL › MIDI.
-- Alimentación (DC IN) (puerto)
-  Descripción: Entrada de alimentación de la controladora. Usa la fuente recomendada por BFFX — en
-             caso de duda, consulta la etiqueta junto al conector de tu dispositivo.
+  Descripción: Elige la familia y la variante de tu BFMiDi. La familia S3 es la línea actual, con
+             procesador nuevo y más memoria para imágenes e íconos: 8SW+, NANO+, MICRO y 6SW+.
+             En el editor, el mismo selector está en CONFIGURACIÓN › HARDWARE, y solo ofrece los
+             modelos del procesador del pedal conectado.
+- Vista superior (imagen)
+  Descripción: La posición de los footswitches (1 a 6, LIVE y GLOBAL, cuando existen), de la
+             pantalla y de las etiquetas de los puertos.
+- Vista trasera (imagen)
+  Descripción: El panel con los puertos físicos de ese modelo. Cada tipo de puerto se explica en los
+             puntos de abajo.
+- USB DEVICE (puerto)
+  Descripción: El puerto USB principal. Conectada a la computadora, la controladora aparece como
+             dispositivo MIDI USB, abre el editor por cable y recibe actualizaciones. Conectada al
+             puerto USB de un Kemper Player, es por él que funcionan el nombre del rig, el afinador
+             y el editor del Kemper.
+             En las placas S3 es USB-B (el conector cuadrado).
+- USB HOST (puerto)
+  Descripción: Lo contrario de DEVICE: aquí conectas aparatos a la controladora — pedaleras USB como
+             la Valeton GP-5, la IK TONEX ONE y la Neural DSP Nano Cortex, teclados MIDI, otra
+             BFMiDi.
+             En las BFMIDI-3 y S3 reconoce sola lo que se conectó y además trae Bluetooth.
+             Configuración en CONFIGURACIÓN › HOST.
+- MIDI TRS y MIDI DIN5 (puerto)
+  Descripción: Salidas MIDI para pedaleras y equipos tradicionales: minijack (TRS) y el clásico
+             conector de 5 pines. Las dos llevan la misma señal — usa el cable o adaptador de tu
+             aparato.
+- EXP (pedal de expresión) (puerto)
+  Descripción: En los modelos “+”. Entrada para un pedal de expresión (TRS): el movimiento se
+             convierte en un CC continuo. Configuración, calibración y rango de salida en
+             CONFIGURACIÓN › FOOTSWITCHES.
+- 2SW (dos footswitches externos) (puerto)
+  Descripción: En los modelos “+”. Entrada para un pedal doble (dos footswitches simples, sin LED).
+             Cada botón recibe su propia función en CONFIGURACIÓN › FOOTSWITCHES, y puede tener un
+             indicador en la pantalla.
+- 9V (alimentación) (puerto)
+  Descripción: Fuente de 9 V de pedal (centro negativo). La fuente es obligatoria para actualizar el
+             USB Host, porque en ese momento el cable USB sale del puerto DEVICE.
 Observaciones:
-- Los puertos disponibles varían por modelo: USB Host común en los BFMIDI-2 y Plus (Tonex, MIDI
-   inverso, Bluetooth) en los BFMIDI-3; EXP y Dual Switch solo en las variantes "+".
+- Los puertos varían según el modelo: USB HOST con Bluetooth en las BFMIDI-3 y S3; EXP y 2SW solo en
+   las variantes “+”.
 
 ========================================================================================
 
 TEMA 5 - LA PANTALLA DEL EDITOR
 ----------------------------------------------------------------------------------------
 Página: 2
-Resumen: Tres columnas: dónde eliges el preset, dónde configuras lo que envía y dónde ves cómo
-        quedará la controladora.
-Introducción: Esta es la pantalla donde pasarás la mayor parte del tiempo. A la izquierda, el banco
-        y sus seis presets. En el medio, la tarjeta PRINCIPAL — lo que este preset envía. A la
-        derecha, la vista previa de lo que aparecerá en el visor de la controladora. Abajo, la barra
-        con navegación y SAVE.
-        En el celular las tres columnas se vuelven una sola, apiladas, en el mismo orden.
+Resumen: La consola donde eliges banco y preset, la tarjeta PRINCIPAL con lo que envía el preset, la
+        pantalla del pedal y la barra inferior.
+Introducción: Es la pantalla donde pasas la mayor parte del tiempo. En la computadora tiene tres
+        columnas lado a lado; en el celular las mismas piezas aparecen una debajo de otra, y la
+        pantalla del pedal queda detrás del botón DISPLAY.
 
-5.1. Visión general de las tres columnas
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Pantalla/vista relacionada: PANTALLA PRESET — COMPLETA
-Objetivo: Entender de un vistazo dónde está cada cosa antes de tocar cualquier campo.
+5.1. Vista general (computadora y tablet)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pantalla/vista relacionada: PANTALLA PRESET — COMPUTADORA
+Objetivo: En una ventana ancha — computadora, apps de Mac y Windows, tablet en horizontal — el
+          editor muestra tres columnas: la consola, la tarjeta del medio y la pantalla del pedal.
 Campos e ítems:
-- Columna 1 — banco y presets (navegación)
-  Descripción: Muestra la letra del banco destacada y sus seis presets con el nombre de cada uno.
-             Tocar un preset es elegir a quién estás editando — y la controladora salta a él al
-             instante, para que lo escuches.
-- Columna 2 — la tarjeta PRINCIPAL (edición)
-  Descripción: El corazón del preset: nombre, PC, CANAL y los botones que abren Layer 2, Display y
-             Extras. También es donde está el atajo del ASISTENTE.
-- Columna 3 — la vista previa del visor (visual)
-  Descripción: Un dibujo fiel de lo que mostrará la controladora, con las pestañas PRESET y LIVE
-             para ver los dos momentos. Debajo están los ajustes de POSICIONAR, APARIENCIA y COLORES
-             DE LA PANTALLA.
-- MODO PRESET × MODO LIVE (interruptor)
-  Descripción: El interruptor más importante de la pantalla. En MODO PRESET editas lo que el preset
-             llama; en MODO LIVE, lo que hace cada footswitch dentro de ese preset.
-             También cambia el modo de la controladora real — por eso el pedal cambia de pantalla
-             cuando lo usas.
-- Insignia L1 / L2 (Layer) (indicador)
-  Descripción: Cada preset puede tener dos capas de funciones en modo LIVE — como si los seis
-             footswitches tuvieran dos páginas. La insignia muestra en cuál estás editando, y queda
-             inactiva mientras la Layer 2 no se active en ese preset.
+- Columna 1 — la consola (navegación)
+  Descripción: El visor del banco, las teclas de los seis presets, el nombre del preset y la barra
+             PRESET | LIVE | LAYER.
+- La lista de footswitches (resumen)
+  Descripción: Solo en la computadora: una fila por footswitch con el ícono que muestra en la
+             pantalla, el modo, el comando MIDI (con su nombre amigable) y el canal. La barra de
+             color es el color del LED.
+             Tocar una fila te lleva directo al modo LIVE, con ese footswitch abierto para editar.
+- Columna 2 — la tarjeta del medio (edición)
+  Descripción: En el modo PRESET es la tarjeta PRINCIPAL (lo que envía el preset y los atajos). En
+             el modo LIVE pasa a ser la tarjeta del footswitch elegido.
+- Columna 3 — la pantalla del pedal (visual)
+  Descripción: La vista previa fiel de lo que mostrará la controladora, con los ajustes de
+             apariencia justo debajo. Cuando abres un atajo de la tarjeta PRINCIPAL, la
+             configuración aparece aquí, sin salir de la pantalla.
+- Barra inferior (navegación)
+  Descripción: Conexión, configuración, inicio, copiar/pegar y guardar. Detalles en la tarjeta La
+             barra inferior.
 Observaciones:
-- Las vistas previas de este manual son el markup real del editor: lo que ves aquí es exactamente lo
-   que aparece en la pantalla de la app.
+- Las capturas de este manual son de la pantalla real del editor en la versión 14.5. Toca una
+   captura para verla en tamaño real.
 
-5.2. Elegir banco y preset
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-Pantalla/vista relacionada: BANCO Y PRESETS
-Objetivo: La columna izquierda es el mapa de la controladora: diez letras, seis presets en cada una.
-          Por ahí te mueves por el repertorio.
+5.2. En el celular
+~~~~~~~~~~~~~~~~~~
+Pantalla/vista relacionada: PANTALLA PRESET — CELULAR
+Objetivo: En el celular las piezas vienen apiladas: la consola arriba y la tarjeta PRINCIPAL abajo.
+          Los dos botones redondos de arriba de la tarjeta alternan entre la configuración y la
+          pantalla del pedal.
+Campos e ítems:
+- CONFIG y DISPLAY (botones redondos)
+  Descripción: CONFIG muestra lo que envía el preset (PC, canal, extras) y los atajos. DISPLAY
+             cambia el contenido de la tarjeta por la vista previa de la pantalla del pedal; el
+             botón AJUSTES debajo de la vista previa abre la ventana con la posición del nombre, el
+             layout, la fuente y los colores.
+- En el modo LIVE (comportamiento)
+  Descripción: La tarjeta del footswitch tiene los mismos dos botones redondos: uno para la
+             configuración del modo y otro para la apariencia del ícono en la pantalla.
+
+5.3. La consola: banco, preset, nombre y modo
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pantalla/vista relacionada: CONSOLA
+Objetivo: La consola es el mapa de la controladora: diez bancos, seis presets en cada uno. Con ella
+          recorres tu repertorio y cambias entre PRESET y LIVE.
 Cómo hacerlo:
-1. Toca la letra destacada para cambiar de banco (A → B → C…).
-2. Toca uno de los seis presets para editarlo. La controladora va contigo.
+1. Toca el visor A1 · SET BANK para elegir otro banco.
+2. Toca una de las teclas 1 a 6 para elegir el preset. La controladora cambia junto.
+3. Usa la barra de abajo de la consola para cambiar entre PRESET y LIVE.
 Campos e ítems:
-- La letra del banco (navegación)
-  Descripción: Son diez bancos, de A a J. Un banco suele ser un show, un set o una banda; los seis
-             presets dentro de él, las canciones.
-             Los bancos que no usas se pueden apagar en CONFIGURACIONES › BANCOS — así la navegación
-             los salta directamente.
-- Los seis presets (selección)
-  Descripción: Cada cuadrado es un preset, con el nombre que le diste. El que está encendido es el
-             que estás editando — y lo que la controladora está tocando en ese momento.
-             En placas de cuatro footswitches, los presets 5 y 6 siguen existiendo y son editables;
-             solo que no se alcanzan con el pie.
-Observaciones:
-- Cambiar de preset aquí descarta los cambios no guardados. Si eso te molesta, activa el guardado
-   automático en CONFIGURACIONES › EDITOR.
+- El visor (banco)
+  Descripción: Muestra el banco y el preset activos (A1). Al tocarlo se abre ELEGIR BANCO, la
+             cuadrícula con las diez letras. Los bancos desactivados en CONFIGURACIÓN › BANCOS
+             aparecen apagados.
+             En el modo LIVE el visor pasa a FX · SWITCH n y las teclas eligen el footswitch que
+             estás editando.
+- Las teclas 1 a 6 (preset)
+  Descripción: La tecla encendida es el preset en edición — y el que está sonando en la
+             controladora. En las placas de cuatro footswitches las teclas 5 y 6 quedan apagadas:
+             esos presets existen en la memoria, pero el pie no los alcanza.
+- La píldora del nombre (texto)
+  Descripción: Es el campo del nombre del preset (hasta 16 caracteres) — tócalo y escribe.
+- PRESET | LIVE (modo)
+  Descripción: El interruptor más importante de la pantalla. En PRESET editas lo que el preset
+             llama; en LIVE, lo que hace cada footswitch dentro de él. El interruptor cambia de
+             verdad el modo de la controladora, y el pedal cambia de pantalla junto.
+- SINGLE LAYER / DUAL LAYER (layer)
+  Descripción: En el modo PRESET, activa o desactiva la segunda capa de funciones del LIVE en este
+             preset (los seis footswitches ganan una segunda página). En el modo LIVE, el mismo
+             botón pasa a LAYER 1 / LAYER 2 y elige qué capa estás editando.
 
-5.3. Layer 2, Display y Extras
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+5.4. Elegir el banco
+~~~~~~~~~~~~~~~~~~~~
+Pantalla/vista relacionada: ELEGIR BANCO
+Objetivo: La cuadrícula con las diez letras se abre al tocar el visor. Un toque en la letra te lleva
+          directo al banco, sin pasar por los del medio.
+Campos e ítems:
+- Letras apagadas (bancos desactivados)
+  Descripción: Son los bancos desactivados en CONFIGURACIÓN › BANCOS › BANCOS ACTIVOS. Desactivar
+             los que no usas hace que la navegación con el pie los salte directamente.
+- Bancos y repertorio (consejo)
+  Descripción: Un banco suele ser un show, un set o una banda; los seis presets dentro de él, las
+             canciones.
+
+5.5. La tarjeta PRINCIPAL
+~~~~~~~~~~~~~~~~~~~~~~~~~
+Pantalla/vista relacionada: TARJETA PRINCIPAL
+Objetivo: Lo que envía el preset cuando se llama — PC, canal y envíos extra — y la fila de atajos al
+          resto del editor.
+Campos e ítems:
+- PC (selección)
+  Descripción: El sonido que carga la pedalera cuando se llama el preset. Llega hasta 600: por
+             encima de 127 la BFMiDi envía también el Bank Select en el formato del equipo elegido
+             en el Modo Amigable.
+- CANAL (selección)
+  Descripción: El canal MIDI del equipo que recibe el PC. El nombre del equipo aparece junto al
+             número cuando el canal está en el Modo Amigable. OFF = el preset no envía PC.
+- EXTRAS (botón)
+  Descripción: Cada toque agrega un envío extra: un mensaje más que sale junto con el PC (empieza
+             como PC en el canal 1). Con al menos un extra, la lista aparece debajo de CANAL. Mira
+             la tarjeta siguiente.
+- MODO ESCENARIO (atajo)
+  Descripción: Siempre el primero de la fila: abre la pantalla completa de escenario. Tiene su
+             propio tema en este manual.
+- Editores de los equipos (atajos automáticos)
+  Descripción: Cuando una Valeton GP-5, una IK TONEX ONE o una Neural DSP Nano Cortex está conectada
+             al USB Host — o cuando el Modo Amigable está en KEMPER PLAYER —, aparece un botón con
+             el color del equipo que abre su editor de presets. Estos botones no ocupan el lugar de
+             tus atajos.
+- Tus atajos (atajos)
+  Descripción: Botones para las pantallas de configuración que más usas. Eliges cuáles aparecen en
+             CONFIGURACIÓN › EDITOR › ATAJOS. En la computadora el atajo abre la configuración en la
+             tercera columna, junto al preset; en el celular te lleva a la pantalla de
+             configuración.
+Observaciones:
+- Los atajos solo aparecen en el modo PRESET. En el modo LIVE la tarjeta del medio es la del
+   footswitch.
+
+5.6. Envíos extra
+~~~~~~~~~~~~~~~~~
 Pantalla/vista relacionada: ENVÍOS EXTRA ABIERTOS
-Objetivo: Tres botones en la tarjeta PRINCIPAL abren lo que no cabe en la pantalla principal: la
-          segunda capa de footswitches, la apariencia de este preset y los envíos MIDI adicionales.
+Objetivo: Además del PC principal, el preset puede enviar hasta 12 mensajes más al ser llamado — y
+          así preparas toda la escena con un solo toque.
 Cómo hacerlo:
-1. Layer 2 — activa la segunda capa de funciones del modo LIVE en este preset.
-2. Display — abre los ajustes de apariencia de este preset en el visor.
-3. Extras — añade envíos MIDI además del PC principal.
+1. Toca EXTRAS, junto a CANAL: cada toque agrega una línea, que empieza como PC en el canal 1.
+2. En cada línea, el botón redondo junto al número cambia entre PC y CC.
+3. Elige número, valor (en el CC) y canal de cada línea.
 Campos e ítems:
-- Envíos extra (hasta 12) (lista)
-  Descripción: Además del PC principal, el preset puede enviar 12 mensajes más al ser llamado — cada
-             uno con su tipo (PC o CC), número, valor y canal.
-             Así preparas la escena entera con un toque: cambiar el sonido de la pedalera, encender
-             el delay, ajustar el volumen de otro aparato y cambiar la escena de la mesa, todo en el
-             mismo preset.
-- Valor EXP — pedal de expresión en este preset (valor especial)
-  Descripción: En un envío extra de tipo CC, la lista de valores termina con EXP (PEDAL DE
-             EXPRESIÓN). Al elegirla, la línea no manda MIDI: dice hacia dónde apunta el pedal de
-             expresión mientras este preset esté activo.
-             El CC y el canal definidos en CONFIGURACIONES › FOOTSWITCHES pasan a ser solo el valor
-             por defecto — un preset con una línea EXP sustituye ese destino. Puedes tener más de
-             una, si quieres el mismo pedal controlando dos destinos a la vez.
-- SW externos en el visor (interruptor)
-  Descripción: En placas con entrada para footswitches externos, este interruptor decide si los
-             indicadores ESW1 y ESW2 aparecen en el visor en este preset. Sus colores y posiciones
-             son globales, en CONFIGURACIONES › FOOTSWITCHES.
+- Hasta 12 envíos (lista)
+  Descripción: Cada fila es un PC o un CC, con su propio canal. Cambiar el sonido de la pedalera,
+             activar el delay, ajustar el volumen de otro equipo y cambiar la escena de la
+             mezcladora — todo en el mismo preset.
+- Valor EXP — el pedal de expresión en este preset (valor especial)
+  Descripción: En las placas con entrada de expresión, la lista de valores de una fila CC termina
+             con EXP (PEDAL DE EXPRESSÃO) (pedal de expresión). Esa fila no envía MIDI: indica hacia
+             dónde apunta el pedal de expresión mientras este preset esté activo.
+             El destino del preset reemplaza el CC y el canal de la tarjeta de expresión (que pasan
+             a ser solo el valor predeterminado) y funciona aun con esa tarjeta desactivada. Puede
+             haber más de una fila EXP, para que el mismo pedal controle dos destinos.
+- El orden de envío (detalle)
+  Descripción: Al llamar el preset, salen primero el PC y los extras; después el estado inicial de
+             los footswitches del LIVE; y solo entonces el LED y la pantalla. A los equipos lentos
+             que pierden los primeros mensajes puedes darles una pausa en CONFIGURACIÓN › HARDWARE ›
+             TIEMPOS DE ENVÍO.
 
-5.4. La vista previa del visor y la apariencia del preset
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Pantalla/vista relacionada: VISTA PREVIA DEL VISOR
-Objetivo: Ver, antes de pisar, exactamente lo que mostrará la controladora — en los dos momentos:
-          llamando el preset y tocando en LIVE.
+5.7. La pantalla del pedal y la apariencia del preset
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pantalla/vista relacionada: PANTALLA DEL PEDAL — PRESET
+Objetivo: Ver, antes de pisar, exactamente lo que mostrará la controladora — al llamar el preset y
+          al tocar en LIVE — y ajustar el nombre y los colores.
 Cómo hacerlo:
-1. Usa las pestañas PRESET y LIVE arriba de la vista previa para alternar entre las dos pantallas.
-2. Abre POSICIONAR, APARIENCIA o COLORES DE LA PANTALLA para ajustar; la vista previa cambia
-   mientras lo haces.
+1. Usa las pestañas PRESET y LIVE arriba de la vista previa para ver las dos pantallas.
+2. Toca la vista previa (o POSICIONAR) para mover el nombre y elegir el layout.
+3. Ajusta la fuente, el estilo y los colores en los bloques debajo de la vista previa: la vista
+   previa cambia mientras ajustas.
 Campos e ítems:
-- POSICIONAR (layout)
-  Descripción: Elige el arreglo de la pantalla de este preset — cuántos recuadros aparecen y cómo se
-             distribuyen. Hay layouts fijos (1 a 4), el modo LISTA (que muestra los presets en
-             secuencia) y el CUSTOM, en el que arrastras cada ícono donde quieras y eliges el
-             tamaño.
-             Si lo dejas como está, el preset sigue el layout global definido en CONFIGURACIONES ›
-             PANTALLA. Al elegir aquí, este preset pasa a tener el suyo — útil para una canción que
-             necesita cuatro efectos grandes mientras las demás usan la lista.
-- APARIENCIA (texto)
-  Descripción: Cómo se escribe el nombre del preset en el visor: tamaño de fuente, negrita,
-             alineación y posición en pantalla. Es lo que garantiza que el nombre de la canción se
-             lea desde el escenario.
-- COLORES DE LA PANTALLA (colores)
-  Descripción: Color del nombre, del borde y del fondo — y el fondo puede ser un color, un degradado
-             o una imagen que hayas enviado en CONFIGURACIONES › IMÁGENES.
-             Hay dos fondos independientes: uno para la pantalla de PRESET y otro para la de LIVE,
-             porque normalmente quieres cosas distintas en los dos momentos.
-Observaciones:
-- La vista previa es fiel a lo que dibuja el pedal, incluidos íconos, colores y el tamaño del texto
-   — si se ve bien aquí, se ve bien allá.
+- La vista previa (visual)
+  Descripción: Dibuja lo que muestra la controladora, con el fondo, el nombre y los íconos. Los
+             footswitches cuya función no tiene canal MIDI no aparecen — igual que en la pantalla
+             del pedal.
+- PRESET — nombre del preset (texto)
+  Descripción: TAMAÑO DE FUENTE (− / +) y ESTILO (B = negrita) del nombre en la pantalla. SW
+             EXTERNOS decide si los indicadores de los footswitches externos (ESW1 y ESW2) aparecen
+             en este preset.
+- APARIENCIA (colores del nombre)
+  Descripción: Los colores del nombre: NOMBRE (el texto), CONTORNO y TAG (la etiqueta del
+             banco/preset).
+- COLORES DE PANTALLA (fondos)
+  Descripción: Los dos fondos de pantalla completa: uno para la pantalla de PRESET y otro para la de
+             LIVE. Cada uno puede ser un color, un degradado o una imagen que subiste en
+             CONFIGURACIÓN › IMÁGENES.
 
-5.5. La barra inferior (navegar, copiar y guardar)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+5.8. Posición del nombre y layout por preset
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pantalla/vista relacionada: POSICIÓN DEL NOMBRE · PRESET
+Objetivo: Arrastra el nombre a donde quieras en la pantalla y elige la disposición de los íconos —
+          solo para este preset, si quieres.
+Cómo hacerlo:
+1. Arrastra el nombre en la vista previa. La posición aparece abajo en porcentaje (X e Y).
+2. Elige el layout de la pantalla: GLOBAL sigue el predeterminado del equipo; los demás valen solo
+   para este preset.
+3. Toca APLICAR. Nada cambia antes de eso.
+Campos e ítems:
+- Los layouts (selección)
+  Descripción: GLOBAL hereda el layout de CONFIGURACIÓN › PANTALLA. L1 a L4 son arreglos fijos de
+             íconos y Custom te deja arrastrar cada ícono y elegir el tamaño. En la pantalla PRESET
+             existen además Nenhum (Ninguno — solo el nombre grande) y Lista (los presets en
+             secuencia).
+             Arrastrar un ícono en un layout L1–L4 convierte la pantalla en Custom.
+- Por qué por preset (uso)
+  Descripción: Una canción que necesita cuatro efectos grandes puede tener su propio layout mientras
+             las demás usan la lista. Si no cambias nada aquí, el preset sigue el layout global.
+- Centrar (atajo)
+  Descripción: Devuelve el nombre al centro de la pantalla.
+
+5.9. La barra inferior
+~~~~~~~~~~~~~~~~~~~~~~
 Pantalla/vista relacionada: BARRA INFERIOR
-Objetivo: Cuatro botones que valen para toda la pantalla: inicio, configuraciones, el menú “+” de
-          copiar y pegar, y SAVE.
+Objetivo: Cinco botones que valen para todo el editor: conexión, configuración, inicio, copiar/pegar
+          y guardar.
 Campos e ítems:
+- Conexión (estado)
+  Descripción: El color indica cómo estás conectado: STA verde (red de casa), AP amarillo (Wi-Fi del
+             pedal), USB azul (cable) y OFFLINE con el Wi-Fi tachado en rojo. Al tocarlo se abre la
+             ventana Conectar ao pedal (Conectar al pedal).
+- Configuración (navegación)
+  Descripción: El engranaje abre el menú con los quince destinos de configuración, de MODO AMIGABLE
+             a RESTAURAR.
 - Inicio (navegación)
-  Descripción: Vuelve a la pantalla de edición del preset, vengas de donde vengas.
-- Configuraciones (navegación)
-  Descripción: Abre el menú con los catorce destinos de configuración — de MODO AMIGABLE a
-             RESTAURAR. Es el tema de la próxima página de este manual.
-- El menú “+” (copiar y pegar) (acciones)
-  Descripción: Copia y pega presets enteros, layers y bancos. Es el atajo que evita reconfigurar
-             desde cero una canción parecida a otra: copia el preset, pégalo en el destino y ajusta
-             lo que cambia.
-             Dentro del modo LIVE, también copia y pega la configuración de un footswitch a otro.
-- SAVE (acción)
-  Descripción: Graba los cambios en la memoria de la controladora. Nada se graba antes de eso — a
-             menos que hayas activado el guardado automático en CONFIGURACIONES › EDITOR.
-             El puntito en la esquina del botón avisa cuando hay un cambio pendiente.
+  Descripción: La píldora naranja te devuelve a la pantalla del preset, vengas de donde vengas.
+- Copiar y pegar (acciones)
+  Descripción: El botón de controles deslizantes abre el menú para copiar y pegar preset, layer y
+             banco — y, en el modo LIVE, la configuración de un footswitch a otro.
+- Guardar (estado y acción)
+  Descripción: Con el guardado automático (el predeterminado), el editor guarda solo menos de un
+             segundo después de cada cambio, y el disquete cambia de color: rojo = hay un cambio
+             pendiente, naranja = guardando, verde = todo guardado. Con el guardado automático
+             desactivado, tócalo para guardar.
+
+5.10. Copiar y pegar
+~~~~~~~~~~~~~~~~~~~~
+Pantalla/vista relacionada: MENÚ COPIAR Y PEGAR
+Objetivo: Evita configurar desde cero una canción parecida a otra: copia, ve al destino y pega.
+Cómo hacerlo:
+1. En el preset de origen, toca el botón de controles deslizantes de la barra inferior y elige
+   COPIAR PRESET, COPIAR LAYER o COPIAR BANCO.
+2. Ve al destino y abre el mismo menú: ahora ofrece PEGAR.
+Campos e ítems:
+- Preset, layer o banco (alcance)
+  Descripción: Preset lleva todo lo que envía y los footswitches del LIVE. Layer lleva solo los seis
+             footswitches de una capa (L1 o L2). Banco lleva los seis presets de una letra.
+- Footswitch (modo LIVE)
+  Descripción: En el modo LIVE el menú copia y pega la configuración de un footswitch — modo,
+             comandos y apariencia — a otro.
 
 ========================================================================================
 
 TEMA 6 - EL MODO LIVE
 ----------------------------------------------------------------------------------------
 Página: 3
-Resumen: Dentro de cada preset, los seis footswitches se vuelven pedales de efecto. Aquí la
-        controladora deja de ser solo un selector de sonidos.
-Introducción: Hay dos momentos en la controladora. En modo PRESET, pisar un footswitch llama una
-        canción. En modo LIVE, ya estás dentro de una canción y cada footswitch controla algo de
-        ella: enciende el drive, marca el tempo del delay, sube el volumen del solo.
-        El modo LIVE se configura por preset: los mismos seis pies hacen cosas distintas en cada
-        canción. Y cada preset puede tener dos capas (L1 y L2), lo que da doce funciones por
-        canción.
+Resumen: Dentro de cada preset, los footswitches se convierten en pedales de efecto. Aquí es donde
+        la controladora deja de ser solo un selector de sonidos.
+Introducción: La controladora tiene dos momentos. En el modo PRESET, pisar un footswitch llama una
+        canción. En el modo LIVE, ya estás dentro de una canción y cada footswitch controla algo de
+        ella: enciende el drive, marca el tempo del delay, sube el volumen para el solo.
+        El modo LIVE se configura por preset: los mismos footswitches hacen cosas distintas en cada
+        canción. Y además cada preset puede tener dos capas (L1 y L2) — doce funciones por canción
+        en una placa de seis footswitches.
 
 6.1. Cómo configurar un footswitch
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Pantalla/vista relacionada: PANTALLA DEL MODO LIVE
-Objetivo: Pasar el interruptor a MODO LIVE, elegir qué footswitch quieres configurar y decir qué
-          hace. Siempre en ese orden.
+Pantalla/vista relacionada: PANTALLA DEL MODO LIVE — COMPUTADORA
+Objetivo: Pasar a LIVE, elegir el footswitch y decirle qué hace. Siempre en ese orden.
 Cómo hacerlo:
-1. Arriba de la pantalla, cambia de MODO PRESET a MODO LIVE.
-2. En la columna izquierda, toca el footswitch (SW1 a SW6) que quieres configurar.
-3. Toca el campo del modo de operación y elige uno de los diez modos.
-4. Rellena los campos de ese modo y toca SAVE.
+1. En la barra de la consola, toca LIVE. (En la computadora, tocar un footswitch de la lista también
+   te lleva a LIVE.)
+2. Con las teclas 1 a 6, elige el footswitch. El visor cambia a FX · SWITCH n.
+3. Arriba de la tarjeta del medio, toca el nombre del modo y elige uno de los diez modos.
+4. Completa los campos del modo. En la tercera columna (en el celular, en el botón redondo DISPLAY)
+   ajusta el ícono y los colores en pantalla.
 Campos e ítems:
-- La rejilla de footswitches (selección)
-  Descripción: Los seis cuadrados de la izquierda dejan de ser presets y pasan a ser los
-             footswitches de este preset, cada uno mostrando el ícono y la sigla que aparecerán en
-             el visor.
-             El que está encendido es el que estás configurando.
+- Elegir el footswitch (selección)
+  Descripción: En LIVE, las teclas de la consola dejan de ser presets y pasan a ser los footswitches
+             de este preset. La tecla encendida es la que estás configurando.
 - L1 y L2 — las dos capas (capas)
-  Descripción: Al activar la Layer 2 en la tarjeta PRINCIPAL, el preset gana una segunda página de
-             funciones para los mismos seis pies. Cambias de capa durante el show con un footswitch
-             configurado para eso, o con el botón LIVE en las placas que lo tienen.
-             Así consigues doce funciones en una canción sin necesitar doce footswitches.
-- Entrar y salir del modo LIVE en el pedal (en el escenario)
-  Descripción: Depende del modelo. Placas con botón LIVE dedicado: un toque entra (y alterna la
-             capa), mantener sale.
-             Placas sin ese botón: usa un combo de dos footswitches con la acción SW_LIVE
-             (CONFIGURACIONES › BANCOS), o deja un footswitch del preset con el comando SALIR AL
-             BANCO. Lo importante es tener siempre un camino de vuelta.
+  Descripción: Activa la segunda capa con el botón SINGLE LAYER / DUAL LAYER de la barra de la
+             consola (en el modo PRESET). En LIVE, el mismo botón elige si editas la LAYER 1 o la
+             LAYER 2.
+             En el escenario, cambias de capa con el botón LIVE en las placas que lo tienen, o con
+             un footswitch configurado con el comando » TO LAYER.
+- Entrar y salir de LIVE con el pie (en el escenario)
+  Descripción: De fábrica, mantener pisado el footswitch del preset que está sonando entra en LIVE
+             (CONFIGURACIÓN › BANCOS › LLAMADA DE PRESETS › CLICK LARGO).
+             Placas con botón LIVE MODE: un toque entra (y alterna la capa), mantenerlo sale. Placas
+             sin ese botón: usa un combo de dos footswitches con la acción SW_LIVE — y, dentro de
+             LIVE, mantener el combo medio segundo sale directo al modo PRESET. También puedes dejar
+             un footswitch con el comando » OUT LIVE MODE.
+- Sin canal, sin ícono (pantalla del pedal)
+  Descripción: Un footswitch cuya función no tiene canal MIDI no aparece en la pantalla de la
+             controladora (ni en la vista previa del editor). Por eso, con el paquete de fábrica —
+             footswitches en STOMP con canal OFF — la pantalla LIVE empieza vacía: se va llenando a
+             medida que les das canal a los footswitches.
+             Las excepciones son el FAVORITO, que navega en vez de enviar MIDI, y el MUTE, que nunca
+             aparece.
 Observaciones:
-- Configurar el modo LIVE es opcional: un preset que solo llama el sonido ya es útil y ya toca.
+- Configurar LIVE es opcional: un preset que solo llama el sonido ya es útil y ya suena.
 
 6.2. Los diez modos de operación
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Pantalla/vista relacionada: SELECTOR DE MODO
-Objetivo: Cada footswitch ejecuta un modo. El modo decide qué pasa cuando pisas — y es la elección
-          que cambia todo lo demás.
+Pantalla/vista relacionada: MODO LIVE · SWITCH 1
+Objetivo: Cada footswitch funciona en un modo. El modo decide qué pasa cuando lo pisas — y cambia
+          todos los demás campos.
 Cómo hacerlo:
-1. Toca el campo del modo, arriba del panel del footswitch, para abrir esta lista.
+1. Toca el nombre del modo, arriba de la tarjeta del footswitch, para abrir esta lista.
 Campos e ítems:
 - Qué modo elegir (resumen)
-  Descripción: STOMP — enciende y apaga un efecto. Es lo que usa el 90% de la gente.
-             TAP TEMPO — marcas el tempo con el pie.
-             SINGLE — cada toque manda siempre lo mismo.
-             MOMENTARY — vale solo mientras el pie está encima.
-             MACROS — un toque manda varios comandos a la vez.
-             SPIN — cicla entre tres valores.
-             RAMPA — barre suavemente de un valor a otro.
-             STEPS — secuenciador: recorre cuatro valores en bucle.
+  Descripción: STOMP — enciende y apaga un efecto. Lo que usa la mayoría.
+             SPIN — recorre en ciclo tres valores.
+             RAMP — barre suavemente de un valor a otro.
+             MOMENT (momentary) — actúa solo mientras el pie está encima.
+             MACROS — varios comandos en un toque.
+             TAP TEMPO — marcar el tempo con el pie.
+             SINGLE — un comando fijo por gesto.
+             STEPS — secuenciador de cuatro valores en loop.
              CONTROL — selector A/B entre dos destinos.
              MUTE — el footswitch queda sin función.
 - ¿Cambiar de modo borra lo que tenía? (detalle)
   Descripción: No. Los parámetros de cada modo se guardan por separado: si pruebas el SPIN y vuelves
-             al STOMP, el STOMP sigue con lo que tenías configurado antes.
+             al STOMP, el STOMP sigue como estaba.
 Observaciones:
-- STEPS y CONTROL valen para los footswitches SW1–SW6. Los botones globales y los switches externos
+- STEPS y CONTROL valen para los footswitches del preset. El SW GLOBAL y los footswitches externos
    usan los otros ocho modos.
 
 6.3. STOMP — enciende y apaga
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Pantalla/vista relacionada: SW — MODO STOMP
 Objetivo: El modo clásico: el pie enciende y apaga un efecto, como un pedal de verdad. Un mismo
-          STOMP puede tener hasta tres secciones, cada una en un gesto distinto del pie.
+          STOMP puede tener hasta tres secciones, cada una en un gesto del pie.
 Cómo hacerlo:
-1. Configura la sección CLICK CORTO: elige el CC y el CANAL del efecto.
-2. Si quieres más funciones en el mismo pie, configura también CLICK LARGO y RECLICK.
-3. Ajusta el color del LED y el estado inicial en OPCIONES.
+1. En la pestaña CLIC CORTO, elige el CC y el CANAL del efecto.
+2. ¿Quieres más funciones en el mismo pie? Configura también CLIC LARGO y RECLICK.
+3. Ajusta el color del LED y el comportamiento en la franja de opciones, abajo.
 Campos e ítems:
-- CLICK CORTO / CLICK LARGO / RECLICK (secciones)
-  Descripción: Tres funciones en el mismo footswitch, cada una en un gesto: un toque rápido, un
-             toque mantenido y un toque repetido.
-             El comportamiento se adapta a lo que rellenes: solo la primera sección = stomp clásico
-             (y mantener se vuelve momentáneo); dos secciones = dos efectos; tres = tres.
-- CC o PC (botón)
-  Descripción: El botón al lado del número cambia el tipo de mensaje: CC (lo normal para
-             encender/apagar efectos) o PC (para llamar un sonido).
-- CUSTOM — valores propios (botón)
-  Descripción: Normalmente encendido manda 127 y apagado manda 0. El CUSTOM abre dos knobs para
-             elegir otros valores — necesario en aparatos que usan, por ejemplo, 64 para encender.
-- FAVORITO (botón)
-  Descripción: Convierte la sección en un atajo a otro preset: en vez de mandar un CC, pisar carga
-             el banco, preset y modo que elijas. Sirve para “saltar a la próxima canción” sin salir
-             del LIVE.
-- Opciones — disparo, estado inicial y LED (grupo)
-  Descripción: Dispara con el preset: manda el comando ya en la llamada del preset, sin esperar a
-             que pises. Empieza ON: define si el efecto entra encendido. Invertir LED: se enciende
-             en apagado en vez de en encendido — útil cuando el plugin usa la lógica invertida.
-             Al lado, el anillo elige el color del LED de ese footswitch.
+- CLIC CORTO / CLIC LARGO / RECLICK (secciones)
+  Descripción: Tres funciones en el mismo footswitch: toque rápido, toque mantenido y doble toque.
+             El comportamiento se adapta a lo que completes: solo la primera sección = stomp
+             clásico; dos o tres secciones = dos o tres efectos en el mismo pie.
+             Con el RECLICK completado, el clic corto espera un instante (cerca de un tercio de
+             segundo) para saber si viene un segundo toque.
+- CC o PC (botón redondo)
+  Descripción: El botón redondo junto al número cambia el tipo de mensaje: CC (lo normal para
+             encender y apagar efectos) o PC (para llamar un sonido). Con el Modo Amigable, la lista
+             muestra el nombre de cada comando.
+- CUSTOM — valores propios (botón redondo)
+  Descripción: Normalmente, encendido envía 127 y apagado envía 0. El botón de controles junto a
+             CANAL abre VALORES CUSTOM para elegir otros valores — mira la tarjeta siguiente.
+- FAVORITO (botón redondo)
+  Descripción: La estrella convierte la sección en un atajo: en vez de enviar MIDI, pisar te lleva a
+             otro banco y preset, llegando al modo PRESET o LIVE (y, en LIVE, a la layer 1 o 2).
+             Sirve para “saltar a la siguiente canción” sin salir de LIVE.
+- Opciones (franja)
+  Descripción: LED — el color del anillo de este footswitch.
+             DISPARA — envía el comando ya al llamar el preset, sin esperar a que pises.
+             EMPIEZA — el efecto arranca encendido o apagado.
+             INVIERTE — el LED se enciende en apagado en vez de en encendido.
+             En las pestañas CLIC LARGO y RECLICK también está VUELVE: al apagar, la pantalla vuelve
+             a mostrar el ícono del clic corto.
 - ANILLO ÚNICO (interruptor)
-  Descripción: Con dos o tres secciones, el anillo de LED normalmente se reparte — un color por
-             sección. Al activar el ANILLO ÚNICO, los tres píxeles se encienden juntos, en el color
-             de la última sección que tocaste.
-             Útil cuando lo que importa es ver de lejos qué efecto acaba de cambiar, y no el estado
-             de los tres a la vez.
+  Descripción: Con dos o tres secciones, el anillo de LED se reparte — un color por sección. Al
+             activar ANILLO ÚNICO (solo en la pestaña CLIC CORTO), los tres LEDs se encienden
+             juntos, en el color de la última sección que tocaste.
 Observaciones:
-- En caso de duda, empieza solo con el CLICK CORTO. Las otras secciones se pueden añadir después,
+- Si tienes dudas, empieza solo con el CLIC CORTO. Las otras secciones se pueden agregar después,
    sin rehacer nada.
 
-6.4. TAP TEMPO — marcar el tempo con el pie
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Pantalla/vista relacionada: SW — MODO TAP TEMPO
-Objetivo: Marcas el tempo de la canción con el pie y la controladora envía el andamiento al delay (o
-          a lo que quieras).
+6.4. Valores custom
+~~~~~~~~~~~~~~~~~~~
+Pantalla/vista relacionada: VALORES CUSTOM
+Objetivo: Para equipos que no usan 127 para encender y 0 para apagar. Cada valor tiene campo,
+          porcentaje y slider — los tres cambian el mismo número.
 Cómo hacerlo:
-1. Elige el CC de tap de tu aparato y el canal.
-2. Toca SAVE y marca el tempo con el pie, al ritmo de la canción.
+1. Toca el botón de controles junto a CANAL.
+2. Ajusta el VALOR OFF (arriba) y el VALOR ON (abajo): escribiendo, arrastrando el slider o
+   arrastrando el propio número.
 Campos e ítems:
-- El BPM en pantalla (visual)
-  Descripción: Al marcar el tempo, la controladora muestra el BPM en una tarjeta temporal en el
-             visor. Cuánto tiempo permanece — y si muestra el promedio o los dos últimos toques — se
-             ajusta en CONFIGURACIONES › PANTALLA.
-             Apagar esa tarjeta no borra el tempo: sigue valiendo para quien lo usa.
-- Qué más usa la batida (integración)
-  Descripción: El tempo que marcas queda guardado y lo usa el modo STEPS cuando está en SYNC TAP:
-             marcar un tempo nuevo cambia el ritmo de la secuencia que ya suena.
+- Cuándo usarlo (uso)
+  Descripción: Equipos que encienden con 64, parámetros que quieres en 30% y 80%, o un volumen que
+             sube solo hasta donde el solo lo pide. Los mismos valores custom existen en MACROS,
+             MOMENTARY, SPIN, RAMP, TAP TEMPO y SINGLE.
 
-6.5. SINGLE — un comando por toque
+6.5. TAP TEMPO — marca el tempo con el pie
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pantalla/vista relacionada: SW — MODO TAP TEMPO
+Objetivo: Marcas el tempo de la canción con el pie y la controladora lo envía al delay — o hasta a
+          tres destinos.
+Cómo hacerlo:
+1. Elige el CC de tap de tu equipo y el canal. AÑADIR TAP agrega hasta tres destinos.
+2. Para cada uno, elige MODO 1 (envía CC + 127) o MODO 2 (CC + 127 seguido de CC + 0) — depende de
+   lo que espera tu equipo.
+3. Marca el tempo con el pie al ritmo de la canción. El LED parpadea al tempo marcado.
+Campos e ítems:
+- MANTENER (gesto)
+  Descripción: Mantener pisado el footswitch puede enviar otro comando, con CC, canal y valores
+             propios — por ejemplo, encender el afinador. Sin canal en MANTENER, mantenerlo pisado
+             no cambia el ícono de la pantalla.
+- El BPM en la pantalla (visual)
+  Descripción: Al marcar el tempo, la controladora muestra el BPM en una tarjeta temporal. Cuánto
+             tiempo se queda y si muestra el promedio o los dos últimos toques se ajusta en
+             CONFIGURACIÓN › PANTALLA. Apagar la tarjeta no borra el tempo.
+- Quién más usa el pulso (integración)
+  Descripción: El STEPS en SYNC TAP sigue el tempo marcado, y el MODO ESCENARIO muestra el BPM en la
+             barra de arriba. Con una Valeton GP-5 conectada al USB Host y en el Modo Amigable, un
+             destino CC 119 le envía directamente el tiempo del delay en milisegundos.
+
+6.6. SINGLE — un comando por gesto
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Pantalla/vista relacionada: SW — MODO SINGLE
-Objetivo: Cada toque manda siempre el mismo mensaje. Sin estado encendido/apagado, sin alternancia —
-          es un botón de comando puro.
+Objetivo: Cada gesto envía siempre lo mismo. Sin encendido/apagado — es un botón de comando puro,
+          con hasta cuatro mensajes por gesto.
 Cómo hacerlo:
-1. Elige el comando (CC o PC), el valor y el canal.
+1. Elige la pestaña del gesto: CLIC CORTO, CLIC LARGO o RECLICK.
+2. Completa hasta cuatro slots, cada uno CC o PC, con valor y canal.
 Campos e ítems:
 - Cuándo usarlo (uso)
   Descripción: Para comandos que no tienen dos estados: llamar una escena, disparar un sample,
-             avanzar la partitura, poner a cero un looper. También es el modo adecuado para los
-             comandos de navegación de la propia controladora (cambiar banco o preset sin salir del
-             LIVE).
+             avanzar la partitura, borrar un looper. Y para los comandos de navegación de la propia
+             controladora (cambiar de banco o preset sin salir de LIVE), que están al final de la
+             lista de CC, marcados con ».
+- Los SINGLE funcionan en grupo (LED y pantalla)
+  Descripción: Solo el último SINGLE pisado queda encendido, como botones de radio. En la pantalla,
+             los que no fueron los últimos usan los colores de INACTIVO.
 
-6.6. MOMENTARY — solo mientras el pie está encima
+6.7. MOMENTARY — solo mientras el pie está encima
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Pantalla/vista relacionada: SW — MODO MOMENTARY
-Objetivo: Enciende al pisar y apaga al soltar. Es el comportamiento de un timbre, no de un
-          interruptor.
+Objetivo: Enciende al pisar y apaga al soltar: es un botón de timbre, no un interruptor. Hasta
+          cuatro mensajes por toque.
 Cómo hacerlo:
-1. Elige el CC y el canal; ajusta los valores de pisado y suelto si tu aparato no usa 127/0.
+1. Completa hasta cuatro slots con CC y canal; usa los valores custom si el equipo no usa 127/0.
+2. Si quieres, ajusta el comportamiento del LED en TRABA y Fade del LED.
 Campos e ítems:
 - Para qué sirve (uso)
-  Descripción: Efectos que quieres durante un pasaje y no toda la canción: un kill switch, un wah
-             fijo, un freeze, un boost de dos notas. Levantas el pie y se acabó.
+  Descripción: Efectos que quieres durante un pasaje: un kill switch, un freeze, un boost de dos
+             notas. Levantas el pie y se acabó.
+- TRABA y EMPIEZA (LED)
+  Descripción: TRABA hace que el LED quede encendido hasta el siguiente toque, simulando un
+             encendido/apagado — útil cuando el equipo alterna solo con cada pulso. Con la traba,
+             EMPIEZA decide si el LED ya arranca encendido al llamar el preset (solo el LED, sin
+             MIDI).
+- Fade del LED (LED)
+  Descripción: FADE ON y FADE OFF (en milisegundos) hacen que el LED se encienda y se apague
+             despacio; la animación puede ser JUNTOS (los tres LEDs al mismo tiempo) o BARRA
+             (llenándose en secuencia). Solo el LED: el MIDI y la pantalla cambian al instante.
 
-6.7. MACROS — varios comandos en un toque
+6.8. MACROS — varios comandos en un toque
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Pantalla/vista relacionada: SW — MODO MACROS
-Objetivo: Un solo pie manda una secuencia de mensajes de una vez — y manda todo de vuelta al apagar.
+Objetivo: Un pie envía varios mensajes a la vez — y envía los valores de apagado cuando vuelves a
+          pisar.
 Cómo hacerlo:
-1. Rellena los slots con los comandos que deben salir juntos (cada uno con tipo, número, valor y
-   canal).
+1. Completa hasta cuatro slots con los comandos que deben salir juntos, cada uno con su valor ON y
+   OFF.
 2. Si quieres, usa las tres secciones de gesto, como en el STOMP.
 Campos e ítems:
 - El caso típico (ejemplo)
-  Descripción: El “pedalón del estribillo”: un toque enciende el drive, sube el delay, quita el
-             chorus y aumenta el volumen — cuatro aparatos, cuatro mensajes, un solo pie. Al apagar,
-             todo vuelve como estaba.
+  Descripción: El “pedalazo del estribillo”: un toque enciende el drive, sube el delay, quita el
+             chorus y aumenta el volumen — cuatro mensajes, un solo pie. Al apagarlo, todo vuelve a
+             como estaba.
+- Diferencias con el STOMP (detalle)
+  Descripción: MACROS tiene ANILLO ÚNICO y VUELVE, como el STOMP, pero no tiene FAVORITO.
 
-6.8. SPIN — ciclar entre tres valores
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+6.9. SPIN — recorre tres valores en ciclo
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Pantalla/vista relacionada: SW — MODO SPIN
 Objetivo: Cada toque avanza al siguiente de tres valores, en ciclo. El anillo de LED muestra en cuál
           estás.
 Cómo hacerlo:
-1. Elige el CC y el canal, y define los tres valores (PX 1, PX 2 y PX 3).
-2. Si quieres, usa MANTENER para mandar un comando distinto al mantener el pie.
+1. Elige el CC y el canal y define los tres valores. Hasta tres slots envían juntos con cada toque.
+2. Si quieres, usa MANTENER para enviar un comando distinto al mantener pisado el footswitch.
 Campos e ítems:
 - Los tres estados (ciclo)
-  Descripción: Cada toque cicla PX 1 → PX 2 → PX 3 → PX 1, y el LED enciende el píxel del estado
-             actual, en el color elegido. Sirve para tres niveles de ganancia, tres tiempos de
-             delay, tres posiciones de un parámetro.
+  Descripción: Cada toque recorre 1 → 2 → 3 → 1. Sirve para tres niveles de ganancia, tres tiempos
+             de delay, tres posiciones de un parámetro.
+- 3 COLORES (LED)
+  Descripción: Normalmente el anillo enciende un LED por posición, en el mismo color. Al activar 3
+             COLORES, los tres LEDs se encienden juntos y cada posición tiene su propio color — más
+             fácil de leer de lejos.
+- Al llamar el preset (detalle)
+  Descripción: Con el disparo activado, el SPIN ya entra en la posición 1 enviando el primer valor.
+             Desactivado, el LED parpadea esperando el primer toque.
 
-6.9. RAMPA — barrer suavemente
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Pantalla/vista relacionada: SW — MODO RAMPA
+6.10. RAMP — barrido suave
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pantalla/vista relacionada: SW — MODO RAMP
 Objetivo: En vez de saltar de un valor a otro, la controladora recorre todo el camino — como si
-          giraras el knob con la mano.
+          giraras la perilla con la mano.
 Cómo hacerlo:
-1. Define el rango (mínimo y máximo) y los tiempos de subida y bajada.
-2. Elige la curva (LINEAR, EXP, LOG o SINE) y el comportamiento (TOGGLE, HOLD o LOOP).
+1. Define el rango (mínimo y máximo) y los tiempos de SUBIDA y BAJADA.
+2. Elige la CURVA y el COMPORTAMIENTO.
 Campos e ítems:
 - TOGGLE, HOLD y LOOP (comportamiento)
-  Descripción: TOGGLE: cada toque invierte el sentido (sube, luego baja). HOLD: sube mientras el pie
-             está encima y vuelve al soltar. LOOP: sigue yendo y viniendo solo, sin parar.
+  Descripción: TOGGLE: cada toque invierte el sentido. HOLD: sube mientras el pie está encima y
+             vuelve al soltar. LOOP: va y vuelve solo, sin parar.
 - La curva (selección)
-  Descripción: Cambia cómo camina el valor: LINEAR a velocidad constante, EXP lento al principio,
-             LOG rápido al principio, SINE suave en los dos extremos. Marca una diferencia real en
-             volumen y filtro.
+  Descripción: LINEAR a velocidad constante, EXP lento al principio, LOG rápido al principio, SINE
+             suave en los dos extremos. Marca una diferencia real en volumen y filtro.
 Observaciones:
-- La RAMPA solo funciona dentro del modo LIVE — no dispara al llamar el preset.
+- El RAMP solo funciona dentro del modo LIVE — no se dispara al llamar el preset.
 
-6.10. STEPS — secuenciador de CC
+6.11. STEPS — secuenciador de CC
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Pantalla/vista relacionada: SW — MODO STEPS
-Objetivo: Encendido, el footswitch recorre cuatro valores en un mismo CC, en bucle, solo — hasta que
-          lo apagues. Es lo que harías girando un knob al ritmo de la música.
+Objetivo: Encendido, el footswitch recorre cuatro valores en un mismo CC, en loop, solo — como si
+          giraras una perilla al ritmo de la canción.
 Cómo hacerlo:
-1. Elige el CC y el canal de la secuencia y rellena los cuatro valores.
+1. En SECUENCIA, elige el CC y el canal y completa los cuatro valores.
 2. Elige el ritmo: MANUAL (un tiempo en milisegundos por step) o SYNC TAP (una figura musical por
-   step, sobre la batida).
-3. Si quieres, activa el efecto: un segundo CC que recibe ON al empezar y OFF al parar.
+   step, sobre el pulso).
+3. Si quieres, completa ENCENDER EFECTO: un segundo CC que recibe ON al empezar y OFF al parar.
+4. Elige cómo lo acciona el footswitch: ON/OFF o MOMENTÁNEO.
 Campos e ítems:
 - Los cuatro valores (secuencia)
-  Descripción: La secuencia recorre los valores en orden, para siempre: 0 → 40 → 90 → 127 → 0 → …
-             Al encender, el primer step sale al instante; al apagar, para de inmediato, sin
-             terminar el ciclo. Y volver a encender empieza en el primero.
+  Descripción: La secuencia recorre los valores en orden, en loop. Al encenderla, el primer step
+             sale al instante; al apagarla, se detiene de inmediato. Volver a encenderla empieza de
+             nuevo desde el primero.
 - MANUAL × SYNC TAP (ritmo)
-  Descripción: En MANUAL, cada step tiene su tiempo en milisegundos — puedes hacer ritmos
+  Descripción: En MANUAL, cada step tiene su propio tiempo (hasta 2 s) — puedes hacer ritmos
              irregulares.
-             En SYNC TAP, cada step recibe una figura musical medida sobre la batida: marcas un
-             tempo nuevo en el TAP TEMPO y la secuencia cambia con él. La batida puede venir del tap
-             o ser un BPM escrito — y con el BPM escrito este switch ignora el tap a propósito,
-             permitiendo un ritmo fijo aquí mientras otro pie marca el tempo del delay.
-- El efecto (opcional) (envío)
-  Descripción: Un segundo CC, con canal propio, que recibe ON cuando la secuencia empieza y OFF
-             cuando para — normalmente para encender el efecto que se modula. El canal es lo que lo
-             habilita: déjalo en OFF y el modo se vuelve secuenciador puro.
+             En SYNC TAP, cada step recibe una figura musical sobre el pulso. El pulso puede venir
+             del Tap (marcas un tempo nuevo y la secuencia lo sigue) o de un BPM fijo (20 a 300) —
+             con BPM fijo este footswitch ignora el tap, lo que permite un ritmo fijo aquí mientras
+             otro pie marca el tempo del delay.
+- ON/OFF × MOMENTÁNEO (accionamiento)
+  Descripción: ON/OFF: un toque enciende, otro apaga, y la secuencia sigue con el pie afuera.
+             MOMENTÁNEO: funciona solo mientras el footswitch está pisado; al soltarlo, se detiene y
+             envía el OFF del efecto.
 Observaciones:
-- Como la RAMPA, el STEPS solo opera en modo LIVE y no dispara al llamar el preset.
-- El LED parpadea al ritmo de la secuencia, así que ves el andamiento sin mirar la pedalera.
+- Como RAMP, STEPS solo funciona en el modo LIVE (o en el HÍBRIDO). Cambiar de preset también
+   detiene la secuencia.
+- El LED parpadea al ritmo de la secuencia.
 
-6.11. CONTROL — selector A/B
+6.12. CONTROL — selector A/B
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Pantalla/vista relacionada: SW — MODO CONTROL
-Objetivo: Un clic alternando dos destinos: el que entra recibe 127, el que sale recibe 0. Nunca
-          están los dos encendidos ni los dos apagados.
+Objetivo: Un clic alterna entre dos destinos: el que entra recibe 127, el que sale recibe 0. Nunca
+          quedan los dos encendidos ni los dos apagados.
 Cómo hacerlo:
 1. En la pestaña FX 1, elige el CC, el canal y el color del LED del primer destino.
 2. En la pestaña FX 2, haz lo mismo para el segundo.
-3. Elige cuál de los dos empieza activo cuando se llama el preset.
+3. En EMPIEZA EN, elige cuál de los dos entra activo cuando se llama el preset.
 Campos e ítems:
-- Cuándo usar CONTROL en vez de STOMP (concepto)
+- ¿CONTROL o STOMP de dos secciones? (concepto)
   Descripción: Usa CONTROL cuando los dos efectos son alternativas: dos amplificadores, dos canales,
-             dos cabinas — casos en que tener los dos encendidos no tiene sentido.
-             Usa un STOMP de dos secciones cuando son independientes: un drive y un delay que pueden
-             estar encendidos juntos, apagados juntos, o solo uno. En el STOMP además viven en
-             gestos distintos; aquí comparten el mismo clic.
-- Los colores y el visor (visual)
-  Descripción: Cada destino tiene su color, y como no existe estado “apagado”, el anillo nunca se
-             apaga — cambia de color. El nombre y el ícono en pantalla también pueden ser distintos
-             en cada destino.
+             dos gabinetes. Usa un STOMP de dos secciones cuando son independientes y pueden estar
+             encendidos juntos.
+- Los colores y la pantalla (visual)
+  Descripción: Cada destino tiene su propio color de LED y su propio ícono y color de nombre en la
+             pantalla. Como no existe “apagado”, el anillo nunca se apaga — cambia de color.
 Observaciones:
-- El 0 del destino que sale va primero: en aparatos donde los dos comparten el mismo bloque, mandar
-   el 127 antes dejaría los dos encendidos un instante.
+- Los valores son fijos (127 y 0). Para valores propios, usa el STOMP.
+- El 0 del destino que sale va primero: así los dos nunca quedan encendidos al mismo tiempo, ni por
+   un instante.
 
-6.12. MUTE — footswitch sin función
+6.13. MUTE — footswitch sin función
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Pantalla/vista relacionada: SW — MODO MUTE
-Objetivo: El modo para cuando no quieres nada en ese pie. No manda MIDI, no enciende LED, no aparece
-          en el visor.
+Objetivo: El modo para cuando no quieres nada en ese pie: no envía MIDI, no enciende LED, no aparece
+          en la pantalla.
 Campos e ítems:
 - Por qué existe (uso)
-  Descripción: Es el modo por defecto de un footswitch que aún no configuraste — y la forma de
-             desactivar un pie que estaba en uso, sin borrar el resto del preset. Un pie en MUTE
-             simplemente no hace nada al pisarlo.
+  Descripción: Es la forma de desactivar un pie que estaba en uso, sin borrar el resto del preset —
+             y el modo de un footswitch que todavía no quieres usar.
 
-6.13. La apariencia de cada footswitch
+6.14. La apariencia de cada footswitch
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Objetivo: Ícono, sigla y colores del recuadro que representa ese footswitch en el visor de la
-          controladora — en los estados encendido y apagado.
+Pantalla/vista relacionada: APARIENCIA DEL FOOTSWITCH
+Objetivo: Ícono, sigla y colores del cuadrito que representa al footswitch en la pantalla de la
+          controladora — encendido y apagado.
 Cómo hacerlo:
-1. En el panel del footswitch, baja hasta abajo: VISTA PREVIA, FONDO, BORDE, COLOR DEL NOMBRE, ÍCONO
-   / SIGLA y TAMAÑO DE LA FUENTE.
-2. Cada color tiene dos columnas: OFF y ON. Es lo que hace que el efecto “se encienda” en la
-   pantalla.
+1. En la computadora, usa la tercera columna; en el celular, el botón redondo DISPLAY de la tarjeta
+   del footswitch.
+2. Toca VISTA ON o VISTA OFF para elegir el ícono (o la opción TEXTO).
+3. Ajusta FONDO y BORDE (cada uno con OFF y ON), la sigla y el color del nombre.
 Campos e ítems:
 - Ícono y sigla (contenido)
-  Descripción: El ícono viene de una biblioteca integrada (pedales, efectos, símbolos) y también
-             puedes enviar los tuyos en CONFIGURACIONES › IMÁGENES. La sigla es el texto corto de
-             abajo — “DRIVE”, “DLY”, “SOLO”.
-- TAMAÑO DE LA FUENTE (selección)
-  Descripción: AUTO deja que la controladora elija según el espacio; o fíjalo en 9, 12, 18 o 24 pt
-             cuando quieras garantizar legibilidad de lejos.
-             Al elegir un tamaño fijo, vale incluso en layouts de recuadro pequeño. Y si el texto no
-             cabe, la controladora baja un escalón por vez hasta que quepa — una sigla cortada en el
-             escenario parece un defecto.
-             El tamaño es del footswitch entero: el recuadro tiene un solo nombre, y un tamaño por
-             estado haría saltar el texto en cada toque.
+  Descripción: El ícono viene de una biblioteca integrada (pedales, efectos, símbolos) o de las
+             imágenes que subiste en CONFIGURACIÓN › IMÁGENES. La sigla es el texto corto — “DRIVE”,
+             “DLY”, “SOLO” —, de hasta 8 caracteres (6 por estado en SPIN, SINGLE y CONTROL).
+             Los íconos a color (fotos de pedales) se ven tal cual; los de trazo toman el color que
+             elijas.
+- TAMAÑO DE FUENTE (selección)
+  Descripción: AUTO deja que la controladora elija según el espacio; o fíjalo en 9, 12, 18 o 24 pt.
+             Si el texto no cabe, la controladora baja un escalón a la vez hasta que quepa. El
+             tamaño es del footswitch entero, no de cada estado.
 - Colores OFF y ON (colores)
   Descripción: Fondo, borde y color del nombre, cada uno con un valor para apagado y otro para
-             encendido. Bien elegidos, hacen legible el estado del efecto de lejos, sin mirar la
-             pedalera.
+             encendido. Bien elegidos, hacen que el estado del efecto se lea de lejos.
 Observaciones:
-- En los modos con más de un destino (STOMP de varias secciones, CONTROL), cada sección tiene su
-   propio conjunto de ícono y colores.
+- En los modos con pestañas (secciones del STOMP y MACROS, FX 1/FX 2 del CONTROL, posiciones del
+   SPIN, gestos del SINGLE), la pestaña elegida en la tarjeta del modo es la misma aquí — cada
+   sección tiene su propio ícono y sus propios colores.
 
 ========================================================================================
 
-TEMA 7 - CONFIGURACIONES
+TEMA 7 - MODO ESCENARIO
 ----------------------------------------------------------------------------------------
 Página: 4
-Resumen: Catorce destinos, del modo amigable a la copia de seguridad. Todo aquí vale para la
-        controladora entera — no para un preset.
-Introducción: El botón de engranaje en la barra inferior abre este menú. Es la única puerta a las
-        configuraciones de la controladora, y cada cuadrado lleva a una pantalla.
-        A diferencia de lo que editas en la pantalla PRESET, lo que está aquí vale para el aparato
-        entero y queda guardado en una memoria protegida — sobrevive incluso a la reinstalación del
-        editor.
+Resumen: Una pantalla completa, en horizontal y con letras grandes para dejar el celular o la tablet
+        en el atril durante el show: el preset que está sonando, los footswitches y el aparato
+        conectado.
+Introducción: El MODO ESCENARIO convierte el editor en un panel para el show. Son dos pantallas: el
+        ESCENARIO 1 muestra la BFMiDi — el nombre del preset en letras enormes, la imagen de fondo y
+        los footswitches, que puedes encender y apagar con el dedo — y el ESCENARIO 2 muestra el
+        aparato conectado a la controladora — la cadena de efectos y los knobs de la GP-5, la TONEX
+        ONE o la Nano Cortex, editables en vivo.
+        La configuración del escenario (colores, fuente, imágenes) queda solo en el aparato donde lo
+        abriste: nada de esto va a la controladora.
 
-7.1. El menú de configuraciones
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Pantalla/vista relacionada: MENÚ DE CONFIGURACIONES
-Objetivo: Saber dónde buscar cada cosa. Los catorce destinos están agrupados por tema, y ese orden
-          es el mismo de la pantalla.
-Cómo hacerlo:
-1. Toca el engranaje en la barra inferior, desde cualquier pantalla.
-Campos e ítems:
-- Sonido y comportamiento (grupo)
-  Descripción: MODO AMIGABLE — dice cuál es tu pedal, para que el editor hable con nombres.
-             FOOTSWITCHES — los botones que no pertenecen a ningún preset (SW GLOBAL, expresión,
-             switches externos).
-             BANCOS — cómo enciende la controladora y cómo navega el pie entre presets.
-- Apariencia (grupo)
-  Descripción: PANTALLA — layouts, nombres y la tarjeta de BPM.
-             LEDS — brillo y colores de los anillos.
-             IMÁGENES — envío de tus imágenes de fondo e íconos.
-- Máquina y conexiones (grupo)
-  Descripción: HARDWARE — modelo de la placa y uso de memoria.
-             WIFI — red y estado de la conexión.
-             HOST — el módulo USB Host y el Bluetooth.
-- Mantenimiento (grupo)
-  Descripción: EDITOR — preferencias de la app (idioma, guardado automático).
-             ACTUALIZAR — versión del firmware y del editor.
-             BACKUP — copia y restauración de los presets.
-             PRUEBAS — diagnóstico, disparo manual de MIDI y monitor.
-             RESTAURAR — borrar todo y volver al estado de fábrica (por eso está en rojo).
-Observaciones:
-- Algunos destinos solo aparecen en tu modelo si el hardware existe — HOST, por ejemplo, depende del
-   módulo USB Host.
-
-7.2. MODO AMIGABLE — MIDI con nombres
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Pantalla/vista relacionada: CONFIGURACIONES › MODO AMIGABLE
-Objetivo: Decir qué aparato está en cada canal para que el editor muestre “Drive”, “Delay” y
-          “Reverb” en vez de números crudos. Es el ajuste que más tiempo ahorra.
-Cómo hacerlo:
-1. Elige tu aparato en la lista. Si tienes más de uno, activa el modo por canal y mapea cada uno.
-2. A partir de ahí, todos los selectores de PC y CC del editor muestran los nombres reales de ese
-   aparato.
-Campos e ítems:
-- Un aparato o varios (selección)
-  Descripción: Si usas una sola pedalera, elígela y listo. Si tienes un rack con varios aparatos,
-             usa el modo por canal: cada canal MIDI recibe un aparato, y los nombres cambian según
-             el canal del slot que estés editando.
-- CC al entrar y salir del LIVE (número)
-  Descripción: Un CC disparado automáticamente al entrar en modo LIVE (valor 127) y al salir (valor
-             0), por canal. Sirve para aparatos con “modo escena” y “modo stomp” que deben acompañar
-             la pantalla de la controladora.
-- Omitir PC/CC sin nombre (interruptor)
-  Descripción: Esconde de los selectores los números que ese aparato no usa. La lista queda solo con
-             lo que existe de verdad — y mucho más corta.
-- Kemper Player (exclusivo)
-  Descripción: Al elegir KEMPER PLAYER, aparece una tarjeta extra con recursos que solo existen para
-             él: GET NAMES (muestra el nombre del rig en el visor de la controladora), SEGUIR AL
-             KEMPER (cuando cambias de rig en el Kemper, la controladora salta al preset que
-             coincide) y el afinador en pantalla, con estilo (arco, barra o LEDs), velocidad de
-             respuesta y colores del indicador.
-Observaciones:
-- ¿No encuentras tu aparato? Elige GENÉRICO: todo funciona igual, solo que los comandos aparecen por
-   número.
-
-7.3. FOOTSWITCHES — botones fuera del preset
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Pantalla/vista relacionada: CONFIGURACIONES › FOOTSWITCHES
-Objetivo: Los controles que valen siempre, en cualquier preset: el modo de operación de los seis
-          pies, el SW GLOBAL, el pedal de expresión y los footswitches externos.
-Campos e ítems:
-- Modo de operación (PRESET–LIVE / HÍBRIDO) (selección)
-  Descripción: PRESET–LIVE es el funcionamiento estándar: en modo PRESET todos los pies eligen
-             presets; en LIVE, todos controlan funciones.
-             En HÍBRIDO, la controladora divide los footswitches: una parte siempre llama presets y
-             la otra siempre controla efectos — sin cambiar de modo. Bueno para quien quiere las dos
-             cosas a la vez y renuncia a la mitad de los presets por página.
-- SW6 = SW GLOBAL (interruptor)
-  Descripción: En los modelos sin botón global dedicado, este interruptor convierte el SW6 en un SW
-             GLOBAL: deja de llamar el preset 6 y pasa a tener una función fija, igual en todos los
-             presets.
-             Reinicia la controladora al guardar, porque el botón cambia de dueño en el arranque.
-- SW GLOBAL — el footswitch que vale siempre (editor)
-  Descripción: Un footswitch fuera de los presets: la función configurada aquí vale en cualquier
-             banco, preset o modo. Ejecuta los mismos modos que los footswitches normales (STOMP,
-             TAP TEMPO, MACROS…).
-             El uso clásico es el afinador, el tap tempo general o un mute — cosas que quieres
-             alcanzar sin pensar en qué canción estás.
-             En placas con botón LIVE dedicado, puedes jubilarlo de esa función y convertirlo en un
-             segundo SW GLOBAL, independiente del primero.
-- Expresión externa (pedal)
-  Descripción: Activa el pedal de expresión y define el CC y el canal que controla — volumen, wah,
-             mezcla del delay.
-             La LECTURA EN VIVO muestra el valor llegando en tiempo real, y la CALIBRACIÓN le enseña
-             a la controladora dónde está el mínimo y el máximo de tu pedal (pisa a fondo cada lado
-             y captura).
-             Este CC y canal son el valor por defecto: un preset puede tener su propio destino, con
-             el valor EXP en un envío extra.
-- External SW1 y SW2 (editores)
-  Descripción: Dos footswitches externos conectados por cable — sin LED, solo MIDI. Cada uno ejecuta
-             los mismos modos que los demás y vale en cualquier preset.
-             Son la forma barata de ganar dos pies más. También pueden navegar bancos en
-             previsualización, dejando los seis footswitches principales libres para los efectos.
-Observaciones:
-- Las tarjetas que dependen del hardware (expresión, switches externos) solo aparecen en los modelos
-   que tienen esas entradas.
-
-7.4. BANCOS — encender, navegar y combos
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Pantalla/vista relacionada: CONFIGURACIONES › BANCOS
-Objetivo: Cómo despierta la controladora, qué hace cada footswitch en modo BANCO y qué pares de pies
-          disparan atajos.
-Campos e ítems:
-- Inicio Automático (grupo)
-  Descripción: Define en qué preset despierta la controladora al encenderla — y en qué modo (BANCO o
-             LIVE).
-             Al activarlo, el pedal ya sube llamando el preset de la primera canción, enviando todo
-             su MIDI. Enciendes la fuente y estás listo para tocar.
-- Llamada de Presets (rejilla)
-  Descripción: Aquí montas la navegación de la controladora: para cada footswitch (SW1–SW6) y cada
-             gesto (CLICK CORTO y CLICK LARGO), eliges una acción. Doce combinaciones
-             independientes.
-             Las acciones principales: LLAMAR PRESET (llama al instante), STANDBY (abre una
-             previsualización — el visor muestra el destino sin cambiar el sonido, y confirmas
-             después), SUBIR/BAJAR BANCO, las mismas en versión STANDBY, SUBIR/BAJAR PRESET y ENTRAR
-             EN MODO LIVE.
-             Al menos una combinación debe ser LLAMAR PRESET o STANDBY — si no, no quedaría forma de
-             llamar un preset con el pie.
-- STANDBY — pasear sin cambiar el sonido (acción)
-  Descripción: Merece un párrafo propio porque es el recurso que más cambia la vida en el escenario:
-             con STANDBY paseas por bancos y presets mientras la canción suena, viendo en el visor a
-             dónde vas, y el sonido solo cambia cuando confirmas.
-             Es como buscar la próxima canción en medio de la anterior, sin que nadie lo oiga.
-- Combos de Footswitch (pares)
-  Descripción: Pisar dos footswitches juntos dispara una acción. Son nueve pares vecinos — 1+2, 1+3,
-             2+3, 2+4, 2+5, 3+4, 3+6, 4+5 y 5+6 —, cada uno con una acción a tu elección.
-             Además de las acciones de navegación, los combos tienen dos exclusivas: ENCENDER/APAGAR
-             WI-FI y SW_LIVE (entra y sale del modo LIVE).
-             La acción dispara en el instante en que el segundo pie toca, y no existe versión
-             “mantenida”. Los combos valen en modo BANCO; la excepción es SW_LIVE, que sigue
-             funcionando dentro del LIVE — si no, en placas sin botón dedicado, no habría vuelta con
-             el pie.
-- Bancos Activos (selección múltiple)
-  Descripción: Apaga las letras que no usas. La navegación pasa a saltarlas, lo que ahorra clics si
-             solo trabajas con dos o tres bancos.
-             Al menos una letra debe seguir encendida.
-Observaciones:
-- Un footswitch que participa de algún combo activo gana un clic largo un poco más lento — es la
-   holgura que la controladora da para formar el par con los dos pies.
-
-7.5. PANTALLA — layouts, nombres y BPM
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Pantalla/vista relacionada: CONFIGURACIONES › PANTALLA
-Objetivo: La apariencia estándar del visor: cuántos recuadros aparecen, qué se escribe y qué pasa
-          cuando marcas el tempo.
-Campos e ítems:
-- Gig View (selección)
-  Descripción: Elige qué pantallas muestra la controladora en el escenario: ESTÁNDAR (las dos), SOLO
-             PRESET o SOLO LIVE. Sirve para simplificar el visor cuando solo usas uno de los dos
-             modos.
-- Layout del modo LIVE y del modo PRESET (layout)
-  Descripción: El arreglo estándar de las dos pantallas. Los layouts 1 a 4 son fijos (cambian
-             cuántos recuadros caben y su tamaño), LISTA muestra los presets en secuencia y CUSTOM
-             te deja arrastrar cada ícono y elegir el tamaño.
-             En PRESET existe además Ninguno, que es la pantalla clásica solo con el nombre grande.
-             Estos son los valores globales: un preset puede tener su propio layout, y en ese caso
-             manda él.
-- Formato del ícono (selección)
-  Descripción: El formato de los recuadros: ESTÁNDAR, CÍRCULO u OCTÓGONO. Es una elección estética,
-             y vale para las dos pantallas por separado.
-- Mostrar nombres de los presets del banco (interruptor)
-  Descripción: En la pantalla de PRESET, muestra los nombres de los seis presets del banco en lugar
-             de los íconos. Es la opción para quien navega por nombre de canción en vez de por
-             ícono.
-- BPM en la pantalla (grupo)
-  Descripción: Cuando marcas el tap tempo, la controladora muestra el andamiento en una tarjeta
-             temporal. Aquí eliges cuánto tiempo permanece (OFF, 2 s, 5 s o 10 s) y si el número es
-             el absoluto (los dos últimos toques) o el promedio de la secuencia.
-             Dejarlo en OFF solo esconde la tarjeta — el tempo sigue valiendo para quien lo usa,
-             como el modo STEPS.
-
-7.6. LEDS — brillo y colores de los anillos
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Pantalla/vista relacionada: CONFIGURACIONES › LEDS
-Objetivo: Los anillos de LED alrededor de cada footswitch son lo que lees de reojo en el escenario.
-          Aquí se define el brillo y el significado de los colores.
-Campos e ítems:
-- Brillo de los LEDs (rango)
-  Descripción: Vale para todos los anillos. Un escenario oscuro pide brillo bajo (evita deslumbrar);
-             la luz del día pide alto. También es lo que más influye en el consumo.
-- Bancos & Presets — por letra o por switch (selección)
-  Descripción: Decide qué significa el color en modo BANCO. POR LETRA: cada banco tiene su color,
-             así el color te dice en qué banco estás. POR SWITCH: cada footswitch tiene el suyo, así
-             el color te dice qué preset es cuál.
-             Elige según lo que más necesites ver rápido.
-- Vista previa del LED en LIVE (interruptor)
-  Descripción: Deja los footswitches apagados con un brillo tenue en vez de oscuros. Así ves dónde
-             están los efectos incluso antes de encenderlos — útil en la oscuridad.
-             El brillo de esa vista previa se ajusta aparte, porque la idea es ser discreto y no
-             competir con el efecto realmente encendido.
-- LEDs dedicados (colores)
-  Descripción: Los colores que indican MODO LIVE y LAYER 2. Como esos dos estados cambian lo que
-             hacen todos los demás pies, vale la pena elegir colores bien distintos — son el aviso
-             de que estás en otro contexto.
-
-7.7. IMÁGENES — fondos e íconos tuyos
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Pantalla/vista relacionada: CONFIGURACIONES › IMÁGENES
-Objetivo: Enviar tus propias imágenes de fondo y tus íconos al visor de la controladora.
-Cómo hacerlo:
-1. Toca un slot vacío para elegir un archivo de tu aparato.
-2. Ajusta el encuadre y el brillo en el editor que se abre, y guarda en el slot.
-3. Después solo elige esa imagen en COLORES DE LA PANTALLA (fondo) o el ícono en el display de un
-   footswitch.
-Campos e ítems:
-- Fondos e íconos (slots)
-  Descripción: Son dos colecciones: fondos (las imágenes grandes, de pantalla completa) e íconos
-             (los dibujos pequeños de los footswitches). Cada una tiene un número fijo de slots, y
-             la tarjeta muestra cuántos están ocupados.
-             Cuántos slots hay depende del modelo — las placas más nuevas tienen bastante más
-             espacio.
-- El editor de imagen (herramienta)
-  Descripción: Antes de grabar recortas, haces zoom, ajustas brillo y contraste e incluso puedes
-             escribir un texto encima, con fuente, color, tamaño y contorno.
-             Vale la pena oscurecer un poco los fondos: en el escenario, una imagen demasiado clara
-             se come la legibilidad del nombre del preset.
-- Envío en lote (acción)
-  Descripción: Puedes enviar varias imágenes de una vez y dejar que la controladora las distribuya
-             por los slots libres. También hay selección múltiple para borrar varias.
-             Las imágenes son archivos grandes: por el cable USB el envío es bastante más rápido y
-             estable que por Wi-Fi.
-
-7.8. HARDWARE — modelo y memoria
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Pantalla/vista relacionada: CONFIGURACIONES › HARDWARE
-Objetivo: Decirle a la controladora qué placa es, y seguir cuánta memoria ocupan tus presets e
-          imágenes.
-Campos e ítems:
-- Modelo (familia y variante) (selección)
-  Descripción: Primero la familia (BFMIDI 1, 2 o 3), después la variante — NANO, MICRO, 6SW+, 7S y
-             demás. Cada variante tiene su número de footswitches y su layout.
-             Esto no es adorno: es lo que le dice a la controladora qué pines existen. Elegir mal
-             deja footswitches sin función o pines sueltos, así que compáralo con lo que está
-             escrito en tu placa.
-             El editor solo ofrece los modelos compatibles con el procesador del pedal conectado,
-             así que no puedes elegir una placa de otra línea.
-- Almacenamiento (estado)
-  Descripción: Cuánta memoria interna está en uso, separada por presets, imágenes, íconos y
-             configuraciones globales, cada uno con usado, libre y total.
-             Las imágenes e íconos son lo que llena: si una barra está cerca del final, borra lo que
-             no uses antes de intentar enviar más.
-Observaciones:
-- Cambiar el modelo reinicia la controladora — los pines se reconfiguran en el arranque.
-
-7.9. WIFI — red y conexión
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-Pantalla/vista relacionada: CONFIGURACIONES › WIFI
-Objetivo: Ver cómo estás conectado ahora y, si quieres, poner la controladora en tu red de casa.
-Cómo hacerlo:
-1. Toca BUSCAR, elige la red, escribe la contraseña y CONECTAR.
-Campos e ítems:
-- Estado de la conexión (estado)
-  Descripción: Una tarjeta con los cuatro escenarios posibles y el tuyo destacado: sin Wi-Fi, en la
-             red del pedal (AP), en tu router (STA) y por cable USB.
-             Cuando está en el router, muestra el nombre de la red y la dirección para acceder desde
-             cualquier aparato de la casa.
-- BUSCAR y CONECTAR (acciones)
-  Descripción: BUSCAR solo está disponible cuando estás en modo AP o por cable — en STA tumbaría la
-             propia conexión que estás usando.
-             Solo aparecen redes de 2,4 GHz: es limitación del chip. Si la tuya no aparece, activa
-             la banda de 2,4 GHz en el router o escribe el nombre a mano (las redes ocultas
-             funcionan).
-- Por qué usar tu red (ventaja)
-  Descripción: Con la controladora en tu router, el celular no necesita cambiar de red para editar —
-             mantienes internet mientras trabajas en el pedal. Y es el único camino que permite
-             actualizar sin cable, en los modelos que lo admiten.
-Observaciones:
-- La contraseña de la red queda guardada en la memoria protegida de la controladora y sobrevive a
-   las actualizaciones.
-
-7.10. HOST — USB Host y Bluetooth
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Pantalla/vista relacionada: CONFIGURACIONES › HOST
-Objetivo: El módulo que te deja conectar aparatos USB directo a la controladora — y el Bluetooth,
-          que hace lo mismo sin cables.
-Campos e ítems:
-- Estado del USB Host (estado)
-  Descripción: Muestra el fabricante y el producto de lo que está conectado, más la salud del
-             módulo. Si aparece “Esperando”, todavía no se reconoció nada.
-- Modo (USB HOST / TONEX ONE) (selección)
-  Descripción: Elige según el aparato conectado. El modo TONEX ONE existe porque ese pedal habla un
-             protocolo propio; para el resto, usa USB HOST.
-- Traducir Boss MS-3 (interruptor)
-  Descripción: El MS-3 no entiende CC/PC de parámetro: el host convierte al formato propio de Boss.
-             Actívalo solo con un MS-3 (o Katana) conectado — con él activado, los CC 20 a 32 dejan
-             de pasar crudos.
-- Filtro MIDI (selección)
-  Descripción: OMNI deja pasar todos los canales; al elegir un canal, solo ese pasa. El filtro vale
-             para los dos sentidos — de la controladora al aparato USB y de vuelta.
-- Bluetooth BFMiDi (grupo)
-  Descripción: Encendido, el Bluetooth tiene tres funciones — y lo que las separa es quién busca a
-             quién:
-             TECLADO — la controladora se vuelve un teclado Bluetooth; los CC se vuelven teclas y
-             atajos, para controlar programas que no entienden MIDI (partitura, grabador,
-             diapositivas).
-             MIDI — se vuelve una interfaz MIDI inalámbrica llamada BFMiDi y espera: úsalo cuando
-             quien busca es el otro aparato (celular, tablet, computadora).
-             PEDAL — la controladora busca un pedal Bluetooth MIDI que esté parpadeando y se conecta
-             a él, para ganar footswitches inalámbricos.
-Observaciones:
-- Esta pantalla solo existe en los modelos que traen el módulo USB Host — el Bluetooth vive en él.
-
-7.11. EDITOR — preferencias de la aplicación
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Pantalla/vista relacionada: CONFIGURACIONES › EDITOR
-Objetivo: Ajustes de esta pantalla, no de la controladora: idioma de la interfaz y si los cambios se
-          guardan solos.
-Campos e ítems:
-- Guardado automático (interruptor)
-  Descripción: Activado, el editor espera un instante tras cada cambio y guarda solo, sin que toques
-             SAVE.
-             Desactivado (por defecto), nada se graba hasta que lo pidas — y salir del preset
-             descarta el cambio. Quien experimenta mucho suele preferirlo desactivado; quien olvida
-             guardar, activado.
-- Idioma de la interfaz (selección)
-  Descripción: Portugués, inglés o español. Cambia las etiquetas del editor y los textos
-             explicativos de cada tarjeta. El visor de la controladora permanece en inglés.
-Observaciones:
-- Estas preferencias viven en el aparato donde el editor está abierto, no en la controladora:
-   abrirlo en otro celular puede mostrar otro idioma.
-
-7.12. ACTUALIZAR — firmware y editor
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Pantalla/vista relacionada: CONFIGURACIONES › ACTUALIZAR
-Objetivo: Mantener la controladora al día. La pantalla verifica sola al abrir y, si hay novedad, un
-          botón lo resuelve todo.
-Cómo hacerlo:
-1. Abre CONFIGURACIONES › ACTUALIZAR. La verificación empieza sola.
-2. Si hay versión nueva, sigue lo que pida la pantalla y no desconectes el cable durante la
-   grabación.
-Campos e ítems:
-- Las dos piezas (concepto)
-  Descripción: Son dos cosas que se actualizan juntas: el firmware (el programa que corre dentro de
-             la controladora y hace que todo funcione) y el editor (esta pantalla). Van en pareja
-             porque un editor nuevo puede depender de recursos que solo existen en el firmware
-             nuevo.
-- Estado de la verificación (estado)
-  Descripción: BFMIDI ACTUALIZADA — estás en la última. ACTUALIZACIÓN DISPONIBLE — salió una nueva.
-             SIN VERIFICACIÓN — no se pudo consultar.
-             Quien descarga es tu navegador, no la controladora: por eso el pedal no necesita
-             internet, solo el aparato donde el editor está abierto. Conectado solo a la red del
-             propio pedal, es normal que aparezca “sin verificación”.
-- Por cable o por la red (camino)
-  Descripción: Por el cable USB funciona en cualquier modelo y es el camino de rescate — pero
-             sustituye todo el contenido: presets, imágenes e íconos vuelven al paquete de fábrica.
-             Por tu red (en los modelos que lo admiten, y solo con el pedal en tu router) tus
-             presets no se tocan.
-             En cualquier caso, la regla segura es una sola: haz una copia antes.
-Observaciones:
-- Firmware y editor muestran la misma versión. Si aparecen distintos, la instalación quedó a medias
-   — ejecuta la actualización de nuevo.
-
-7.13. BACKUP — copia y restauración
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Pantalla/vista relacionada: CONFIGURACIONES › BACKUP
-Objetivo: Guardar tu trabajo en un archivo — el pedal entero, un banco o un preset — y traerlo de
-          vuelta cuando lo necesites.
-Cómo hacerlo:
-1. Elige el recorte, toca HACER COPIA y guarda el archivo.
-2. Para volver, elige el archivo y toca RESTAURAR.
-Campos e ítems:
-- Copia completa (archivo)
-  Descripción: Todos los presets del pedal. Eliges si quieres incluir imágenes e íconos (hace el
-             archivo unas diez veces mayor, pero es la copia de verdad) y si lleva las
-             configuraciones globales (placa, colores, Wi-Fi, controles).
-             Es la copia que hay que hacer antes de actualizar, antes de prestar el pedal y de vez
-             en cuando.
-- Exportar performance (un banco) (archivo)
-  Descripción: Exporta o importa un banco entero — los seis presets, el repertorio de un show —
-             llevando solo las imágenes e íconos que ese banco usa.
-             Al importar eliges el banco de destino, y se sobrescribe: los presets que no estén en
-             el archivo vuelven al valor por defecto. Es el recorte adecuado para intercambiar
-             repertorio con otra persona.
-- Restaurar las configuraciones globales (detalle)
-  Descripción: Cuando el archivo lleva las configuraciones globales, solo se regraban si son
-             diferentes de las actuales. Es decir: no necesitas restaurarlas tras actualizar el
-             firmware — solo si las borraste.
-Observaciones:
-- Guarda el archivo fuera del celular (nube, computadora). Una copia que vive solo en el aparato que
-   puede romperse no es una copia.
-
-7.14. PRUEBAS — diagnóstico y monitor MIDI
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Pantalla/vista relacionada: CONFIGURACIONES › PRUEBAS
-Objetivo: Descubrir si el problema es el cable, el canal o el comando — sin montar ningún preset.
-Campos e ítems:
-- Prueba de hardware (diagnóstico)
-  Descripción: Tres pruebas de diez segundos: LEDS, DISPLAY y MIDI. Cada una corre dentro de la
-             controladora sin bloquear el resto, y el botón PARAR aborta.
-             Sirven para responder “¿es defecto o es configuración?”: si los LEDs se encienden en la
-             prueba, el problema está en la configuración, no en el hardware.
-- Disparo MIDI (prueba manual) (herramienta)
-  Descripción: Manda un mensaje MIDI al instante, sin preset y sin entrar en LIVE: elige el canal,
-             ajusta el número con los botones y escucha.
-             Es la herramienta adecuada para descubrir a qué comando responde tu procesador —
-             recorres los números hasta que el efecto reacciona, y solo entonces montas el preset.
-             En PC, por encima de 127 la controladora manda el Bank Select junto, igual que un envío
-             de preset.
-- Monitor MIDI (diagnóstico)
-  Descripción: Muestra, en tiempo real, todo lo que la controladora está enviando — con hora, preset
-             de origen y el mensaje. Puedes copiar la lista.
-             Así compruebas si un preset manda realmente lo que crees que manda, y en qué orden.
-Observaciones:
-- Si el disparo manual funciona y el preset no, el problema está en el preset (canal o valor) — no
-   en el cable ni en el aparato.
-
-7.15. RESTAURAR — volver al estado de fábrica
+7.1. Abrir el Modo Escenario y el ESCENARIO 1
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Objetivo: Borrar el contenido de la controladora y empezar de cero. Es el único ítem rojo del menú,
-          y por una buena razón.
+Pantalla/vista relacionada: ESCENARIO 1
+Objetivo: El ESCENARIO 1 es el panel general: el preset de la BFMiDi en letras grandes, la imagen
+          del preset y los íconos de los footswitches — iguales a los de la pantalla de la
+          controladora.
 Cómo hacerlo:
-1. Haz una copia completa antes. No hay forma de deshacerlo después.
+1. En la pantalla PRESET, toca MODO ESCENARIO — siempre es el primer botón de la fila de atajos de
+   la tarjeta PRINCIPAL.
+2. El escenario siempre abre en el ESCENARIO 1. En el celular ocupa toda la pantalla y queda en
+   horizontal.
+3. Toca un ícono de footswitch para encender o apagar el efecto; toca un preset de la fila de abajo
+   para cambiar de canción.
 Campos e ítems:
-- Cuándo tiene sentido usarlo (uso)
-  Descripción: Cuando vas a pasar el pedal a otra persona, cuando quieres reiniciar la organización
-             desde cero, o cuando alguna configuración quedó tan enredada que empezar de nuevo es
-             más rápido que cazar el problema.
-             No hace falta antes de actualizar — la actualización no exige tierra arrasada.
+- El letrero (nombre del preset)
+  Descripción: El nombre del preset en el mayor tamaño que cabe, en hasta dos líneas. Arriba, el
+             banco y el preset (A1) y si la controladora está en MODO PRESET o MODO LIVE; abajo, el
+             aparato del Modo Amigable.
+- La imagen (fondo)
+  Descripción: Por defecto es el mismo fondo de la pantalla de la controladora en ese preset (el de
+             PRESET o el de LIVE, según el modo). En las apps también puedes usar la galería de la
+             app o una foto tuya — mira Las imágenes del escenario.
+- Los footswitches (íconos)
+  Descripción: Los mismos íconos de la pantalla del pedal, con el número y una barrita en el color
+             del LED. Los footswitches sin canal MIDI quedan en blanco, como en la controladora.
+             Tocar el ícono hace lo mismo que un clic corto con el pie: enciende o apaga el efecto y
+             envía el MIDI. Vale para los modos de encendido/apagado — STOMP, MACROS, CONTROL y
+             STEPS (este en LIVE o en el HÍBRIDO); en los demás aparece el aviso “Este modo no
+             enciende/apaga”.
+- Presets del banco (fila)
+  Descripción: Los seis presets del banco actual, con número y nombre. Tocar uno llama ese preset en
+             la controladora, exactamente como pisar su footswitch.
+- La lengüeta superior (barra oculta)
+  Descripción: La barra de controles queda oculta para no robar espacio. Toca la lengüeta de arriba
+             — o cualquier área vacía de la pantalla — para mostrarla. Se oculta sola después de
+             unos segundos.
 Observaciones:
-- Tras restaurar, la controladora vuelve con los presets de fábrica y sin ningún combo configurado.
+- Encender y apagar footswitches desde el escenario requiere la controladora actualizada. Con
+   firmware antiguo el ícono avisa “Actualice la controladora para usarlo”.
+- Sin pedal conectado, el escenario muestra la etiqueta OFFLINE; la conexión en la barra de arriba
+   se convierte en un botón que abre la ventana de conexión.
+
+7.2. La barra de controles
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pantalla/vista relacionada: ESCENARIO 1 — BARRA ABIERTA
+Objetivo: Salir, cambiar entre ESCENARIO 1 y ESCENARIO 2, ver el preset, abrir los ajustes y seguir
+          la conexión y el BPM.
+Campos e ítems:
+- SALIR (botón)
+  Descripción: Cierra el escenario y vuelve al editor. La tecla ESC del teclado hace lo mismo.
+- ESCENARIO 1 / ESCENARIO 2 (botón)
+  Descripción: Un solo botón, que alterna entre las dos pantallas; los dos puntitos indican en cuál
+             estás.
+- PRESET A1 (información)
+  Descripción: El banco y el preset que están sonando en la controladora.
+- AJUSTES (botón)
+  Descripción: Abre la configuración del escenario, en cuatro pestañas. Mira las tarjetas
+             siguientes.
+- Conexión, BPM y reloj (estado)
+  Descripción: Cómo estás conectado (STA, AP o USB), el BPM del último TAP TEMPO marcado en la
+             BFMiDi y, si lo activas, el reloj. Sin pedal, la conexión se convierte en el botón
+             OFFLINE.
+- En el ESCENARIO 2 (extras)
+  Descripción: También aparecen el selector de aparato (GP-5, TONEX, NANO CORTEX, KEMPER) y el botón
+             EDITOR, que abre el editor de preset completo encima del escenario.
+
+7.3. ESCENARIO 2 — el aparato conectado
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pantalla/vista relacionada: ESCENARIO 2 — VALETON GP-5
+Objetivo: Muestra el preset del aparato conectado al USB Host de la controladora, con la cadena de
+          efectos y los knobs — y te deja ajustarlos en vivo.
+Cómo hacerlo:
+1. Abre la barra de controles y toca ESCENARIO 1 para cambiar al ESCENARIO 2.
+2. Toca un bloque de la cadena para ver sus knobs.
+3. Mantén presionado el bloque medio segundo para encender o apagar el efecto.
+4. Arrastra un knob hacia arriba o hacia abajo para cambiar el valor. El sonido cambia al instante.
+Campos e ítems:
+- Qué aparatos (compatibilidad)
+  Descripción: Valeton GP-5, IK TONEX ONE y Neural DSP Nano Cortex conectadas al USB Host de la
+             controladora. El escenario abre en el primer aparato conectado; los demás aparecen en
+             el selector como “no conectado”. El Kemper Player tiene su propia pantalla (tarjeta
+             siguiente).
+- El encabezado (preset del aparato)
+  Descripción: Número y nombre del preset del aparato y, abajo, qué preset de la BFMiDi está
+             sonando. Cuando editas algo aparece EDITADO, SIN GUARDAR. El disquete (GP-5 y Nano
+             Cortex) graba la edición en el aparato; la TONEX ONE graba sola.
+- La cadena de efectos (bloques)
+  Descripción: Cada bloque tiene el LED de encendido, el ícono y la sigla, en el color de la
+             categoría. En la GP-5 la cadena sigue el orden real del patch. Tocar muestra los knobs;
+             mantener presionado enciende y apaga — a propósito, para que un toque accidental en el
+             escenario no apague el efecto.
+- El modelo y los knobs (edición en vivo)
+  Descripción: Tocar el nombre del modelo abre la lista para cambiar el amplificador, el drive o el
+             delay. Los knobs se arrastran en vertical; lo que enciende/apaga se vuelve un
+             interruptor, y las listas avanzan con cada toque. Las flechas aparecen cuando hay más
+             knobs de los que caben.
+- Cambiar el preset del aparato (cómo funciona)
+  Descripción: El escenario muestra y edita el preset que ya está sonando en el aparato; quien
+             cambia el preset es la propia BFMiDi, mediante el PC de cada preset. Pisa o toca un
+             preset de la fila de abajo y el escenario vuelve a leer el aparato.
+Observaciones:
+- En el modo offline, el ESCENARIO 2 avisa que necesita el pedal y ofrece CONECTAR AL PEDAL.
+
+7.4. ESCENARIO 2 con la Nano Cortex
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pantalla/vista relacionada: ESCENARIO 2 — NANO CORTEX
+Objetivo: Con la Neural DSP Nano Cortex, los slots de efecto cambian de color según el efecto
+          cargado, y el preset aparece en el formato de la Nano (A1 a H8).
+Campos e ítems:
+- Aspecto del aparato (tema)
+  Descripción: Con la opción Aspecto del aparato encendida (predeterminado), el ESCENARIO 2 adopta
+             los colores y el estilo de cada pedal: la pantalla azul de la GP-5, el negro con ámbar
+             de la TONEX, el grafito de la Nano Cortex y el verde del Kemper.
+- Cortex Cloud (limitación)
+  Descripción: Mientras la app Cortex Cloud esté conectada a la Nano por Bluetooth, la Nano rechaza
+             la edición por USB. Desconecta Cortex Cloud para editar desde el escenario o desde el
+             editor.
+
+7.5. ESCENARIO 2 con el Kemper Player
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pantalla/vista relacionada: ESCENARIO 2 — KEMPER PLAYER
+Objetivo: Con el Modo Amigable en KEMPER PLAYER, el ESCENARIO 2 muestra el nombre del rig en letras
+          grandes y los footswitches de la BFMiDi como botones de stomp del Kemper.
+Campos e ítems:
+- El nombre del rig (letrero)
+  Descripción: Viene del GET NAMES del Kemper. Actívalo en CONFIGURACIÓN › MODO AMIGABLE, en la
+             tarjeta del Kemper Player.
+- Los stomps (footswitches)
+  Descripción: Cada footswitch de la BFMiDi se convierte en un botón al estilo Kemper, con ícono y
+             los dos LEDs (estado y categoría). Comandos como Delay, Reverb y Wah toman el color de
+             la categoría del Kemper; STOMP A a D, EFFECT X y MOD muestran el nombre del slot. Tocar
+             enciende y apaga, como en el ESCENARIO 1.
+- EDITAR RIG (botón)
+  Descripción: Abre el editor del Kemper encima del escenario. Mientras esté abierto, los
+             footswitches de la controladora quedan en pausa — el botón lo avisa.
+
+7.6. Configuración del escenario — GENERAL
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pantalla/vista relacionada: CONFIGURACIÓN DEL ESCENARIO — GENERAL
+Objetivo: Lo que aparece en los dos escenarios y cómo se comporta la pantalla.
+Campos e ítems:
+- Presets de la BFMIDI abajo (interruptor)
+  Descripción: La fila para cambiar de preset, en los dos escenarios. Los botones pueden mostrar
+             NÚMERO + NOMBRE o SOLO NÚMERO.
+- Conexión, BPM y reloj (interruptores)
+  Descripción: Lo que muestra la barra de arriba. El reloj viene apagado.
+- Mantener la pantalla encendida (interruptor)
+  Descripción: Le pide al celular o a la tablet que no apague la pantalla mientras el escenario esté
+             abierto (en los equipos y navegadores que lo permiten). Activado por defecto.
+- Vibrar al tocar (interruptor)
+  Descripción: Una vibración corta confirma el toque, en los aparatos que vibran.
+Observaciones:
+- Todo en la configuración del escenario se guarda solo en esta app, en este aparato. RESTAURAR
+   PREDETERMINADO vuelve a los ajustes de fábrica sin borrar las imágenes elegidas.
+
+7.7. Configuración del escenario — VISUAL
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pantalla/vista relacionada: CONFIGURACIÓN DEL ESCENARIO — VISUAL
+Objetivo: El aspecto del escenario: fondo, color de acento, fuente, tamaño de los textos, esquinas y
+          paneles.
+Campos e ítems:
+- Fondo y color de acento (colores)
+  Descripción: Ocho fondos (Carbón, Negro, Azul noche, Vino, Bosque, Morado, Reflector, Acero) y
+             nueve colores de acento.
+- Fuente, peso y tamaño (texto)
+  Descripción: Fuente Estándar, Redondeada, Estrecha, Mono o Serifa — todas del propio sistema, para
+             que el escenario abra sin internet. Peso de los títulos, tamaño de los textos (P, M, G,
+             GG) y nombres en mayúsculas.
+- Esquinas, contorno, espaciado y paneles (estilo)
+  Descripción: Esquinas rectas, suaves o redondas; contorno de los paneles; espaciado justo, normal
+             o amplio; paneles sólidos o de vidrio; y el brillo en los elementos activos.
+
+7.8. Configuración del escenario — ESCENARIO 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pantalla/vista relacionada: CONFIGURACIÓN DEL ESCENARIO — ESCENARIO 1
+Objetivo: Cómo el ESCENARIO 1 organiza el nombre, la imagen y los footswitches.
+Campos e ítems:
+- Mostrar la imagen y Diseño de arriba (imagen)
+  Descripción: Con la imagen encendida, elige LADO A LADO (nombre de un lado, imagen del otro — con
+             el lado de la imagen y el espacio del nombre en 35, 50 o 65%) o NOMBRE SOBRE LA IMAGEN.
+- Footswitches (disposición)
+  Descripción: UNA FILA (en orden, 1 a 6) o COMO EN EL PEDAL (dos filas, imitando la controladora).
+- Qué mostrar (interruptores)
+  Descripción: MODO PRESET / LIVE, el modo amigable, el tamaño de los íconos (P, M, G), el número de
+             los footswitches y la barra del LED.
+- Oscurecer los apagados (interruptor)
+  Descripción: Deja los footswitches apagados más tenues, para que lo que está encendido salte a la
+             vista.
+- Tocar el ícono enciende/apaga (interruptor)
+  Descripción: Apagado, los íconos solo muestran el estado y no responden al toque — útil cuando el
+             celular queda al alcance de otras personas en el escenario.
+
+7.9. Las imágenes del escenario
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pantalla/vista relacionada: IMAGEN DEL ESCENARIO Y RECORTE
+Objetivo: En las apps, el fondo del ESCENARIO 1 puede ser la imagen de la controladora, una imagen
+          de la galería de la app o una foto tuya. El recorte vale en cualquier caso.
+Cómo hacerlo:
+1. En AJUSTES › ESCENARIO 1, baja hasta Imagen del escenario.
+2. Elige si vale para TODOS LOS PRESETS o SOLO A1 (el preset actual).
+3. Toca Del display, una imagen de la galería o SUBIR FOTO.
+4. En RECORTE DE LA IMAGEN, arrastra para elegir la parte que aparece y ajusta el ZOOM.
+Campos e ítems:
+- Tus fotos (apps)
+  Descripción: Las fotos subidas se reducen y se guardan solo en la app, en este aparato — nunca van
+             a la controladora y no ocupan su memoria de imágenes. La X de la esquina borra la foto.
+- Galería de la app (apps)
+  Descripción: Fondos listos (acero, luces, humo, galaxia, reflectores, neón, atardecer, tarima) que
+             vienen dentro de las apps.
+- En el navegador (limitación)
+  Descripción: Abierto desde la controladora o desde el sitio web, el escenario usa solo la imagen
+             de la pantalla de la controladora — el recorte sigue disponible.
+- Recorte (ajuste)
+  Descripción: Cada imagen guarda su propio encuadre: arrastra para elegir el punto, usa el zoom
+             (100 a 300%) y CENTRAR para volver al centro.
+
+7.10. Configuración del escenario — ESCENARIO 2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pantalla/vista relacionada: CONFIGURACIÓN DEL ESCENARIO — ESCENARIO 2
+Objetivo: Cómo el ESCENARIO 2 muestra la cadena y los knobs del aparato.
+Campos e ítems:
+- Aspecto del aparato (tema)
+  Descripción: Encendido, cada aparato usa sus propios colores y su estilo. Apagado, el ESCENARIO 2
+             sigue la pestaña VISUAL.
+- Cadena, siglas y color de los bloques (cadena)
+  Descripción: Mostrar o no la cadena de efectos y las siglas en los bloques, y si los bloques usan
+             el color del aparato o el color de acento.
+- Knobs (tamaño y disposición)
+  Descripción: Tamaño (P, M, G) y disposición: EN FILA (con flechas para los que no caben) o TODOS A
+             LA VISTA.
+- Mantener para encender/apagar (tiempo)
+  Descripción: Cuánto tiempo debe quedar el dedo en el bloque para encender o apagar el efecto: 0,3
+             s, 0,45 s (predeterminado), 0,7 s o 1 s.
+- Botón de guardar (interruptor)
+  Descripción: Muestra u oculta el disquete del encabezado — si no quieres arriesgarte a grabar en
+             el escenario, puedes quitarlo.
+
+7.11. En el celular y la tablet
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pantalla/vista relacionada: ESCENARIO 1 — CELULAR EN HORIZONTAL
+Objetivo: En el celular el escenario ocupa toda la pantalla y queda en horizontal, incluso con la
+          rotación automática desactivada.
+Campos e ítems:
+- Pantalla completa (comportamiento)
+  Descripción: En la app de Android el escenario oculta las barras del sistema y bloquea la pantalla
+             en horizontal; deslizar desde el borde muestra las barras por un instante. En el
+             navegador el escenario pide pantalla completa e intenta bloquear la pantalla en
+             horizontal.
+- Donde no se puede girar (comportamiento)
+  Descripción: Si el aparato no permite bloquear la orientación (iPhone, por ejemplo) y lo sostienes
+             en vertical, el escenario se dibuja girado 90° — solo gira el aparato. Los arrastres de
+             los knobs se ajustan solos.
+- Pantalla siempre encendida (comportamiento)
+  Descripción: Con Mantener la pantalla encendida activado (predeterminado), el aparato no apaga la
+             pantalla en medio de la canción.
 
 ========================================================================================
 
-TEMA 8 - RECURSOS AVANZADOS
+TEMA 8 - EDITORES DE PRESET DE LOS APARATOS
+----------------------------------------------------------------------------------------
+Página: 4
+Resumen: Edita en vivo el sonido de la Valeton GP-5, la IK TONEX ONE, la Neural DSP Nano Cortex y el
+        Kemper Player — desde la propia BFMiDi, sin el software de computadora del fabricante.
+Introducción: Con el aparato conectado a la controladora, el editor de la BFMiDi muestra el preset
+        que está sonando en el aparato — bloques, modelos y parámetros — y envía cada ajuste al
+        instante, como las apps de los fabricantes.
+        La GP-5, la TONEX ONE y la Nano Cortex se conectan al puerto USB HOST de la controladora
+        (BFMIDI-3 y BFMIDI-S3). El Kemper Player se conecta al revés: el puerto DEVICE de la
+        controladora va al puerto USB del Player.
+
+8.1. Dónde abrirlo
+~~~~~~~~~~~~~~~~~~
+Pantalla/vista relacionada: ATAJOS CON LOS APARATOS CONECTADOS
+Objetivo: Con el aparato conectado y reconocido, su editor aparece solo como un botón de color en la
+          tarjeta PRINCIPAL.
+Cómo hacerlo:
+1. Conecta el aparato y espera unos segundos.
+2. En la pantalla PRESET, toca el botón del aparato en la fila de atajos (GP-5, TONEX ONE, NANO
+   CORTEX o KEMPER).
+3. O: CONFIGURACIÓN › HOST → tarjeta del aparato → EDITAR PRESET. En el Modo Escenario, el botón
+   EDITOR del ESCENARIO 2.
+Campos e ítems:
+- Los botones de los aparatos (atajos automáticos)
+  Descripción: Aparecen antes de tus atajos, en el color de cada marca, y no quitan ninguno de su
+             lugar. Con dos TONEX ONE en el hub, los botones pasan a ser TONEX 1 y TONEX 2 (la 1 es
+             la del puerto de menor número).
+- Requisitos (antes que nada)
+  Descripción: Controladora con USB Host (BFMIDI-3 o BFMIDI-S3), firmware de la controladora y del
+             USB Host actualizados, y el editor conectado a la controladora (el modo offline no
+             llega al aparato). Con un USB Host antiguo, el botón EDITAR PRESET queda deshabilitado
+             e indica que actualices.
+- Dos aparatos a la vez (límite)
+  Descripción: En un hub USB caben dos aparatos — por ejemplo GP-5 + TONEX ONE. La Nano Cortex
+             necesita más canales USB y funciona sola en el USB Host.
+
+8.2. Valeton GP-5
+~~~~~~~~~~~~~~~~~
+Pantalla/vista relacionada: EDITOR DE PRESET — VALETON GP-5
+Objetivo: Los diez bloques del patch de la GP-5 — noise gate, pre, drive, amp, cab, EQ, modulación,
+          delay, reverb y NS — con cambio de modelo y todos los parámetros. La edición solo queda
+          grabada cuando guardas.
+Cómo hacerlo:
+1. Toca un bloque de la cadena (la lista a la izquierda en la computadora; en el celular, la fila de
+   arriba) para ir hasta él.
+2. Enciende o apaga el bloque con el interruptor a la derecha del nombre; toca el nombre del modelo
+   para cambiarlo.
+3. Ajusta los parámetros con el slider o escribiendo el valor.
+4. Cuando el sonido esté bien, toca GUARDAR EN EL PEDAL. Para volver a lo que estaba grabado,
+   DESCARTAR.
+Campos e ítems:
+- Volumen del patch (parámetro)
+  Descripción: El volumen general del preset, arriba, de 0 a 100.
+- Los bloques (cadena)
+  Descripción: Cada bloque tiene el color de la categoría, el modelo destacado y los parámetros
+             agrupados por función (GAIN, TONE, OUTPUT, TIME, FEEDBACK…). El knob es solo un
+             indicador: el valor se cambia con el slider que está debajo o con la casilla de valor.
+- NOMBRE (texto)
+  Descripción: Hasta 10 caracteres, como en la GP-5. Un nombre más largo se corta al guardar — el
+             editor avisa.
+- GUARDAR EN EL PEDAL y DESCARTAR (acciones)
+  Descripción: La GP-5 solo graba con GUARDAR EN EL PEDAL; el editor lo confirma con “Preset
+             guardado en el pedal.”. Cambiar de preset antes de eso pierde la edición. DESCARTAR
+             recarga el preset grabado.
+             Cerrar con una edición pendiente pregunta qué hacer: guardar, descartar, CERRAR SIN
+             GUARDAR (la edición sigue sonando hasta el próximo cambio de preset) o seguir editando.
+Observaciones:
+- Con el Modo transmisión del USB Host activado (CONFIGURACIÓN › HOST), el editor de la GP-5 no está
+   disponible: en ese modo el host no puede leer el preset.
+
+8.3. IK TONEX ONE
+~~~~~~~~~~~~~~~~~
+Pantalla/vista relacionada: EDITOR DE PRESET — IK TONEX ONE
+Objetivo: El preset que está sonando en la TONEX ONE: amp, gabinete, noise gate, compresor, EQ,
+          modulación, delay y reverb. La TONEX graba sola cada ajuste.
+Campos e ítems:
+- Graba sola (atención)
+  Descripción: La TONEX ONE no tiene “guardar”: cada cambio ya queda en el pedal. Por eso existe
+             VOLVER AL ORIGINAL, que devuelve el preset a como estaba cuando abriste el editor.
+- Los bloques (cadena)
+  Descripción: AMP (gain, presence, depth, volume, mix), CAB (tone model, VIR o apagado), NOISE
+             GATE, COMPRESSOR, EQ de tres bandas y los efectos de MODULATION, DELAY y REVERB —
+             algunos con su posición en la cadena (antes o después del amp).
+- Dos TONEX (hub)
+  Descripción: Con dos TONEX ONE conectadas, cada una tiene su propio editor y su propio canal MIDI
+             (CONFIGURACIÓN › HOST). La TONEX 1 es la que está en el puerto de menor número del hub.
+
+8.4. Neural DSP Nano Cortex
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pantalla/vista relacionada: EDITOR DE PRESET — NANO CORTEX
+Objetivo: Gate, dos efectos antes de la captura, la captura (con gain, nivel y EQ) y tres efectos
+          después — cambiando modelos y ajustando cada parámetro.
+Campos e ítems:
+- La cadena (bloques)
+  Descripción: GATE (reducción en %) → PRE FX 1 y 2 → CAPTURA (slot 1 a 25, con gain, level, bass,
+             mid, treble y volume) → POST FX 1, 2 y 3. El color de cada slot de efecto sigue el tipo
+             del efecto cargado.
+- Guardar (acciones)
+  Descripción: Como en la GP-5: GUARDAR EN EL PEDAL graba, DESCARTAR vuelve a lo grabado. El nombre
+             acepta hasta 32 caracteres (mínimo 4).
+- Cortex Cloud por Bluetooth (limitación)
+  Descripción: Mientras la app Cortex Cloud esté conectada a la Nano por Bluetooth, la Nano no
+             acepta edición por USB. Desconecta Cortex Cloud y el editor vuelve a leer el preset.
+- Sola en el USB Host (limitación)
+  Descripción: La Nano Cortex usa más canales USB que los otros aparatos y no cabe en un hub junto
+             con otro. Conéctala sola al puerto USB HOST.
+Observaciones:
+- La Nano Cortex también muestra el afinador y el nombre del preset en la pantalla de la
+   controladora — mira Integraciones con equipos.
+
+8.5. Kemper Player — EDITAR RIG
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pantalla/vista relacionada: EDITOR DE RIG — KEMPER PLAYER
+Objetivo: Edita en vivo el rig que está sonando en el Kemper Player: stomps, amp, EQ, gabinete,
+          efectos y los Fixed FX — por el mismo cable USB de la controladora.
+Cómo hacerlo:
+1. Conecta el puerto DEVICE de la controladora al puerto USB del Kemper Player y elige KEMPER PLAYER
+   en CONFIGURACIÓN › MODO AMIGABLE.
+2. Conecta el editor a la controladora por Wi-Fi (su cable USB está ocupado con el Player).
+3. Toca el botón KEMPER de la tarjeta PRINCIPAL o EDITAR RIG, en la tarjeta del Kemper Player.
+Campos e ítems:
+- Footswitches en pausa (modo exclusivo)
+  Descripción: Con el editor abierto, la controladora dedica el USB al Kemper: footswitches,
+             afinador y SEGUIR EL KEMPER quedan detenidos. Para salir: cierra el editor, mantén
+             cualquier footswitch durante 2 segundos, o deja el editor 20 segundos sin hablar con la
+             controladora (pestaña en segundo plano, conexión perdida). Ninguna de las salidas
+             cambia el rig ni envía PC o CC.
+- Guardar en el Player (atención)
+  Descripción: El Kemper no acepta “guardar” por MIDI. Para guardar la edición, en el Player: mantén
+             presionado el botón del rig hasta que los LEDs parpadeen y pulsa el mismo botón.
+             Cambiar de rig antes de eso descarta la edición.
+- RELEER y VOLVER AL ORIGINAL (acciones)
+  Descripción: Un knob girado en el propio Player no aparece solo en el editor — toca RELEER. VOLVER
+             AL ORIGINAL deshace lo que cambiaste desde que lo abriste. ¿Cambiaste de rig en el
+             Player? El editor lo detecta y vuelve a leer.
+- Nivel del Player (ajuste)
+  Descripción: En CONFIGURACIÓN › MODO AMIGABLE, tarjeta del Kemper Player, elige el NIVEL DEL
+             PLAYER (I, II o III) igual al de tu Player: el nivel III también muestra los módulos C,
+             D, X y MOD.
+- Valores con el texto del Kemper (detalle)
+  Descripción: La casilla de valor muestra el texto que usa el propio Kemper (“2.5 dB”, “361 ms”).
+             Mientras no llega, aparece una estimación en cursiva.
+Observaciones:
+- El editor del Kemper no abre desde el editor online (sitio https) ni con el editor conectado por
+   cable a la computadora: la pantalla explica lo que falta y te indica el camino.
+
+8.6. Cuando el editor no abre
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Objetivo: Una guía corta, de lo más común a lo más raro.
+Campos e ítems:
+- El botón del aparato no aparece (guía)
+  Descripción: Revisa: (1) la pantalla PRESET está en modo PRESET (los atajos no aparecen en LIVE);
+             (2) el editor está conectado a la controladora, no en el modo offline; (3) el equipo
+             aparece como conectado en CONFIGURACIÓN › HOST; (4) el modelo de la placa es BFMIDI-3 o
+             BFMIDI-S3; (5) en la GP-5, el Modo transmisión está apagado.
+- Se queda “leyendo” y no carga (guía)
+  Descripción: Actualiza el USB Host (CONFIGURACIÓN › ACTUALIZAR › USB HOST). En la Nano Cortex,
+             desconecta Cortex Cloud.
+- El preset cambió solo en el editor (normal)
+  Descripción: Si cambias de preset (desde la BFMiDi o en el aparato), el editor lee el preset nuevo
+             y avisa. En la GP-5 y la Nano, una edición sin guardar se pierde con ese cambio.
+
+========================================================================================
+
+TEMA 9 - CONFIGURACIÓN
 ----------------------------------------------------------------------------------------
 Página: 5
-Resumen: Comandos que la controladora se manda a sí misma, integraciones con aparatos específicos y
-        qué hacer cuando algo no responde.
-Introducción: Nada de esta página es necesario para tocar. Son recursos para quien ya domina lo
-        básico y quiere sacar más de la controladora — o necesita resolver un problema específico.
+Resumen: Quince destinos, del Modo Amigable a la restauración de fábrica. Lo que está aquí vale para
+        toda la controladora — no para un preset.
+Introducción: El engranaje de la barra inferior abre el menú CONFIGURACIÓN, y cada cuadro te lleva a
+        una pantalla. Los mismos destinos pueden convertirse en atajos en la tarjeta PRINCIPAL
+        (CONFIGURACIÓN › EDITOR › ATAJOS).
+        Casi todo aquí se guarda en una memoria protegida de la controladora, que sobrevive a las
+        actualizaciones. Las excepciones son las preferencias del propio editor (tema, idioma,
+        guardado automático, atajos y el nivel del Kemper Player), que quedan en el dispositivo
+        donde lo abriste.
 
-8.1. Comandos de navegación (la controladora hablándose a sí misma)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Objetivo: Además de mandar MIDI hacia fuera, un footswitch puede mandar un comando a la propia
-          controladora — cambiar de banco, preset o capa sin salir del modo LIVE.
+9.1. El menú de configuración
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pantalla/vista relacionada: MENÚ DE CONFIGURACIÓN
+Objetivo: Saber dónde buscar cada cosa. El menú muestra los quince destinos en tres filas de cinco;
+          aquí están agrupados por tema.
 Cómo hacerlo:
-1. En un footswitch en modo SINGLE, abre la lista de comandos y baja hasta el final: los comandos de
-   navegación vienen después de los CC normales, marcados con ».
+1. Toca el engranaje de la barra inferior, en cualquier pantalla.
+Campos e ítems:
+- Sonido y comportamiento (grupo)
+  Descripción: MODO AMIGABLE — cuál es tu equipo, para que el editor hable con nombres.
+             FOOTSWITCHES — lo que no pertenece a un preset: modo de operación, SW GLOBAL, expresión
+             y footswitches externos.
+             BANCOS — cómo arranca la controladora, cómo navega el pie y los combos.
+- Apariencia (grupo)
+  Descripción: PANTALLA — layouts y la tarjeta de BPM. LEDS — brillo y colores de los anillos.
+             IMÁGENES — tus propios fondos e íconos.
+- Máquina y conexiones (grupo)
+  Descripción: HARDWARE — modelo, tiempos de envío y memoria. WIFI, HOST (el USB Host y los equipos
+             conectados) y BLUETOOTH — las tres pestañas de la pantalla de conexiones.
+- Mantenimiento (grupo)
+  Descripción: EDITOR — tema, guardado automático, atajos e idioma. ACTUALIZAR — firmware de la
+             controladora y del USB Host. BACKUP — copias en archivo. PRUEBAS — diagnóstico y
+             monitor MIDI. RESTAURAR — borrar y volver a los valores de fábrica (por eso está en
+             rojo).
+
+9.2. MODO AMIGABLE — MIDI con nombres
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pantalla/vista relacionada: CONFIGURACIÓN › MODO AMIGABLE
+Objetivo: Indicar qué equipo está en cada canal, para que el editor muestre “Delay”, “Reverb” y el
+          nombre de los sonidos en lugar de números.
+Cómo hacerlo:
+1. En la fila CH 1, elige tu equipo en la lista (está organizada por marca y tiene búsqueda).
+2. ¿Tienes más de un equipo? Toca + CANAL y asigna cada canal.
+3. A partir de ahí, todos los selectores de PC y CC del editor muestran los nombres de ese equipo,
+   según el canal del comando.
+Campos e ítems:
+- Un equipo por canal (mapa)
+  Descripción: Cada fila es un canal MIDI (CH 1 a CH 16) con el equipo que escucha en él. GLOBAL
+             significa “sin equipo”: los comandos aparecen solo por número.
+- La lista de equipos (selección)
+  Descripción: Organizada por marca (Valeton, Hotone, Line 6, Fractal, IK, Neural DSP, Kemper, BOSS,
+             Strymon…), con búsqueda por marca o modelo. Los equipos que registraste tú mismo (USER
+             1 a 3) quedan justo debajo de GLOBAL.
+- CC en LIVE (engranaje)
+  Descripción: El engranaje al final de cada fila envía un CC en ese canal AL ENTRAR y AL SALIR del
+             modo LIVE (valores ajustables). Sirve para que los equipos con “modo escena” y “modo
+             stomp” acompañen a la controladora.
+- Omitir PC/CC sin nombre (interruptor)
+  Descripción: Oculta de los selectores los números que el equipo no usa: la lista queda solo con lo
+             que existe.
+Observaciones:
+- ¿No encuentras tu equipo? Regístralo en la tarjeta APARATO PERSONALIZADO, justo debajo.
+
+9.3. Aparato personalizado (USER 1, 2 y 3)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Objetivo: Para equipos que no están en la lista: ponle nombre al equipo, a sus comandos y a sus
+          presets, y el editor pasa a usar esos nombres.
+Cómo hacerlo:
+1. En la tarjeta APARATO PERSONALIZADO, elige USER 1, 2 o 3 y escribe el nombre del equipo.
+2. En la pestaña COMANDOS (CC), toca + AÑADIR e indica el número y lo que hace. Haz lo mismo en
+   PRESETS (PC).
+3. Elige ese USER en un canal del Modo Amigable. Listo: los nombres aparecen en los selectores.
+Campos e ítems:
+- Límites (detalle)
+  Descripción: Nombre del equipo de hasta 24 caracteres; hasta 32 nombres por lista, de hasta 20
+             caracteres cada uno. No se aceptan números repetidos.
+- Dónde se guarda (memoria)
+  Descripción: En la memoria de la controladora, guardado con el botón de guardar (o por el guardado
+             automático). Va incluido en el backup completo cuando incluyes la configuración global.
+
+9.4. Kemper Player y Nano Cortex en el Modo Amigable
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pantalla/vista relacionada: TARJETA KEMPER PLAYER
+Objetivo: Al elegir KEMPER PLAYER o NANO CORTEX en un canal, aparece una tarjeta extra con funciones
+          que solo existen para ellos.
+Campos e ítems:
+- EDITAR RIG y NIVEL DEL PLAYER (Kemper)
+  Descripción: Abre el editor del rig que está sonando (mira Editores de preset de los aparatos). El
+             nivel del Player (I, II o III) decide qué módulos muestra el editor.
+- GET NAMES (nombre en pantalla)
+  Descripción: Muestra en la pantalla de la controladora el nombre del rig del Kemper (o del preset
+             de la Nano Cortex) en lugar del nombre del preset de la BFMiDi. En la Nano, Cortex
+             Cloud tiene que estar desconectado.
+- SEGUIR EL KEMPER (Kemper)
+  Descripción: Cuando cambias el rig en el propio Kemper, la controladora salta al preset que
+             coincide.
+- Afinador en pantalla (afinador)
+  Descripción: Estilo (ARCO, BARRA o LEDS), velocidad de respuesta y los colores del indicador
+             (afinado, cerca, lejos). El afinador se abre con un footswitch que envía el comando de
+             afinador del equipo (CC 31 en el Kemper, CC 43 en la Nano Cortex).
+
+9.5. FOOTSWITCHES — lo que vale en cualquier preset
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pantalla/vista relacionada: CONFIGURACIÓN › FOOTSWITCHES
+Objetivo: Los controles que no pertenecen a ningún preset: el modo de operación, el botón LIVE, el
+          SW GLOBAL, el pedal de expresión y los footswitches externos.
+Campos e ítems:
+- MODO DE OPERACIÓN (selección)
+  Descripción: PRESET–LIVE es el predeterminado: en el modo PRESET los pies eligen presets; en LIVE,
+             controlan funciones. En HÍBRIDO la controladora divide los footswitches: una parte
+             siempre llama presets y la otra siempre controla efectos, sin cambiar de modo.
+- BOTÓN LIVE (interruptor)
+  Descripción: En las placas con botón LIVE dedicado, Usar como SW GLOBAL 2 retira la función de
+             LIVE de ese botón y lo convierte en un segundo SW GLOBAL.
+- SW6 = SW GLOBAL (interruptor)
+  Descripción: En las placas NANO y 6SW+ (que no tienen SW GLOBAL dedicado) y en la BFMIDI-2 6S,
+             convierte el SW6 en un SW GLOBAL. Deja de llamar al preset 6 y también sale de la
+             llamada de presets y de los combos. Reinicia la controladora al guardar.
+- SW GLOBAL (editor)
+  Descripción: Un footswitch que vale en cualquier banco, preset o modo, con los modos de los
+             footswitches del preset — menos STEPS y CONTROL. El uso clásico es el tap tempo
+             general, el afinador o un mute. Toca EDITAR para abrirlo.
+             RESET AL CAMBIAR PRESET devuelve el LED y la pantalla al estado inicial en cada cambio
+             de preset, sin enviar MIDI.
+- EXTERNAL SW1 y SW2 (editores)
+  Descripción: Los dos footswitches externos (entrada 2SW), sin LED, con los mismos modos del SW
+             GLOBAL y válidos en cualquier preset. Cada uno puede tener un indicador en pantalla
+             (sigla, colores y posición) y el mismo reset al cambiar de preset. También tienen dos
+             comandos exclusivos para recorrer bancos en vista previa.
+Observaciones:
+- Las tarjetas que dependen del hardware (botón LIVE, expresión, footswitches externos) solo
+   aparecen en los modelos que tienen esas entradas.
+
+9.6. Expresión externa
+~~~~~~~~~~~~~~~~~~~~~~
+Pantalla/vista relacionada: EXPRESIÓN EXTERNA — ABIERTA
+Objetivo: El pedal de expresión: qué CC controla, la calibración de tu pedal y el rango de salida.
+Cómo hacerlo:
+1. Activa el interruptor de la tarjeta y toca EDITAR.
+2. Elige el CC y el canal (volumen, wah, mix del delay…).
+3. En CALIBRACIÓN, lleva el pedal hasta el final de cada lado y captura el mínimo y el máximo.
+Campos e ítems:
+- LECTURA EN VIVO (estado)
+  Descripción: Muestra el valor que sale en tiempo real, ya con la calibración y el rango aplicados.
+- RANGO DE SALIDA (porcentaje)
+  Descripción: MÍN y MÁX en porcentaje: con el pedal atrás envía el mínimo y con la punta abajo
+             envía el máximo (50% = 64). Un mínimo mayor que el máximo invierte el sentido. Vale
+             también para los destinos EXP de los presets.
+- El predeterminado y el preset (destino)
+  Descripción: El CC y el canal de esta tarjeta son el predeterminado. Un preset con una fila EXP en
+             los envíos extra tiene su propio destino — y activa el pedal incluso con esta tarjeta
+             desactivada.
+
+9.7. BANCOS — arranque, navegación y combos
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pantalla/vista relacionada: CONFIGURACIÓN › BANCOS
+Objetivo: Cómo arranca la controladora, qué hace cada footswitch en el modo PRESET y qué pares de
+          footswitches disparan atajos.
+Campos e ítems:
+- INICIO AUTOMÁTICO (grupo)
+  Descripción: Con INICIAR CON PRESET activado, la controladora arranca en el banco y el preset
+             elegidos, en el modo PRESET o LIVE, enviando todo su MIDI. Conectas la fuente y estás
+             listo para tocar.
+- LLAMADA DE PRESETS (tres pestañas)
+  Descripción: Para cada footswitch y cada gesto, una acción. CLICK CORTO y CLICK LARGO valen en
+             cualquier footswitch. El RECLICK es pisar de nuevo el footswitch del preset que ya está
+             sonando (solo en los footswitches cuyo clic corto es LLAMAR PRESET).
+             De fábrica: corto = LLAMAR PRESET, largo = ENTRAR EN MODO LIVE y reclick = SUBIR BANCO.
+- Las acciones (lista)
+  Descripción: LLAMAR PRESET, STANDBY (muestra el destino en pantalla sin cambiar el sonido, y
+             confirmas después), SUBIR/BAJAR BANCO (también en versión standby), SUBIR/BAJAR PRESET,
+             ENTRAR EN MODO LIVE (solo en el footswitch del preset activo) y NINGUNO. En el clic
+             largo y en el reclick existe además el FAVORITO: ir directo a un banco y preset fijos,
+             llegando en PRESET o en LIVE.
+             Al menos un footswitch tiene que llamar preset (LLAMAR PRESET o STANDBY) — si no, no
+             quedaría forma de cambiar de preset con el pie.
+- STANDBY — recorrer sin cambiar el sonido (acción)
+  Descripción: Con STANDBY recorres bancos y presets mientras suena la música, viendo en pantalla a
+             dónde vas, y el sonido solo cambia cuando confirmas. Es como buscar la siguiente
+             canción en medio de la anterior, sin que nadie lo escuche.
+- COMBOS DE FOOTSWITCH (pares)
+  Descripción: Pisar dos footswitches juntos dispara una acción. Son diez pares — 1+2, 1+3, 1+4,
+             2+3, 2+4, 2+5, 3+4, 3+6, 4+5 y 5+6 — y cada uno recibe una acción: navegación, STANDBY,
+             ENCENDER/APAGAR WI-FI o SW_LIVE (entra y sale del LIVE).
+             Los combos valen en el modo PRESET; el SW_LIVE sigue valiendo dentro del LIVE. Y dentro
+             del LIVE, mantener el par del SW_LIVE medio segundo sale directo al modo PRESET —
+             incluso con la capa 2 activada.
+- BANCOS ACTIVOS (selección)
+  Descripción: Desactiva las letras que no usas: la navegación pasa a saltarlas. Al menos una tiene
+             que seguir activada.
+Observaciones:
+- Un footswitch que participa en un combo activo tiene un clic largo un poco más lento — es el
+   margen para que armes el par con los dos pies.
+- Los combos vienen vacíos de fábrica: ENCENDER/APAGAR WI-FI, por ejemplo, tiene que configurarse
+   aquí.
+
+9.8. PANTALLA — layouts, nombres y BPM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pantalla/vista relacionada: CONFIGURACIÓN › PANTALLA
+Objetivo: La apariencia predeterminada de la pantalla de la controladora: qué aparece en cada modo,
+          la disposición de los íconos y la tarjeta de BPM.
+Campos e ítems:
+- GIG VIEW (selección)
+  Descripción: ESTÁNDAR (las dos pantallas), SOLO PRESET o SOLO LIVE. Además de los interruptores
+             que muestran u ocultan el nombre del preset en LIVE y en BANK.
+- LAYOUT DEL MODO LIVE y DEL MODO PRESET (layout)
+  Descripción: L1 a L4 son arreglos fijos y CUSTOM te deja arrastrar cada ícono y elegir el tamaño
+             (hasta la altura completa de la pantalla). En PRESET existen además NINGUNO (solo el
+             nombre grande) y LISTA (los presets en secuencia). Estos son los valores globales: un
+             preset puede tener su propio layout.
+- Sólo el actual (CUSTOM del LIVE) (interruptor)
+  Descripción: Con el layout CUSTOM en LIVE, Sólo el actual muestra un solo ícono: el del último
+             footswitch pisado, en una posición y un tamaño compartidos. La lista Iconos visibles
+             sigue decidiendo cuáles pueden aparecer.
+- Forma del ícono y nombres del banco (estilo)
+  Descripción: Íconos ESTÁNDAR, CÍRCULO u OCTÓGONO, por separado para cada pantalla. Mostrar nombres
+             de presets del banco cambia los íconos de la pantalla PRESET por los nombres de las
+             canciones, con colores y tamaño ajustables.
+- BPM EN PANTALLA (grupo)
+  Descripción: Cuánto tiempo queda la tarjeta de BPM en pantalla al marcar el tap tempo (OFF, 2, 5 o
+             10 s) y si el número es el ABSOLUTO (los dos últimos toques) o el PROMEDIO (promedio de
+             la secuencia). OFF solo oculta la tarjeta; el tempo sigue valiendo.
+
+9.9. LEDS — brillo y colores de los anillos
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pantalla/vista relacionada: CONFIGURACIÓN › LEDS
+Objetivo: Los anillos alrededor de los footswitches son lo que lees con el rabillo del ojo en el
+          escenario.
+Campos e ítems:
+- Brillo de LEDs (deslizador)
+  Descripción: Vale para todos los anillos. Un escenario oscuro pide brillo bajo; la luz del día,
+             alto.
+- BANCOS Y PRESETS (selección)
+  Descripción: Lo que significa el color en el modo PRESET. POR LETRA: cada banco tiene su color.
+             POR SWITCH: cada footswitch tiene el suyo.
+- Vista previa del LED en LIVE (interruptor)
+  Descripción: Deja los footswitches apagados con un brillo tenue (ajustable) en lugar de totalmente
+             apagados, para que veas dónde están los efectos en la oscuridad.
+- LEDS DEDICADOS (colores)
+  Descripción: Los colores que avisan MODO LIVE y LAYER 2. Elige colores bien distintos: es el aviso
+             de que todos los footswitches cambiaron de función.
+
+9.10. IMÁGENES — tus propios fondos e íconos
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pantalla/vista relacionada: CONFIGURACIÓN › IMÁGENES
+Objetivo: Sube tus propias imágenes de fondo e íconos a la pantalla de la controladora.
+Cómo hacerlo:
+1. Toca FONDO BANK (imágenes de pantalla completa) o ÍCONOS SW (los dibujos de los footswitches).
+2. Toca el + y elige un archivo. Ajusta el recorte y guarda.
+3. Después elige la imagen en COLORES DE PANTALLA (fondo del preset) o en el ícono de un footswitch.
+Campos e ítems:
+- Memoria compartida (barra)
+  Descripción: Las imágenes y los íconos comparten la misma memoria: unos 2,4 MB en las placas S3 y
+             unos 490 KB en las anteriores. La barra muestra cuánto está en uso — y borrar un ícono
+             libera espacio para un fondo, y viceversa.
+             Caben hasta 40 imágenes y 60 íconos; cada imagen puede tener hasta 50 KB y cada ícono
+             hasta 30 KB.
+- El editor de imagen (herramienta)
+  Descripción: Antes de grabar, recortas, haces zoom, ajustas brillo y contraste y puedes escribir
+             un texto encima. Vale la pena oscurecer un poco los fondos: una imagen demasiado clara
+             le quita legibilidad al nombre del preset.
+- En lote (acciones)
+  Descripción: Subir en lote envía varias imágenes de una vez; Seleccionar permite borrar varias.
+             Por el cable USB el envío es más rápido y estable que por Wi-Fi.
+
+9.11. HARDWARE — modelo, tiempos de envío y memoria
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pantalla/vista relacionada: CONFIGURACIÓN › HARDWARE
+Objetivo: Decirle a la controladora qué placa es, ajustar el ritmo del envío MIDI y seguir el uso de
+          la memoria.
+Campos e ítems:
+- MODELO (selección)
+  Descripción: Primero la familia (1, 2, 3 o 3 S3), después la variante (NANO, MICRO, 6SW+, 7S,
+             8SW+…). No es un adorno: es lo que le dice a la controladora qué pines existen. El
+             editor solo ofrece los modelos del procesador del pedal conectado. Cambiar el modelo
+             reinicia la controladora.
+- TIEMPOS DE ENVÍO (pausas)
+  Descripción: Para equipos que pierden mensajes que llegan demasiado rápido. Pausa entre HEADER y
+             LIVE: espera entre el PC/extras del preset y el estado inicial de los footswitches.
+             Pausa por canal: intervalo mínimo entre dos mensajes para un canal (un Bank Select + PC
+             cuenta como uno solo).
+             Usa el mínimo que lo resuelva: durante la pausa la controladora espera, y un pedal de
+             expresión en ese canal queda “escalonado”.
+- STORAGE (estado)
+  Descripción: Cuánta memoria está en uso: Presets, Imágenes e íconos (una sola barra, con el
+             detalle debajo) y Globales.
+- Tarjetas especiales (por modelo)
+  Descripción: En las placas MICRO, REMAPPING gira la pantalla y reorganiza los cuatro footswitches.
+             En la BFMIDI-1 7S, INVERTIR PANTALLA gira la pantalla 180°. Las dos reinician la
+             controladora.
+
+9.12. WIFI — red y conexión
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pantalla/vista relacionada: CONFIGURACIÓN › WIFI
+Objetivo: Ver cómo estás conectado y, si quieres, poner la controladora en tu red de casa.
+Cómo hacerlo:
+1. Conectado por la red del pedal (AP) o por el cable, toca BUSCAR.
+2. Elige tu red, escribe la contraseña y toca CONECTAR. El intento ocurre sin bloquear el pedal.
+Campos e ítems:
+- ESTADO DE LA CONEXIÓN (estado)
+  Descripción: Cuatro cuadros — OFF, AP, STA y USB — con el tuyo resaltado. En la red de casa, la
+             tarjeta muestra la red y la dirección.
+- La red del pedal (fija)
+  Descripción: BFMIDI_WIFI, contraseña bfmidi@editor, dirección http://192.168.4.1 o
+             http://bfmidi.local. Es igual en todas las unidades.
+- BUSCAR y CONECTAR (acciones)
+  Descripción: BUSCAR solo funciona por la red del pedal o por el cable — en la red de casa tumbaría
+             su propia conexión. Solo aparecen redes de 2,4 GHz; las redes ocultas se pueden
+             escribir a mano. La contraseña solo se guarda después de conectar de verdad: si falla,
+             la configuración anterior se mantiene.
+- Por qué usar tu red (ventaja)
+  Descripción: El celular no necesita cambiar de red para editar, y sigues con internet. En las
+             placas S3 es también el camino para actualizar sin cable.
+- WPA antiguo (TKIP) (compatibilidad)
+  Descripción: Déjalo desactivado en redes actuales. Actívalo solo si un router antiguo realmente no
+             conecta.
+Observaciones:
+- La contraseña de tu red queda en la memoria protegida de la controladora y sobrevive a las
+   actualizaciones.
+
+9.13. HOST — el USB Host y los equipos conectados
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pantalla/vista relacionada: CONFIGURACIÓN › HOST
+Objetivo: Los equipos conectados al puerto USB HOST de la controladora: una tarjeta para cada uno,
+          con el canal MIDI y el editor de preset.
+Campos e ítems:
+- USB HOST (estado)
+  Descripción: Cuántos equipos están conectados, si el módulo está respondiendo y la versión de su
+             firmware (con un aviso cuando está desactualizado).
+- Detección automática (modo)
+  Descripción: El USB Host reconoce solo lo que conectaste: los pedales MIDI USB comunes y la IK
+             TONEX ONE funcionan juntos, hasta dos equipos en un hub. No hay modo que elegir.
+- Una tarjeta por equipo (equipos)
+  Descripción: Fabricante, producto, puerto del hub, ID USB, estado y el canal que escucha ese
+             equipo. Cada TONEX ONE tiene su propio canal; los pedales MIDI comunes comparten un
+             filtro. GP-5, TONEX ONE y Nano Cortex tienen el botón EDITAR PRESET.
+- Traducir Boss MS-3 (interruptor)
+  Descripción: El MS-3 (y el Katana) no entienden los CC de parámetro comunes: el host los convierte
+             al formato de Boss. Actívalo solo con ellos conectados.
+- Modo transmisión (más pedales) (interruptor)
+  Descripción: Permite que el host envíe MIDI a hasta cuatro pedales en un hub, en lugar de dos — a
+             cambio, nada vuelve de los pedales: el afinador, el nombre del rig, SEGUIR EL KEMPER y
+             el editor de la GP-5 dejan de funcionar. Con una TONEX ONE conectada, el límite sigue
+             siendo dos.
+- MIDI BFMiDi (host → controladora) (interruptores)
+  Descripción: Habilitar MIDI reverso repite el MIDI que llega de los equipos conectados en las
+             salidas de la controladora (USB DEVICE y DIN5), como un thru/merge. MIDI Control Host
+             BFMIDI deja que un equipo conectado controle la BFMiDi (llamar presets y bancos, entrar
+             en LIVE).
+Observaciones:
+- La pantalla HOST solo funciona en los modelos con USB Host: BFMIDI-3 y BFMIDI-S3.
+- La Nano Cortex funciona sola en el USB Host: no cabe en un hub junto con otro equipo.
+
+9.14. BLUETOOTH — inalámbrico
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pantalla/vista relacionada: CONFIGURACIÓN › BLUETOOTH
+Objetivo: El Bluetooth vive en el módulo USB Host y tiene tres funciones — la diferencia entre ellas
+          es quién busca a quién.
+Campos e ítems:
+- TECLADO (función)
+  Descripción: La controladora se convierte en un teclado Bluetooth: los CC se convierten en teclas
+             y atajos, para controlar programas que no entienden MIDI (partituras, grabadores,
+             diapositivas).
+- MIDI (función)
+  Descripción: Se convierte en una interfaz MIDI inalámbrica llamada BFMiDi y espera: úsala cuando
+             quien busca es el otro equipo (celular, tablet, computadora).
+- PEDAL (función)
+  Descripción: La controladora busca un pedal Bluetooth MIDI que se esté anunciando y se conecta a
+             él, para sumar footswitches inalámbricos.
+- Filtro MIDI del Bluetooth (canal)
+  Descripción: El Bluetooth tiene su propio filtro de canal (OMNI deja pasar todos), separado del
+             filtro de los equipos USB.
+
+9.15. EDITOR — tema, guardado, atajos e idioma
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pantalla/vista relacionada: CONFIGURACIÓN › EDITOR
+Objetivo: Ajustes del editor, no de la controladora: quedan en el dispositivo donde lo abriste.
+Campos e ítems:
+- TEMA (selección)
+  Descripción: CLARO u OSCURO.
+- GUARDADO AUTOMÁTICO (interruptor)
+  Descripción: Activado (el predeterminado), el editor graba solo menos de un segundo después de
+             cada cambio. Desactivado, nada se graba hasta que tocas guardar — y salir del preset
+             descarta el cambio.
+- ATAJOS (interruptores)
+  Descripción: Un interruptor para cada destino del menú: los activados se convierten en botones en
+             la tarjeta PRINCIPAL. El MODO ESCENARIO y los editores de los equipos conectados
+             aparecen siempre, antes de tus atajos.
+- IDIOMA DE LA INTERFAZ (selección)
+  Descripción: Português, English o Español. La pantalla de la controladora permanece en inglés.
+
+9.16. ACTUALIZAR — la controladora
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pantalla/vista relacionada: CONFIGURACIÓN › ACTUALIZAR — PESTAÑA 1
+Objetivo: Mantener la BFMiDi al día. La pantalla verifica sola al abrirse y, si hay novedades, un
+          botón resuelve todo.
+Cómo hacerlo:
+1. Abre CONFIGURACIÓN › ACTUALIZAR. La verificación empieza sola.
+2. Si hay una versión nueva, toca ACTUALIZAR LA BFMiDi (o ACTUALIZAR TODO, en las placas sin USB
+   Host) y sigue la pantalla.
+3. Por cable, el navegador puede pedirte que autorices el puerto de la controladora en medio de la
+   grabación — la tarjeta parpadea para avisarte y muestra cuál elegir. No quites el cable hasta el
+   final.
+Campos e ítems:
+- Las dos pestañas (placas con USB Host)
+  Descripción: 1 BFMiDi es la controladora; 2 USB HOST es el módulo USB Host. Son actualizaciones
+             separadas, hechas en ese orden.
+- Por cable o por la red (camino)
+  Descripción: Por cable (Chrome o Edge en la computadora, o las apps de Mac y Windows) funciona en
+             cualquier modelo. Por la red (OTA) funciona en las placas S3 con el pedal en tu red de
+             casa.
+- COPIA AUTOMÁTICA (interruptor)
+  Descripción: La grabación por cable reemplaza la memoria del pedal. Con la copia automática
+             (activada por defecto), el editor guarda tus presets, imágenes, íconos y aparatos
+             personalizados antes de grabar y devuelve todo después. Desactivada, la controladora
+             vuelve con el paquete de fábrica. Por la red no se borra nada.
+- Estados y botones (estado)
+  Descripción: BFMiDi actualizada (o Equipo actualizado, en las placas sin USB Host), Actualización
+             disponible o Sin verificación (sin internet). VERIFICAR DE NUEVO repite la consulta;
+             FORCE UPDATE reinstala la versión actual. Quien descarga de internet es tu dispositivo,
+             no el pedal; una computadora que ya actualizó antes guarda una copia y puede actualizar
+             incluso sin internet.
+Observaciones:
+- También puedes actualizar desde el sitio de actualización (Update BFMiDi), con la misma copia
+   automática.
+
+9.17. ACTUALIZAR — el USB Host
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pantalla/vista relacionada: CONFIGURACIÓN › ACTUALIZAR — PESTAÑA 2
+Objetivo: El módulo USB Host tiene su propio firmware. Se actualiza con el cable de la computadora
+          conectado directo al puerto HOST y la controladora en la fuente de 9 V — un asistente te
+          guía paso a paso.
+Cómo hacerlo:
+1. Actualiza primero la controladora (pestaña 1).
+2. En la pestaña 2 USB HOST, conecta la fuente de 9 V a la controladora y toca ACTUALIZAR USB HOST.
+3. Sigue el asistente: te pide sacar el cable del puerto DEVICE y conectar la computadora al puerto
+   HOST, y luego graba y verifica.
+4. Al final, vuelve a poner el cable en el puerto DEVICE.
+Campos e ítems:
+- Por qué la fuente de 9 V (obligatorio)
+  Descripción: En esta actualización el cable USB sale del puerto DEVICE y va al HOST. Sin la
+             fuente, la BFMiDi se apaga a mitad del proceso.
+- Lo que necesitas (lista)
+  Descripción: Fuente de 9 V de pedal, un cable USB con punta USB-C para el puerto HOST (de
+             preferencia con la punta rectangular en la computadora), Chrome o Edge en la
+             computadora (o la app BFMiDi de Windows/Mac) y unos 3 minutos. Tus presets no se
+             borran.
+- Si se detiene a mitad de camino (rescate)
+  Descripción: El asistente siempre dice qué pasó — si nada cambió o si el firmware quedó
+             incompleto. Con la grabación incompleta, la pestaña ofrece RECUPERAR; no apagues la
+             controladora antes de intentarlo de nuevo.
+
+9.18. BACKUP — copia y restauración
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pantalla/vista relacionada: CONFIGURACIÓN › BACKUP
+Objetivo: Guardar tu trabajo en un archivo — el pedal entero, un banco o un preset — y traerlo de
+          vuelta cuando lo necesites.
+Campos e ítems:
+- BACKUP COMPLETO (archivo)
+  Descripción: Todos los presets. Elige si incluir imágenes e íconos (el archivo queda bastante más
+             grande, pero es la copia de verdad) y la configuración global (placa, colores,
+             controles, aparatos personalizados). HACER COPIA descarga el archivo; RESTAURAR lo trae
+             de vuelta.
+- EXPORTAR PERFORMANCE (un banco)
+  Descripción: Exporta o importa un banco entero — los seis presets de un show — llevando solo las
+             imágenes e íconos que usa. Al importar, eliges el banco de destino, que se reemplaza.
+- PRESET ÚNICO (un preset)
+  Descripción: Exporta o importa un solo preset (sin imágenes), para llevar una canción de un pedal
+             a otro.
+Observaciones:
+- Guarda los archivos fuera del celular (nube, computadora). Un backup que vive solo en el aparato
+   que se puede romper no es un backup.
+
+9.19. PRUEBAS — diagnóstico y monitor MIDI
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pantalla/vista relacionada: CONFIGURACIÓN › PRUEBAS
+Objetivo: Descubrir si el problema es el cable, el canal o el comando — sin armar ningún preset.
+Campos e ítems:
+- PRUEBA DE HARDWARE (diagnóstico)
+  Descripción: Tres pruebas de diez segundos: LEDS, DISPLAY y MIDI. Si los LEDs se encienden en la
+             prueba, el problema está en la configuración, no en el hardware.
+- DISPARO MIDI (herramienta)
+  Descripción: Envía un PC o un CC al instante, en el canal elegido. Con DISPARO AUTOMÁTICO, cada +
+             o − ya envía — es la forma más rápida de descubrir a qué número responde tu equipo.
+- MONITOR MIDI (diagnóstico)
+  Descripción: Muestra lo que envía la controladora en la llamada de preset y en los disparos en
+             vivo del LIVE, en orden, con la opción de copiar.
+Observaciones:
+- Si el disparo manual funciona y el preset no, el problema está en el preset (canal o valor) — no
+   en el cable ni en el equipo.
+
+9.20. RESTAURAR — borrar y volver a los valores de fábrica
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pantalla/vista relacionada: CONFIGURACIÓN › RESTAURAR
+Objetivo: Borrar los presets o la configuración global y empezar de nuevo. Es el ítem rojo del menú,
+          y por una buena razón.
+Cómo hacerlo:
+1. Haz un backup completo antes. No hay forma de deshacerlo.
+Campos e ítems:
+- BORRAR TODOS LOS PRESETS (irreversible)
+  Descripción: Los 60 presets vuelven al estado en blanco: footswitches en STOMP sin canal (por eso
+             no aparecen en la pantalla) y la capa 2 apagada. Las imágenes, los íconos y los equipos
+             personalizados no se borran.
+- BORRAR CONFIG GLOBAL (irreversible)
+  Descripción: Devuelve colores, brillo, inicio automático, bancos, combos y controles a los valores
+             de fábrica — y también el modelo de la placa. Revisa el modelo en HARDWARE justo
+             después. La red Wi-Fi de casa no se borra.
+- MODO OFFLINE (copia local)
+  Descripción: En el modo offline aparece también REINICIAR COPIA LOCAL, que devuelve la copia
+             guardada en el dispositivo al paquete de fábrica sin tocar la controladora.
+Observaciones:
+- No hace falta restaurar antes de actualizar.
+
+========================================================================================
+
+TEMA 10 - FUNCIONES AVANZADAS
+----------------------------------------------------------------------------------------
+Página: 6
+Resumen: Comandos que la controladora se envía a sí misma, las integraciones con equipos específicos
+        y qué hacer cuando algo no responde.
+Introducción: Nada en esta página es necesario para tocar. Son funciones para quien ya domina lo
+        básico y quiere sacarle más provecho a la controladora — o necesita resolver un problema
+        específico.
+
+10.1. Comandos de navegación (la controladora hablando consigo misma)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Objetivo: Además de enviar MIDI hacia afuera, un footswitch puede enviarle un comando a la propia
+          controladora — cambiar de banco, de preset o de capa sin salir del LIVE.
+Cómo hacerlo:
+1. En cualquier lista de CC de un footswitch (STOMP, SINGLE, MACROS, MOMENTARY, SPIN, TAP TEMPO),
+   desplázate hasta el final: los comandos de navegación vienen después de los CC normales, marcados
+   con ».
 Campos e ítems:
 - » UP BANK y » DOWN BANK (comando)
-  Descripción: Suben y bajan una letra, llamando el preset del banco nuevo. Las letras apagadas en
-             Bancos Activos se saltan.
+  Descripción: Suben y bajan una letra, llamando el preset del banco nuevo. Los bancos desactivados
+             en BANCOS ACTIVOS se saltan.
 - » UP PRESET y » DOWN PRESET (comando)
-  Descripción: Avanzan de un preset al vecino dentro del banco, en ciclo. Así se monta un “próxima
-             canción” con el pie, sin salir del LIVE.
-- » OUT LIVE y » SW_LIVE (comando)
-  Descripción: OUT LIVE sale del modo LIVE y vuelve a la navegación de presets. SW_LIVE es el
-             interruptor: entra y sale.
-             En placas sin botón LIVE dedicado, dejar uno de estos en un footswitch es lo que
-             garantiza el camino de vuelta.
+  Descripción: Pasan al preset vecino dentro del banco, en ciclo (en las placas de cuatro
+             footswitches, solo entre esos cuatro). Es la “próxima canción” con el pie, sin salir
+             del LIVE.
+- » OUT LIVE MODE y » SW_LIVE (comando)
+  Descripción: OUT LIVE MODE sale del LIVE y vuelve a la navegación de presets; SW_LIVE es el
+             interruptor: entra y sale. En las placas sin botón LIVE, tener uno de estos en un
+             footswitch es lo que garantiza la vuelta.
 - » TO LAYER (comando)
-  Descripción: Alterna entre la Layer 1 y la Layer 2 del preset — las dos páginas de funciones. Solo
-             tiene sentido dentro del modo LIVE, y solo si la Layer 2 está activada en ese preset.
-- Navegación en previsualización (switches externos) (comando)
-  Descripción: Los footswitches externos tienen dos comandos exclusivos: subir y bajar banco en
-             previsualización, sin cambiar el sonido, esperando que un footswitch del preset
-             confirme.
-             Es la forma de ganar navegación por previsualización sin gastar ninguno de los seis
-             pies principales.
+  Descripción: Alterna entre la Layer 1 y la Layer 2 del preset. Solo tiene sentido dentro del LIVE,
+             con la Layer 2 activada.
+- Navegación en vista previa (footswitches externos) (comando)
+  Descripción: Los footswitches externos tienen dos comandos exclusivos, » UP BANK STANDBY y » DOWN
+             BANK STANDBY: suben y bajan de banco en vista previa, sin cambiar el sonido, y esperan
+             a que un footswitch del preset confirme.
 Observaciones:
-- Estos comandos no salen por el cable MIDI: los consume la propia controladora.
+- Estos comandos no salen por el cable MIDI: los consume la propia controladora. RAMP y STEPS no los
+   ofrecen.
 
-8.2. Integraciones — Kemper y Valeton GP-5
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Objetivo: Dos aparatos tienen conversaciones propias con la controladora, que van más allá del MIDI
-          común.
+10.2. Integraciones con equipos
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Objetivo: Algunos equipos se comunican con la controladora más allá del MIDI común. Elige el equipo
+          en el Modo Amigable para activar estas funciones.
 Campos e ítems:
 - Kemper Player (integración)
-  Descripción: Al elegir KEMPER PLAYER en el Modo Amigable, la controladora gana: el nombre del rig
-             en el visor, el afinador en pantalla (con estilo y colores ajustables) y el SEGUIR AL
-             KEMPER — cuando cambias de rig en el aparato, la controladora salta sola al preset que
-             coincide.
-             Además, la lista de comandos pasa a incluir los parámetros internos del Kemper por
-             nombre, y no solo los CC genéricos.
+  Descripción: Con el puerto DEVICE de la controladora conectado al USB del Player: el nombre del
+             rig en la pantalla (GET NAMES), el afinador en la pantalla de la controladora (un
+             footswitch enviando CC 31), el SEGUIR EL KEMPER y el editor del rig (EDITAR RIG). La
+             lista de comandos incorpora los parámetros internos del Kemper por nombre (marcados con
+             ◆), y valores como el Transpose aparecen como notas musicales.
 - Valeton GP-5 (integración)
-  Descripción: Conectada por USB, la GP-5 acepta cosas que no existen como CC común. Al elegirla en
-             el Modo Amigable, obtienes sus parámetros internos en la lista de comandos — lo mismo
-             que ajustar sus knobs desde la controladora.
-             Y el TAP TEMPO pasa a mandar el tiempo del delay en milisegundos, en vez de simular
-             golpes: el delay acierta el tempo a la primera.
+  Descripción: Conectada al USB Host: la lista de comandos incorpora los parámetros internos de la
+             GP-5 por nombre — lo mismo que girar sus knobs desde la controladora. En el TAP TEMPO,
+             un destino CC 119 envía el tiempo del delay en milisegundos (hasta 1 s), así el tempo
+             queda exacto desde el primer golpe. Y el editor de preset completo.
+- IK TONEX ONE (integración)
+  Descripción: Conectada al USB Host, se reconoce sola: cambio de preset por el PC de cada preset de
+             la BFMiDi, canal propio para cada TONEX (hasta dos en el hub) y el editor de preset.
+- Neural DSP Nano Cortex (integración)
+  Descripción: Conectada sola al USB Host: el afinador en la pantalla de la controladora (un
+             footswitch enviando CC 43 en el canal de la Nano), el nombre del preset de la Nano en
+             la pantalla (GET NAMES, activado en la tarjeta del Modo Amigable) y el editor de
+             preset. Con el Cortex Cloud conectado por Bluetooth, la Nano rechaza la comunicación
+             por USB.
+- BOSS MS-3 y Katana (integración)
+  Descripción: Con Traducir Boss MS-3 activado (CONFIGURACIÓN › HOST), el USB Host convierte los
+             comandos al formato propio de Boss.
 Observaciones:
-- Las dos integraciones dependen de que el aparato esté conectado al USB Host de la controladora (o
-   la controladora al USB de él, en el caso del Kemper).
+- Los editores de preset se explican en el capítulo Editores de preset de los aparatos.
 
-8.3. Cuando algo no responde
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Objetivo: Una rutina corta para encontrar el problema en el orden correcto, de lo más probable a lo
+10.3. Cuando algo no responde
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Objetivo: Una guía corta para encontrar el problema en el orden correcto, de lo más probable a lo
           más raro.
 Campos e ítems:
-- La pedalera no cambia de sonido (rutina)
+- La pedalera no cambia de sonido (guía)
   Descripción: 1. ¿El cable va de la BFMiDi a la pedalera (MIDI OUT → MIDI IN)?
-             2. ¿El canal del preset es el mismo que escucha la pedalera?
-             3. ¿Tocaste SAVE?
-             4. Usa el DISPARO MIDI en CONFIGURACIONES › PRUEBAS: si ahí funciona, el problema está
-             en el preset; si ni ahí, es el cable o el aparato.
-- No consigo abrir el editor (rutina)
-  Descripción: El Wi-Fi de la controladora se apaga solo tras 90 segundos sin nadie conectado. Apaga
-             y enciende la controladora: el Wi-Fi sube en el arranque y tienes 90 segundos para
-             entrar.
-             Si pasa mucho, configura un combo con la acción ENCENDER/APAGAR WI-FI, o pon la
-             controladora en tu red de casa — así siempre está alcanzable.
-- Un footswitch no hace nada (rutina)
-  Descripción: Comprueba que no esté en MUTE, y que estés en el modo correcto (PRESET × LIVE) — en
-             LIVE hace lo que el preset le asignó, no cambia de preset.
-             Comprueba también el modelo de la placa en CONFIGURACIONES › HARDWARE: un modelo
-             equivocado deja footswitches sin función.
-- No consigo enviar imágenes (rutina)
-  Descripción: Mira el almacenamiento en CONFIGURACIONES › HARDWARE: si la barra de imágenes está
-             llena, borra lo que no uses antes.
-             Y prefiere el cable USB para enviar medios — son archivos grandes, y por Wi-Fi el envío
-             es más lento y más propenso a fallar.
+             2. ¿El canal del preset es el que escucha la pedalera?
+             3. Usa el DISPARO MIDI en CONFIGURACIÓN › PRUEBAS: si ahí funciona, el problema está en
+             el preset; si ni ahí funciona, está en el cable o en el equipo.
+             4. ¿La pedalera pierde los primeros mensajes después de cambiar de preset? Usa los
+             TIEMPOS DE ENVÍO en CONFIGURACIÓN › HARDWARE.
+- No puedo abrir el editor (guía)
+  Descripción: 1. El Wi-Fi del pedal se apaga solo 90 segundos después de encenderlo si nadie se
+             conecta: apaga y enciende la controladora.
+             2. La red es BFMIDI_WIFI, contraseña bfmidi@editor.
+             3. Escribe la dirección con http:// (http://192.168.4.1 o http://bfmidi.local) — sin
+             eso, el navegador busca en Google.
+             4. En la Mac (macOS 15+), dale al navegador el permiso de Red local.
+             5. Último recurso: cable USB + Chrome/Edge, o las aplicaciones de Mac y Windows.
+- Un footswitch no hace nada (guía)
+  Descripción: Verifica que no esté en MUTE y que estés en el modo correcto (PRESET × LIVE). En el
+             modo PRESET, revisa la LLAMADA DE PRESETS: el gesto puede estar en NINGUNO, y ENTRAR EN
+             MODO LIVE solo funciona en el footswitch del preset activo. El editor del Kemper
+             abierto pausa los footswitches (mantén uno presionado 2 s para salir). Revisa también
+             el modelo en HARDWARE.
+- El ícono del footswitch desapareció de la pantalla (guía)
+  Descripción: Su función no tiene canal MIDI: un footswitch sin canal no aparece en la pantalla de
+             la controladora. Asígnale un canal al comando (o usa el FAVORITO, que aparece incluso
+             sin canal).
+- No puedo enviar imágenes (guía)
+  Descripción: Mira la barra de memoria en CONFIGURACIÓN › IMÁGENES: las imágenes y los íconos
+             comparten el mismo espacio. Borra lo que no usas, revisa el tamaño del archivo (hasta
+             50 KB por imagen, 30 KB por ícono) y prefiere el cable USB.
+- La pantalla del pedal quedó apagada después de cambiar el modelo (guía)
+  Descripción: Un modelo equivocado deja la pantalla y los footswitches sin respuesta. Conéctate por
+             Wi-Fi o por cable y elige el modelo correcto en CONFIGURACIÓN › HARDWARE — incluso
+             después de BORRAR CONFIG GLOBAL, que devuelve el modelo al predeterminado.
 Observaciones:
-- Antes de tocar cualquier cosa grande, haz una copia. Es lo que convierte un error en cinco minutos
+- Antes de cambiar algo importante, haz un backup. Es lo que convierte un error en cinco minutos
    perdidos, y no en una noche.
 
 ========================================================================================

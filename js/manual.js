@@ -5,6 +5,12 @@
 "use strict";
 
 (function () {
+  // Mesma versao de cache do index.html: o iframe do snapshot carrega o
+  // css/app.css por conta propria e precisa invalidar junto.
+  var MN_ASSET_V = (document.querySelector('link[href*="manual.css"]') || {})
+    .getAttribute ? (document.querySelector('link[href*="manual.css"]')
+      .getAttribute('href').split('v=')[1] || '1') : '1';
+
   const $ = (sel, root) => (root || document).querySelector(sel);
   const main = $("#mnMain");
   const sidebarInner = $("#mnSidebarInner");
@@ -51,7 +57,8 @@
       exampleMeta: "EXEMPLO",
       previewReal: "Como aparece no app — prévia em CSS do card real",
       realScreen: "A tela real do editor",
-      shotMissing: "Snapshot ausente — rode tools/capture_snapshots.mjs:",
+      shotZoom: "Abrir o print em tamanho real",
+      shotMissing: "Print ausente — rode tools/capture_shots.mjs:",
       previewStomp: "Como aparece no app — card real do modo STOMP",
       previewMode: "Como aparece no app — card real do modo {m}",
       noDescription: "Sem descrição.",
@@ -76,11 +83,12 @@
       // ── Narração dos fluxos ilustrados (acesso-flow / preset-flow) ──
       accS1t: "ABRA O WIFI DO CELULAR",
       accS1s: "Ajustes › Wi-Fi — a rede do pedal aparece na lista",
-      accTap: "TOQUE EM “BFMIDI_WIFI”",
+      accTap: "TOQUE EM “BFMIDI_XXXXXX”",
       accConnect: "CONECTAR",
       accS2t: "DIGITE A SENHA",
-      accS2s: "A senha é fixa, igual para todos os pedais",
+      accS2s: "Veja a senha única na tela da controladora",
       accPw: "SENHA",
+      accDisplayPw: "VEJA A TELA",
       accNoNet: "“Sem internet”? Normal — continue conectado.",
       accS3t: "ABRA O NAVEGADOR",
       accS3s: "Chrome, Safari ou Edge — digite o endereço e confirme",
@@ -88,7 +96,8 @@
       accS4t: "PRONTO — O EDITOR ABRE",
       accS4s: "Sem instalar nada: o app roda dentro do pedal",
       accEdit: "Edite presets, cores e tudo mais por aqui.",
-      accSummary: "REDE: BFMIDI_WIFI · SENHA: bfmidi@editor · ENDEREÇO: 192.168.4.1",
+      accSummary: "REDE E SENHA: NA TELA DO PEDAL · ENDEREÇO: 192.168.4.1",
+      accAria: "Passo a passo: conectar o celular na rede exclusiva BFMIDI_XXXXXX, usar a senha mostrada no pedal e abrir 192.168.4.1",
       ppS1t: "ESCOLHA UM PRESET NO APP",
       ppS1s: "Página PRESET — banco A, toque no botão 1 (ele fica laranja)",
       ppS2t: "DIGA QUAL SOM CARREGAR",
@@ -106,7 +115,12 @@
       ppSong: "Música 1",
       ppBank: "MEU SET",
       hwFamily: "FAMÍLIA",
-      hwVariant: "VARIANTE"
+      hwVariant: "VARIANTE",
+      hwTop: "Vista de cima",
+      hwTopSub: "desenho do painel",
+      hwRear: "Vista de trás / conectores",
+      hwRearSub: "desenho das portas",
+      hwPhoto: "foto do produto"
     },
     en: {
       home: "Home",
@@ -127,7 +141,8 @@
       exampleMeta: "EXAMPLE",
       previewReal: "How it looks in the app — CSS preview of the real card",
       realScreen: "The editor's real screen",
-      shotMissing: "Missing snapshot — run tools/capture_snapshots.mjs:",
+      shotZoom: "Open the screenshot at full size",
+      shotMissing: "Missing screenshot — run tools/capture_shots.mjs:",
       previewStomp: "How it looks in the app — real STOMP mode card",
       previewMode: "How it looks in the app — real {m} mode card",
       noDescription: "No description.",
@@ -151,11 +166,12 @@
       pageFull: "Full Manual",
       accS1t: "OPEN YOUR PHONE'S WIFI",
       accS1s: "Settings › Wi-Fi — the pedal's network shows up in the list",
-      accTap: "TAP “BFMIDI_WIFI”",
+      accTap: "TAP “BFMIDI_XXXXXX”",
       accConnect: "CONNECT",
       accS2t: "TYPE THE PASSWORD",
-      accS2s: "The password is fixed, the same for every pedal",
+      accS2s: "See the unique password on the controller display",
       accPw: "PASSWORD",
+      accDisplayPw: "SEE DISPLAY",
       accNoNet: "“No internet”? That's normal — stay connected.",
       accS3t: "OPEN THE BROWSER",
       accS3s: "Chrome, Safari or Edge — type the address and confirm",
@@ -163,7 +179,8 @@
       accS4t: "DONE — THE EDITOR OPENS",
       accS4s: "Nothing to install: the app runs inside the pedal",
       accEdit: "Edit presets, colors and everything else here.",
-      accSummary: "NETWORK: BFMIDI_WIFI · PASSWORD: bfmidi@editor · ADDRESS: 192.168.4.1",
+      accSummary: "NETWORK AND PASSWORD: ON PEDAL DISPLAY · ADDRESS: 192.168.4.1",
+      accAria: "Step by step: connect the phone to the unique BFMIDI_XXXXXX network, use the password shown on the pedal and open 192.168.4.1",
       ppS1t: "CHOOSE A PRESET IN THE APP",
       ppS1s: "PRESET page — bank A, tap button 1 (it turns orange)",
       ppS2t: "TELL IT WHICH SOUND TO LOAD",
@@ -181,7 +198,12 @@
       ppSong: "Song 1",
       ppBank: "MY SET",
       hwFamily: "FAMILY",
-      hwVariant: "VARIANT"
+      hwVariant: "VARIANT",
+      hwTop: "Top view",
+      hwTopSub: "panel drawing",
+      hwRear: "Rear view / connectors",
+      hwRearSub: "port drawing",
+      hwPhoto: "product photo"
     },
     es: {
       home: "Inicio",
@@ -202,7 +224,8 @@
       exampleMeta: "EJEMPLO",
       previewReal: "Cómo se ve en la app — vista previa CSS de la tarjeta real",
       realScreen: "La pantalla real del editor",
-      shotMissing: "Falta el snapshot — ejecuta tools/capture_snapshots.mjs:",
+      shotZoom: "Abrir la captura en tamaño real",
+      shotMissing: "Falta la captura — ejecuta tools/capture_shots.mjs:",
       previewStomp: "Cómo se ve en la app — tarjeta real del modo STOMP",
       previewMode: "Cómo se ve en la app — tarjeta real del modo {m}",
       noDescription: "Sin descripción.",
@@ -226,11 +249,12 @@
       pageFull: "Manual Completo",
       accS1t: "ABRE EL WIFI DEL CELULAR",
       accS1s: "Ajustes › Wi-Fi — la red del pedal aparece en la lista",
-      accTap: "TOCA “BFMIDI_WIFI”",
+      accTap: "TOCA “BFMIDI_XXXXXX”",
       accConnect: "CONECTAR",
       accS2t: "ESCRIBE LA CONTRASEÑA",
-      accS2s: "La contraseña es fija, igual para todos los pedales",
+      accS2s: "Mira la contraseña única en la pantalla de la controladora",
       accPw: "CONTRASEÑA",
+      accDisplayPw: "MIRA LA PANTALLA",
       accNoNet: "¿“Sin internet”? Es normal — permanece conectado.",
       accS3t: "ABRE EL NAVEGADOR",
       accS3s: "Chrome, Safari o Edge — escribe la dirección y confirma",
@@ -238,7 +262,8 @@
       accS4t: "LISTO — EL EDITOR ABRE",
       accS4s: "Sin instalar nada: la app corre dentro del pedal",
       accEdit: "Edita presets, colores y todo lo demás aquí.",
-      accSummary: "RED: BFMIDI_WIFI · CONTRASEÑA: bfmidi@editor · DIRECCIÓN: 192.168.4.1",
+      accSummary: "RED Y CONTRASEÑA: EN LA PANTALLA DEL PEDAL · DIRECCIÓN: 192.168.4.1",
+      accAria: "Paso a paso: conectar el celular a la red exclusiva BFMIDI_XXXXXX, usar la contraseña mostrada en el pedal y abrir 192.168.4.1",
       ppS1t: "ELIGE UN PRESET EN LA APP",
       ppS1s: "Página PRESET — banco A, toca el botón 1 (se pone naranja)",
       ppS2t: "DI QUÉ SONIDO CARGAR",
@@ -256,7 +281,12 @@
       ppSong: "Canción 1",
       ppBank: "MI SET",
       hwFamily: "FAMILIA",
-      hwVariant: "VARIANTE"
+      hwVariant: "VARIANTE",
+      hwTop: "Vista superior",
+      hwTopSub: "dibujo del panel",
+      hwRear: "Vista trasera / conectores",
+      hwRearSub: "dibujo de los puertos",
+      hwPhoto: "foto del producto"
     }
   };
   let mnLang = (localStorage.getItem("mn-lang") || "").toLowerCase();
@@ -686,7 +716,7 @@
 
     const svg = `
     <svg viewBox="0 0 560 ${total}" xmlns="http://www.w3.org/2000/svg" role="img"
-         aria-label="Passo a passo: conectar o celular na rede BFMIDI_WIFI, digitar a senha, abrir o navegador em 192.168.4.1 e usar o editor">
+         aria-label="${esc(t("accAria"))}">
       <defs>
         <linearGradient id="mnAccAccentV" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0" stop-color="#ff8a3a"/>
@@ -705,7 +735,7 @@
       <rect x="${px + pw - 52}" y="${p1y + 32}" width="30" height="16" rx="8" fill="#30d158"/>
       <circle cx="${px + pw - 30}" cy="${p1y + 40}" r="6.5" fill="#fff"/>
       ${netRow(px + 20, p1y + 60, pw - 40, "Casa_2G", false)}
-      ${netRow(px + 20, p1y + 98, pw - 40, "BFMIDI_WIFI", true)}
+      ${netRow(px + 20, p1y + 98, pw - 40, "BFMIDI_XXXXXX", true)}
       ${netRow(px + 20, p1y + 136, pw - 40, "Vizinho_5G", false)}
       ${tap(px + pw - 58, p1y + 113)}
       <text x="280" y="${p1y + p1h - 14}" ${mono} font-size="9" letter-spacing="1" text-anchor="middle" style="fill:var(--accent)">${t("accTap")}</text>
@@ -715,10 +745,10 @@
       <!-- PASSO 2: digitar a senha -->
       ${step(2, p2y - 28, t("accS2t"), t("accS2s"))}
       ${phone(px, p2y, pw, p2h)}
-      <text x="${px + pw / 2}" y="${p2y + 46}" ${sysf} font-size="12.5" font-weight="800" text-anchor="middle" style="fill:var(--text)">BFMIDI_WIFI</text>
+      <text x="${px + pw / 2}" y="${p2y + 46}" ${sysf} font-size="12.5" font-weight="800" text-anchor="middle" style="fill:var(--text)">BFMIDI_XXXXXX</text>
       <text x="${px + 22}" y="${p2y + 72}" ${mono} font-size="8" letter-spacing="1.2" style="fill:var(--faint)">${t("accPw")}</text>
       <rect x="${px + 20}" y="${p2y + 80}" width="${pw - 40}" height="34" rx="9" style="fill:var(--card-2);stroke:#ff6a1f;stroke-width:1.6"/>
-      <text x="${px + 32}" y="${p2y + 102}" ${mono} font-size="12.5" font-weight="700" style="fill:var(--accent)">bfmidi@editor</text>
+      <text x="${px + 32}" y="${p2y + 102}" ${mono} font-size="12.5" font-weight="700" style="fill:var(--accent)">${t("accDisplayPw")}</text>
       <rect x="${px + 20}" y="${p2y + 128}" width="${pw - 40}" height="32" rx="9" fill="#ff6a1f"/>
       <text x="${px + pw / 2}" y="${p2y + 148}" ${mono} font-size="11" font-weight="800" letter-spacing="1.5" text-anchor="middle" fill="#16161a">${t("accConnect")}</text>
       ${tap(px + pw - 48, p2y + 144)}
@@ -1502,7 +1532,7 @@
       `<svg viewBox="0 0 48 48" ${icoCommon} stroke-width="2.2"><line x1="24" y1="40" x2="24" y2="9"/><path d="M20 13 L24 7 L28 13"/><circle cx="24" cy="41" r="2.1" fill="currentColor" stroke="none"/><path d="M24 23 L31.5 18.5"/><circle cx="33" cy="17.5" r="2.4"/><path d="M24 29 L16.5 24.5"/><rect x="12.5" y="21.5" width="5.2" height="5.2" rx="0.6" fill="currentColor" stroke="none"/></svg>`
     ];
     const stateTxts = [
-      "Sua controladora não está conectada a nenhum WiFi. Conecte-se ao WiFi BFMIDI_WIFI com a senha bfmidi@editor.",
+      "Sua controladora não está conectada a nenhum WiFi. Conecte-se ao WiFi BFMIDI_XXXXXX e veja a senha na tela do pedal.",
       "Sua controladora está conectada diretamente ao WiFi da controladora.",
       "Sua controladora está conectada ao seu roteador.",
       "Sua controladora está se comunicando via USB."
@@ -2081,10 +2111,14 @@
     { id: "BFMIDI-3 MICRO", tag: "BFMIDI-3", switches: 4, size: "2x2 LAYOUT" },
     { id: "BFMIDI-3 6SW+", tag: "BFMIDI-3", switches: 6, size: "2x3 LAYOUT" },
     { id: "BFMIDI-3 7S", tag: "BFMIDI-3", switches: 8, size: "3x3 GRID" },
-    { id: "BFMIDI-3 7SW+", tag: "BFMIDI-3", switches: 8, size: "3x3 GRID" }
+    { id: "BFMIDI-3 7SW+", tag: "BFMIDI-3", switches: 8, size: "3x3 GRID" },
+    { id: "BFMIDI-S3 8SW+", tag: "BFMIDI-S3", switches: 8, size: "6 + LIVE + GLOBAL" },
+    { id: "BFMIDI-S3 NANO+", tag: "BFMIDI-S3", switches: 6, size: "2x3 LAYOUT" },
+    { id: "BFMIDI-S3 MICRO", tag: "BFMIDI-S3", switches: 4, size: "2x2 LAYOUT" },
+    { id: "BFMIDI-S3 6SW+", tag: "BFMIDI-S3", switches: 6, size: "2x3 LAYOUT" }
   ];
-  const MN_CONNECTION_FAMILIES = ["BFMIDI-1", "BFMIDI-2", "BFMIDI-3"];
-  let mnConnectionsModel = "BFMIDI-3 7S";
+  const MN_CONNECTION_FAMILIES = ["BFMIDI-1", "BFMIDI-2", "BFMIDI-3", "BFMIDI-S3"];
+  let mnConnectionsModel = "BFMIDI-S3 8SW+";
 
   /* ─────────── Desenhos de hardware por modelo (seção Hardware) ───────────
      SVGs das vistas superior/traseira, fieis aos desenhos de referencia.
@@ -2631,7 +2665,21 @@
 
   // Mapa modelo -> desenhos {top, rear}. startsWith cobre as variantes
   // (BFMIDI-1 7S_A1/_B1/_C1 compartilham o mesmo painel).
+  // Família S3: fotos do produto (as mesmas da vitrine), em vez de desenho.
+  const MN_HW_PHOTOS = {
+    "BFMIDI-S3 8SW+":  ["8sw-top.webp", "8sw-rear.webp"],
+    "BFMIDI-S3 NANO+": ["nano-top.webp", "nano-rear.webp"],
+    "BFMIDI-S3 MICRO": ["micro-hero-md.webp", "micro-rear.webp"],
+    "BFMIDI-S3 6SW+":  ["6sw-hero-md.webp", "6sw-rear.webp"]
+  };
+  function mnHwPhoto(file, alt) {
+    return '<img class="mn-hw-photo" src="img/hw/' + file + '" alt="' + esc(alt) + '" loading="lazy" decoding="async">';
+  }
   function mnHwSvgsFor(modelId) {
+    if (MN_HW_PHOTOS[modelId]) {
+      const f = MN_HW_PHOTOS[modelId];
+      return { top: mnHwPhoto(f[0], modelId + " — " + t("hwTop")), rear: mnHwPhoto(f[1], modelId + " — " + t("hwRear")), photo: true };
+    }
     if (modelId.indexOf("BFMIDI-1 7S") === 0) {
       return { top: mnHwTopSvg17s(), rear: mnHwRearSvg17s() };
     }
@@ -2728,7 +2776,7 @@
             <div class="bfg-variant-list">
               ${variants.map((v) => {
                 const on = current.id === v.id;
-                const name = v.id.replace(/^BFMIDI-\d+\s*/, "");
+                const name = v.id.replace(/^BFMIDI-S?\d+\s*/, "");
                 const sub = `${v.switches} SW · ${v.size}`;
                 return `
                   <button type="button" class="bfg-variant-row${on ? " is-on" : ""}"
@@ -2742,8 +2790,8 @@
               }).join("")}
             </div>
             <div class="mn-svg-grid">
-              ${svgSlot("vista1", "Vista superior/frontal", "desenho SVG do hardware", hwSvgs && hwSvgs.top)}
-              ${svgSlot("vista2", "Vista traseira/conectores", "desenho SVG das portas", hwSvgs && hwSvgs.rear)}
+              ${svgSlot("vista1", t("hwTop"), hwSvgs && hwSvgs.photo ? t("hwPhoto") : t("hwTopSub"), hwSvgs && hwSvgs.top)}
+              ${svgSlot("vista2", t("hwRear"), hwSvgs && hwSvgs.photo ? t("hwPhoto") : t("hwRearSub"), hwSvgs && hwSvgs.rear)}
             </div>
           </div>
         </div>
@@ -3269,206 +3317,292 @@
     return typeof raw === "string" ? { html: raw, w: 0, h: 0 } : raw;
   }
 
-  function shotHtml(card) {
-    var data = shotData(card.shot);
-    if (!data) return null;
-    if (!card.shotOf) return data.html;
-    var box = document.createElement("div");
-    box.innerHTML = data.html;
-    var part = box.querySelector(card.shotOf);
-    return part ? part.outerHTML : data.html;
+
+  /* --------- SNAPSHOT: a tela real, dentro de um iframe ---------
+     Por que iframe e nao uma <div>: o CSS do editor depende da JANELA.
+       . media queries - o app tem layout de celular abaixo de 900px; numa
+         <div> elas leem a janela do LEITOR, entao a tela do manual caia no
+         layout errado (era isso que "esticava" as telas);
+       . unidades vw/vh - a letra do banco e clamp(72px, 22vw, 150px);
+       . display:contents - `.bf-bank-console` nao gera caixa: quem posiciona
+         os tiles e o grid do PAI, entao o pedaco so se monta no contexto dele;
+       . variaveis :root - o css/manual.css carrega depois do app.css e
+         sobrescrevia a paleta do editor (os icones da barra sumiam).
+     Dentro do iframe, com a largura EXATA da captura, tudo isso volta a valer
+     e o resultado e o que o navegador mostra. */
+
+  // Largura da JANELA em que os snapshots foram capturados. As media queries
+  // do editor leem a janela, nao o elemento: renderizar um fragmento de 370px
+  // numa janela de 370px ligava o layout de CELULAR e a tela saia diferente da
+  // que foi capturada. O iframe entao tem a largura da janela, e o fragmento
+  // fica numa caixa com a largura que ele tinha.
+  var MN_SHOT_VIEWPORT = 1265;
+
+  function shotDoc(html, boxW) {
+    return '<!doctype html><html><head><meta charset="utf-8">'
+      + '<link rel="stylesheet" href="css/app.css?v=' + MN_ASSET_V + '">'
+      + '<style>'
+      + 'html,body{margin:0;padding:0;background:transparent;overflow:hidden}'
+      + '.phone-frame,.bf-screen,[class*="bf-content"]{min-height:0!important}'
+      + '[class*="backdrop"]{position:static!important;inset:auto!important;'
+      + 'background:transparent!important;backdrop-filter:none!important;'
+      + 'display:flex!important;justify-content:center!important}'
+      + '.bf-tabbar{position:static!important;transform:none!important;margin:0!important}'
+      + '*{animation:none!important;transition:none!important;scrollbar-width:none!important}'
+      + '::-webkit-scrollbar{display:none}'
+      + 'button,input,select,textarea,a{pointer-events:none!important}'
+      + '#mn-box{width:' + boxW + 'px}'
+      + '</style></head><body><div id="mn-box">' + html + '</div></body></html>';
+  }
+
+  /* --------- SNAPSHOT EM IMAGEM (v14.5) ---------
+     O formato atual: cada snapshot é um PRINT de verdade do editor
+     (img/shots/<id>.webp, 2x), tirado por tools/capture_shots.mjs com o
+     pedal simulado. `hot` vem medido da própria captura — { seletor:
+     [x, y, largura, altura] } em FRAÇÃO da imagem —, então o marcador
+     acompanha a escala sem precisar do DOM do app. `light` (opcional) é o
+     mesmo print no tema claro, trocado junto com o tema do manual. */
+  function shotSrc(data) {
+    return (mnTheme === "light" && data.light) ? data.light : data.img;
+  }
+  function renderShotImg(card, data) {
+    var title = esc(card.mockTitle || card.title);
+    var marks = "", legend = "";
+    var hot = data.hot || {};
+    var shown = {};
+    (card.hot || []).forEach(function (h) {
+      var r = h.sel ? hot[h.sel] : null;
+      if (!r) return;
+      var x = r[0], y = r[1];
+      if (h.at === "c") { x += r[2] / 2; y += r[3] / 2; }
+      else if (h.at === "tr") { x += r[2]; }
+      else if (h.at === "bl") { y += r[3]; }
+      else if (h.at === "br") { x += r[2]; y += r[3]; }
+      else if (h.at === "l") { y += r[3] / 2; }
+      else if (h.at === "t") { x += r[2] / 2; }
+      marks += '<span class="mn-hot" style="left:' + (x * 100).toFixed(2) + '%;top:'
+        + (y * 100).toFixed(2) + '%">' + h.n + '</span>';
+      shown[h.n] = 1;
+    });
+    if (card.hot && card.hot.length) {
+      legend = '<div class="mn-shot-legend">' + card.hot.filter(function (h) { return shown[h.n]; })
+        .map(function (h) {
+          return '<span data-hot="' + h.n + '"><b>' + h.n + '</b>' + esc(h.label || "") + '</span>';
+        }).join("") + '</div>';
+      if (!marks) legend = "";
+    }
+    var w = data.w || 400, h = data.h || 300;
+    var kind = data.kind ? ' is-' + esc(data.kind) : '';
+    return '<div class="mn-block-label">' + esc(t("realScreen")) + '</div>'
+      + '<figure class="mn-shot mn-shot-img' + kind + '" data-shot="' + esc(card.shot) + '">'
+      + '<div class="mn-shot-bar"><span class="dot"></span>' + title + '</div>'
+      + '<div class="mn-shot-scroll">'
+      + '<a class="mn-shot-zoom" href="' + esc(shotSrc(data)) + '" target="_blank" rel="noopener"'
+      + ' title="' + esc(t("shotZoom")) + '">'
+      + '<span class="mn-shot-pic" style="max-width:' + w + 'px;aspect-ratio:' + w + ' / ' + h + '">'
+      + '<img src="' + esc(shotSrc(data)) + '" data-shot-img="' + esc(card.shot) + '"'
+      + ' width="' + w + '" height="' + h + '" loading="lazy" decoding="async" alt="' + title + '">'
+      + marks + '</span></a></div>' + legend + '</figure>';
+  }
+  function refreshShotTheme() {
+    var imgs = document.querySelectorAll("img[data-shot-img]");
+    for (var i = 0; i < imgs.length; i++) {
+      var d = shotData(imgs[i].getAttribute("data-shot-img"));
+      if (!d || !d.img) continue;
+      var src = shotSrc(d);
+      if (imgs[i].getAttribute("src") !== src) {
+        imgs[i].setAttribute("src", src);
+        var a = imgs[i].closest("a.mn-shot-zoom");
+        if (a) a.setAttribute("href", src);
+      }
+    }
   }
 
   function renderShot(card) {
-    var inner = shotHtml(card);
-    if (inner == null) {
-      return `<div class="mn-shot"><div class="mn-shot-bar"><span class="dot"></span>
-        ${esc(card.mockTitle || card.title)}</div>
-        <div class="mn-shot-scroll"><p class="mn-missing">${esc(t("shotMissing"))} <code>${esc(card.shot)}</code></p></div></div>`;
+    var data = shotData(card.shot);
+    if (!data) {
+      return '<div class="mn-shot"><div class="mn-shot-bar"><span class="dot"></span>'
+        + esc(card.mockTitle || card.title) + '</div>'
+        + '<div class="mn-shot-scroll"><p class="mn-missing">' + esc(t("shotMissing"))
+        + ' <code>' + esc(card.shot) + '</code></p></div></div>';
     }
+    if (data.img) return renderShotImg(card, data);
     HOT_BY_SHOT[card.shot] = card;
     var legend = "";
     if (card.hot && card.hot.length) {
-      legend = `<div class="mn-shot-legend">${card.hot.map(function (h) {
-        return `<span data-hot="${h.n}"><b>${h.n}</b>${esc(h.label || "")}</span>`;
-      }).join("")}</div>`;
+      legend = '<div class="mn-shot-legend">' + card.hot.map(function (h) {
+        return '<span data-hot="' + h.n + '"><b>' + h.n + '</b>' + esc(h.label || "") + '</span>';
+      }).join("") + '</div>';
     }
-    return `<div class="mn-block-label">${esc(t("realScreen"))}</div>
-      <div class="mn-shot" data-shot="${esc(card.shot)}">
-        <div class="mn-shot-bar"><span class="dot"></span>${esc(card.mockTitle || card.title)}</div>
-        <div class="mn-shot-scroll"><div class="mn-shot-stage"><div class="mn-shot-frame">${inner}</div></div></div>
-        ${legend}
-      </div>`;
+    return '<div class="mn-block-label">' + esc(t("realScreen")) + '</div>'
+      + '<div class="mn-shot" data-shot="' + esc(card.shot) + '"'
+      + (card.shotOf ? ' data-crop="' + esc(card.shotOf) + '"' : '') + '>'
+      + '<div class="mn-shot-bar"><span class="dot"></span>'
+      + esc(card.mockTitle || card.title) + '</div>'
+      + '<div class="mn-shot-scroll"><div class="mn-shot-stage">'
+      + '<iframe class="mn-shot-frame" title="' + esc(card.mockTitle || card.title) + '"'
+      + ' scrolling="no" tabindex="-1" aria-hidden="true"></iframe>'
+      + '</div></div>' + legend + '</div>';
   }
 
-  /* Reduz cada snapshot ate caber na largura do cartao. O editor foi
-     desenhado pra ~1280px; aqui ele vira "captura de tela" escalada, sem
-     reflow — reflow mudaria o layout do app e a previa deixaria de ser
-     fiel. Roda no render e a cada resize. */
-  /* Largura de projeto: a MEDIDA REAL gravada na captura. O fallback por
-     classe só serve para snapshots antigos, sem `w` — chutar a largura é
-     exatamente o que esticava a tela. */
-  function shotDesignWidth(frame, id) {
-    var data = shotData(id);
-    if (data && data.w) return data.w;
-    var el = frame.firstElementChild;
-    var cls = el ? String(el.className || "") : "";
-    if (/bf-content/.test(cls)) return 1280;
-    if (/settings-backdrop|wiz-backdrop|modal-backdrop/.test(cls)) return 900;
-    if (/bf-sw-mode-modal/.test(cls)) return 720;
-    if (/bf-header/.test(cls)) return 1280;
-    if (/bf-bank-col/.test(cls)) return 460;
-    return 440;
-  }
-
-  /* Altura real do conteúdo: o ponto mais baixo alcançado por qualquer
-     descendente. Cobre filhos absolutos (offsetHeight 0) e evita herdar a
-     sobra da coluna do app. `fallback` é a altura gravada na captura, usada
-     só se a medição não achar nada. */
-  function measureContent(frame, fallback) {
-    var top = frame.getBoundingClientRect().top;
-    var all = frame.querySelectorAll("*");
-    var max = 0;
-    for (var i = 0; i < all.length; i++) {
-      var r = all[i].getBoundingClientRect();
-      if (!r.height && !r.width) continue;              // oculto
-      var b = r.bottom - top;
-      if (b > max) max = b;
+  /* Monta os iframes e ajusta cada um quando carregar. */
+  function mountShots(root) {
+    var boxes = (root || document).querySelectorAll(".mn-shot[data-shot]");
+    for (var i = 0; i < boxes.length; i++) {
+      (function (box) {
+        var ifr = box.querySelector("iframe.mn-shot-frame");
+        if (!ifr || ifr.dataset.mnMounted) return;
+        ifr.dataset.mnMounted = "1";
+        var data = shotData(box.getAttribute("data-shot"));
+        if (!data) return;
+        ifr.style.width = MN_SHOT_VIEWPORT + "px";
+        ifr.style.height = Math.max(data.h || 0, 200) + "px";
+        ifr.addEventListener("load", function () { fitOne(box); });
+        ifr.srcdoc = shotDoc(data.html, data.w || MN_SHOT_VIEWPORT);
+      })(boxes[i]);
     }
-    max = Math.ceil(max);
-    if (!max) return fallback || frame.offsetHeight || 200;
-    // Sem teto proporcional: telas legitimamente altas (SPIN, STEPS, os
-    // paineis de CONFIGURACOES) sao 2-3x a altura da coluna que as continha
-    // no app, e um teto em cima da altura gravada CORTAVA o conteudo.
-    return max;
   }
 
-  function fitShots(root) {
-    var stages = (root || document).querySelectorAll(".mn-shot-stage");
-    for (var i = 0; i < stages.length; i++) {
-      var stage = stages[i];
-      var frame = stage.querySelector(".mn-shot-frame");
-      if (!frame) continue;
+  /* Ajusta UM snapshot: altura real do conteudo, recorte opcional e escala. */
+  function fitOne(box) {
+    var ifr = box.querySelector("iframe.mn-shot-frame");
+    var stage = box.querySelector(".mn-shot-stage");
+    var host = stage && stage.parentElement;
+    var data = shotData(box.getAttribute("data-shot"));
+    if (!ifr || !stage || !host || !data) return;
+    var doc = ifr.contentDocument;
+    if (!doc || !doc.body) return;
 
-      // Fixed/sticky vazam do app e flutuam sobre o manual (a barra inferior
-      // era o caso visivel). Nao da pra pegar por seletor CSS, entao vai no
-      // estilo computado — uma vez por snapshot.
-      if (!frame.dataset.mnUnstuck) {
-        var all = frame.querySelectorAll("*");
-        for (var k = 0; k < all.length; k++) {
-          var pos = getComputedStyle(all[k]).position;
-          if (pos === "fixed" || pos === "sticky") all[k].style.position = "relative";
+    ifr.style.width = MN_SHOT_VIEWPORT + "px";
+    ifr.style.height = Math.max(data.h || 0, 200) + "px";
+    var need = Math.max(doc.body.scrollHeight, doc.documentElement.scrollHeight);
+    ifr.style.height = Math.max(need, 1) + "px";
+
+    // O que aparece: por padrao a caixa do fragmento; com data-crop, um
+    // pedaco de dentro dela (usado quando o elemento so se monta no contexto
+    // do pai — `display:contents` nao gera caixa propria).
+    // `data-crop` aceita LISTA de seletores e recorta a UNIAO das caixas.
+    // No desktop o editor usa `display:contents` na coluna, entao o bloco que
+    // o leitor enxerga como "um card" pode ser 2-3 irmaos soltos no grid do
+    // pai — nao existe um elemento unico pra recortar.
+    var alvos = [];
+    var sel = box.getAttribute("data-crop");
+    if (sel) { try { alvos = [].slice.call(doc.querySelectorAll(sel)); } catch (e) { alvos = []; } }
+    if (!alvos.length) {
+      var cx = doc.getElementById("mn-box");
+      if (cx) alvos = [cx];
+    }
+    var offX = 0, offY = 0, cropW = data.w || MN_SHOT_VIEWPORT, cropH = need;
+    if (alvos.length) {
+      var x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
+      for (var a = 0; a < alvos.length; a++) {
+        var q = alvos[a].getBoundingClientRect();
+        if (!q.width && !q.height) continue;
+        x0 = Math.min(x0, q.left); y0 = Math.min(y0, q.top);
+        x1 = Math.max(x1, q.right); y1 = Math.max(y1, q.bottom);
+      }
+      // Apara a sobra do fim: varios paineis do app sao caixas roláveis que
+      // ocupam a coluna inteira, entao a caixa e bem mais alta que o conteudo
+      // (o console de bancos tinha ~290px vazios embaixo). No manual isso vira
+      // um bloco morto — corta na altura do conteudo de verdade.
+      var fundo = -Infinity;
+      for (var b = 0; b < alvos.length; b++) {
+        var kids = alvos[b].querySelectorAll("*");
+        for (var c = 0; c < kids.length; c++) {
+          var kr = kids[c].getBoundingClientRect();
+          if (!kr.width && !kr.height) continue;
+          if (kr.bottom > fundo) fundo = kr.bottom;
         }
-        frame.dataset.mnUnstuck = "1";
       }
+      if (fundo > y0 + 40 && fundo < y1) y1 = fundo + 12;   // 12px de respiro
 
-      var id = stage.closest("[data-shot]");
-      id = id ? id.getAttribute("data-shot") : null;
-      var data = shotData(id);
-      var design = shotDesignWidth(frame, id);
-
-      // A LARGURA vem da captura (é ela que reproduz o layout do app). A
-      // ALTURA é medida pelo conteúdo de verdade — nem offsetHeight nem a
-      // altura gravada servem sozinhas:
-      //   · vários painéis têm filhos ABSOLUTOS, então offsetHeight é 0 e o
-      //     conteúdo sairia cortado;
-      //   · a altura gravada é a da COLUNA do app, que sobra muito espaço
-      //     vazio embaixo de um card pequeno.
-      // Medir o ponto mais baixo de todos os descendentes resolve os dois.
-      frame.style.width = design + "px";
-      frame.style.height = "auto";
-      frame.style.setProperty("--mn-scale", "1");        // mede sem escala
-      var contentH = measureContent(frame, data && data.h);
-      frame.style.height = contentH + "px";
-
-      // A largura util vem do CARTAO, não do palco: o palco é filho do frame
-      // escalado no fluxo e, no primeiro render, ainda mede errado — foi o que
-      // fazia a escala sair minúscula e a tela nascer achatada.
-      var host = stage.parentElement;                     // .mn-shot-scroll
-      var cs = getComputedStyle(host);
-      var avail = host.clientWidth
-        - parseFloat(cs.paddingLeft || 0) - parseFloat(cs.paddingRight || 0);
-      if (!avail || avail < 40) continue;                 // layout ainda não pronto
-      var scale = Math.min(1, avail / design);
-      frame.style.setProperty("--mn-scale", String(scale));
-      // o transform nao reserva espaco: a altura do palco tem que ser dada
-      var natH = frame.offsetHeight;      // ja reflete o piso + eventual sobra
-      stage.style.height = Math.ceil(natH * scale) + "px";
-      stage.style.width = Math.ceil(design * scale) + "px";
-
-      // Re-ajusta quando a largura do cartão mudar (abrir a sidebar, girar o
-      // celular, fonte carregar). Só largura: mexer na altura é o que ESTE
-      // código faz, e observar altura entraria em laço.
-      if (!stage.dataset.mnObserved && typeof ResizeObserver !== "undefined") {
-        stage.dataset.mnObserved = "1";
-        stage.dataset.mnLastW = String(Math.round(avail));
-        new ResizeObserver(function () {
-          var w = Math.round(host.clientWidth);
-          if (String(w) === stage.dataset.mnLastW) return;
-          stage.dataset.mnLastW = String(w);
-          fitShots(stage.closest(".mn-shot"));
-          placeHotspots(stage.closest(".mn-shot"));
-        }).observe(host);
+      if (x1 > x0 && y1 > y0) {
+        offX = Math.max(0, Math.round(x0));
+        offY = Math.max(0, Math.round(y0));
+        cropW = Math.round(x1 - x0);
+        cropH = Math.round(y1 - y0);
       }
+    }
+
+    var cs = getComputedStyle(host);
+    var avail = host.clientWidth
+      - parseFloat(cs.paddingLeft || 0) - parseFloat(cs.paddingRight || 0);
+    if (!avail || avail < 40) return;
+    var scale = Math.min(1, avail / cropW);
+
+    ifr.style.transformOrigin = "top left";
+    ifr.style.transform = "scale(" + scale + ") translate(" + (-offX) + "px," + (-offY) + "px)";
+    stage.style.width = Math.ceil(cropW * scale) + "px";
+    stage.style.height = Math.ceil(cropH * scale) + "px";
+
+    box.dataset.mnScale = String(scale);
+    box.dataset.mnOffX = String(offX);
+    box.dataset.mnOffY = String(offY);
+    placeHotspotsOne(box);
+
+    if (!stage.dataset.mnObserved && typeof ResizeObserver !== "undefined") {
+      stage.dataset.mnObserved = "1";
+      stage.dataset.mnLastW = String(Math.round(avail));
+      new ResizeObserver(function () {
+        var nw = Math.round(host.clientWidth);
+        if (String(nw) === stage.dataset.mnLastW) return;
+        stage.dataset.mnLastW = String(nw);
+        fitOne(box);
+      }).observe(host);
     }
   }
 
-  var fitTimer = null;
-  window.addEventListener("resize", function () {
-    clearTimeout(fitTimer);
-    fitTimer = setTimeout(function () { fitShots(); placeHotspots(); }, 150);
-  });
+  function fitShots(root) { mountShots(root); }
 
-  /* Posiciona os marcadores depois que o snapshot ja esta no DOM — a
-     posicao vem do layout real, entao nao ha coordenada chumbada que
-     quebre quando o app mudar de tamanho. */
+  /* Marcadores numerados: medidos DENTRO do iframe e reposicionados no palco
+     ja com a escala e o deslocamento do recorte aplicados. */
+  function placeHotspotsOne(box) {
+    var card = HOT_BY_SHOT[box.getAttribute("data-shot")];
+    var stage = box.querySelector(".mn-shot-stage");
+    var ifr = box.querySelector("iframe.mn-shot-frame");
+    if (!stage || !ifr) return;
+    var old = stage.querySelectorAll(".mn-hot");
+    for (var k = 0; k < old.length; k++) old[k].remove();
+    if (!card || !card.hot) return;
+    var doc = ifr.contentDocument;
+    if (!doc) return;
+
+    var scale = parseFloat(box.dataset.mnScale) || 1;
+    var offX = parseFloat(box.dataset.mnOffX) || 0;
+    var offY = parseFloat(box.dataset.mnOffY) || 0;
+    var postos = {};
+    for (var j = 0; j < card.hot.length; j++) {
+      var h = card.hot[j], el = null;
+      try { el = h.sel ? doc.querySelector(h.sel) : null; } catch (e) { el = null; }
+      if (!el) continue;
+      var r = el.getBoundingClientRect();
+      if (!r.width && !r.height) continue;
+      var x = r.left, y = r.top;
+      // Canto superior esquerdo por padrao: no centro o marcador tapava
+      // justamente o que aponta (cobria os icones da barra inferior).
+      if (h.at === "c") { x += r.width / 2; y += r.height / 2; }
+      else if (h.at === "tr") { x += r.width; }
+      else if (h.at === "bl") { y += r.height; }
+      else if (h.at === "br") { x += r.width; y += r.height; }
+      var tag = document.createElement("span");
+      tag.className = "mn-hot";
+      tag.textContent = h.n;
+      tag.style.left = ((x - offX) * scale) + "px";
+      tag.style.top = ((y - offY) * scale) + "px";
+      stage.appendChild(tag);
+      postos[h.n] = 1;
+    }
+    var leg = box.querySelectorAll(".mn-shot-legend [data-hot]");
+    for (var q = 0; q < leg.length; q++) {
+      leg[q].style.display = postos[leg[q].getAttribute("data-hot")] ? "" : "none";
+    }
+  }
+
   function placeHotspots(root) {
-    var shots = (root || document).querySelectorAll(".mn-shot[data-shot]");
-    for (var i = 0; i < shots.length; i++) {
-      var box = shots[i];
-      var frame = box.querySelector(".mn-shot-frame");
-      var id = box.getAttribute("data-shot");
-      var card = HOT_BY_SHOT[id];
-      if (!frame || !card || !card.hot) continue;
-      // os marcadores vao no PALCO, nao no frame: o frame esta escalado por
-      // transform e um filho dele herdaria a escala (marcador minusculo e
-      // fora de lugar). getBoundingClientRect ja devolve a posicao final na
-      // tela, entao medir contra o palco basta.
-      var stage = frame.parentElement;
-      var old = stage.querySelectorAll(".mn-hot");
-      for (var k = 0; k < old.length; k++) old[k].remove();
-      var sr = stage.getBoundingClientRect();
-      var postos = {};
-      for (var j = 0; j < card.hot.length; j++) {
-        var h = card.hot[j];
-        var el = null;
-        try { el = h.sel ? frame.querySelector(h.sel) : null; } catch (e) { el = null; }
-        if (!el) continue;
-        var r = el.getBoundingClientRect();
-        if (!r.width && !r.height) continue;
-        var x = r.left - sr.left, y = r.top - sr.top;
-        if (h.at === "tl") { /* canto */ }
-        else if (h.at === "tr") { x += r.width; }
-        else if (h.at === "bl") { y += r.height; }
-        else if (h.at === "br") { x += r.width; y += r.height; }
-        else { x += r.width / 2; y += r.height / 2; }
-        var tag = document.createElement("span");
-        tag.className = "mn-hot";
-        tag.textContent = h.n;
-        tag.style.left = x + "px";
-        tag.style.top = y + "px";
-        stage.appendChild(tag);
-        postos[h.n] = 1;
-      }
-      // Um recorte pode nao conter todos os alvos (a barra inferior, por
-      // exemplo, nao faz parte da tela de conteudo). Legenda que aponta pra
-      // marcador inexistente confunde — some com ela.
-      var leg = box.querySelectorAll(".mn-shot-legend [data-hot]");
-      for (var q = 0; q < leg.length; q++) {
-        leg[q].style.display = postos[leg[q].getAttribute("data-hot")] ? "" : "none";
-      }
-    }
+    var boxes = (root || document).querySelectorAll(".mn-shot[data-shot]");
+    for (var i = 0; i < boxes.length; i++) placeHotspotsOne(boxes[i]);
   }
+
 
   // indice shot -> card, preenchido no render (os marcadores precisam do card)
   var HOT_BY_SHOT = {};
@@ -3989,6 +4123,7 @@
   function applyTheme() {
     document.body.classList.toggle("is-theme-light", mnTheme === "light");
     syncMockTheme();
+    refreshShotTheme();
     const l = $("#mnThemeLight"), d = $("#mnThemeDark");
     if (l) l.classList.toggle("is-on", mnTheme === "light");
     if (d) d.classList.toggle("is-on", mnTheme === "dark");
